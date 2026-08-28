@@ -26,7 +26,7 @@ export const navigationItems: NavItem[] = [
     href: "/layanan",
     dropdown: [
       { label: "Fasilitas", href: "/layanan/fasilitas" },
-      { label: "Layanan Unggulan", href: "/layanan#unggulan" },
+      { label: "Layanan Unggulan", href: "/layanan/layanan-unggulan" },
       { label: "Rawat Inap", href: "/layanan/rawat-inap" },
     ],
   },
@@ -77,7 +77,7 @@ export const footerNavigation = {
   ],
   layanan: [
     { label: "Fasilitas", href: "/layanan/fasilitas" },
-    { label: "Layanan Unggulan", href: "/layanan#unggulan" },
+    { label: "Layanan Unggulan", href: "/layanan/layanan-unggulan" },
     { label: "Rawat Inap", href: "/layanan/rawat-inap" },
   ],
   informasi: [

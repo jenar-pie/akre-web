@@ -1,29 +1,251 @@
 export interface Facility {
   id: string;
   title: string;
+  category?: string;
   image: string;
   description?: string;
+  badge?: string;
+  features?: string[];
+  iconName?: string;
 }
 
 export const featuredFacilities: Facility[] = [
   {
     id: "igd",
     title: "IGD 24 Jam",
+    category: "Gawat Darurat & Kritis",
     image: "/assets/fasilitas/igd.jpg",
-    description: "Layanan gawat darurat 24 jam dengan tim medis siaga dan fasilitas penanganan cepat."
+    badge: "Siaga 24 Jam Non-Stop",
+    description: "Instalasi Gawat Darurat yang siaga 24 jam dengan tim dokter terampil, triage modern, dan ambulans siaga untuk penanganan darurat cepat dan tepat.",
+    features: [
+      "Siaga 24 Jam Non-Stop dengan dokter jaga & perawat terlatih ACLS/BTCLS",
+      "Area Triage dan resusitasi dengan peralatan life-support lengkap",
+      "Terhubung langsung dengan Laboratorium & Radiologi Cito",
+      "Armada Ambulans Emergency & Evakuasi Medis 24 Jam",
+    ],
+    iconName: "Siren",
   },
   {
     id: "icu",
-    title: "ICU",
+    title: "ICU (Intensive Care Unit)",
+    category: "Gawat Darurat & Kritis",
     image: "/assets/fasilitas/icu.jpg",
-    description: "Ruang perawatan intensif dengan peralatan pemantauan medis terkini."
+    badge: "Perawatan Kritis Terpadu",
+    description: "Ruang perawatan intensif dengan sistem monitoring hemodinamik mutakhir, ventilator canggih, dan rasio perawat berdedikasi tinggi.",
+    features: [
+      "Ventilator mekanik modern dan bedside multi-parameter monitor",
+      "Sistem pemantauan sentral (Central Monitoring Unit) 24 jam",
+      "Pengawasan dokter spesialis anestesi & intensivis berkala",
+      "Lingkungan steril dengan standar pencegahan infeksi (PPI) ketat",
+    ],
+    iconName: "Activity",
   },
   {
-    id: "nicu",
-    title: "NICU",
-    image: "/assets/fasilitas/nicu.jpg",
-    description: "Perawatan intensif khusus untuk bayi baru lahir yang membutuhkan perawatan medis khusus."
-  }
+    id: "nicu-picu",
+    title: "NICU & PICU",
+    category: "Gawat Darurat & Kritis",
+    image: "/assets/fasilitas/nicu.png",
+    badge: "Perawatan Intensif Anak & Bayi",
+    description: "Unit perawatan intensif khusus neonatus (bayi baru lahir/prematur) dan anak dengan inkubator modern, fototerapi, serta tim medis bersertifikasi khusus.",
+    features: [
+      "Inkubator perawatan bayi prematur & radiant warmer mutakhir",
+      "Unit fototerapi intensif untuk penanganan hiperbilirubinemia (kuning)",
+      "Monitoring respirasi dan saturasi oksigen neonatal non-invasif",
+      "Pendampingan dokter spesialis anak dan perawat terlatih khusus perinatologi",
+    ],
+    iconName: "Baby",
+  },
+];
+
+export const categorizedFacilities = [
+  {
+    categoryName: "Gawat Darurat & Perawatan Kritis",
+    categorySlug: "critical-care",
+    description: "Fasilitas penanganan medis cepat dan pemantauan intensif selama 24 jam penuh.",
+    items: [
+      {
+        id: "igd",
+        title: "IGD 24 Jam",
+        category: "Gawat Darurat & Perawatan Kritis",
+        image: "/assets/fasilitas/igd.jpg",
+        badge: "24 Jam Non-Stop",
+        description: "Layanan gawat darurat siaga 24 jam dengan tim dokter & paramedis terampil, triage modern, dan respons cepat tanggap darurat.",
+        features: ["Dokter Jaga & Nakes Bersertifikat ATLS/ACLS", "Kamar Resusitasi & Observasi", "Pemeriksaan Lab & Rontgen Cito"],
+        iconName: "Siren",
+      },
+      {
+        id: "icu",
+        title: "ICU (Intensive Care Unit)",
+        category: "Gawat Darurat & Perawatan Kritis",
+        image: "/assets/fasilitas/icu.jpg",
+        badge: "Monitoring Canggih",
+        description: "Ruang perawatan intensif dengan dukungan ventilator mutakhir, defibrilator, dan pemantauan fungsi vital pasien secara kontinu.",
+        features: ["Bed Pasien Elektrik Multifungsi", "Central Monitoring System", "Tim Dokter Spesialis & Konsultan"],
+        iconName: "Activity",
+      },
+      {
+        id: "nicu",
+        title: "NICU (Neonatal Intensive Care)",
+        category: "Gawat Darurat & Perawatan Kritis",
+        image: "/assets/fasilitas/nicu.png",
+        badge: "Perawatan Bayi Baru Lahir",
+        description: "Unit perawatan intensif bagi bayi baru lahir berisiko tinggi, prematur, atau membutuhkan penanganan respirasi dan fototerapi.",
+        features: ["Inkubator Tertutup & Radiant Warmer", "Ventilator Khusus Neonatal", "Unit Fototerapi Intensif"],
+        iconName: "Baby",
+      },
+      {
+        id: "picu",
+        title: "PICU (Pediatric Intensive Care)",
+        category: "Gawat Darurat & Perawatan Kritis",
+        image: "/assets/fasilitas/nicu.png",
+        badge: "Perawatan Intensif Anak",
+        description: "Unit perawatan intensif khusus pasien anak usia 1 bulan hingga 18 tahun dengan pengawasan ketat tim dokter spesialis anak.",
+        features: ["Peralatan Medis Disesuaikan Ukuran Anak", "Perawat Berpengalaman Pediatrik", "Ruang Tenang & Bersih"],
+        iconName: "HeartPulse",
+      },
+    ],
+  },
+  {
+    categoryName: "Layanan Rawat Jalan & Bedah",
+    categorySlug: "outpatient-surgery",
+    description: "Pelayanan konsultasi dokter spesialis, poliklinik terpadu, dan tindakan operasi berstandar tinggi.",
+    items: [
+      {
+        id: "poliklinik",
+        title: "Poliklinik Rawat Jalan Terpadu",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/rawatjalan.jpg",
+        badge: "Beragam Spesialis",
+        description: "Poliklinik dokter spesialis lengkap dengan ruang periksa nyaman, sistem antrean terintegrasi, dan dokter spesialis berpengalaman.",
+        features: ["Spesialis Anak, Obgyn, Penyakit Dalam, Bedah, Saraf", "Ruang Tunggu Sejuk & Ber-AC", "Antrean Online & Display Digital"],
+        iconName: "Stethoscope",
+      },
+      {
+        id: "anak",
+        title: "Klinik & Ruang Periksa Anak",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/anak.jpg",
+        badge: "Ramah Anak & Hangat",
+        description: "Ruang konsultasi dokter spesialis anak yang didesain ceria, ramah anak, dan menenangkan untuk pengalaman berobat yang menyenangkan.",
+        features: ["Pojok Bermain Edukatif", "Pemeriksaan Tumbuh Kembang", "Imunisasi & Konsultasi Nutrisi"],
+        iconName: "Smile",
+      },
+      {
+        id: "gigi",
+        title: "Poliklinik Gigi & Mulut",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/gigi.jpg",
+        badge: "Dental Care Modern",
+        description: "Pemeriksaan dan tindakan kesehatan gigi & mulut dengan dental unit mutakhir, prosedur higienis, dan sterilisasi autoklaf teruji.",
+        features: ["Pembersihan Karang Gigi (Scaling)", "Penambalan & Pencabutan Gigi", "Perawatan Saluran Akar & Estetika Gigi"],
+        iconName: "Sparkles",
+      },
+      {
+        id: "kamar-operasi",
+        title: "Kamar Operasi (Operating Theater)",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/bedah.jpg",
+        badge: "Sterilisasi Standar HEPA",
+        description: "Ruang bedah berstandar medis dengan tata udara steril HEPA filter, lampu operasi LED presisi, dan mesin anestesi modern.",
+        features: ["Operasi Bedah Umum & Subspesialis", "Sistem Sterilisasi Bertekanan Positif", "Kesiapan Operasi Emergensi 24 Jam"],
+        iconName: "Scissors",
+      },
+      {
+        id: "ruang-bersalin",
+        title: "Ruang Bersalin (VK Maternity)",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/icu.jpg",
+        badge: "Nuansa Islami & Tenang",
+        description: "Ruang persalinan privat bernuansa Islami yang mengutamakan kenyamanan ibu, privasi aurat, dan bimbingan zikir/doa saat persalinan.",
+        features: ["Metode Persalinan Normal & ERACS", "Inisiasi Menyusu Dini (IMD)", "Pendampingan Bidan & Dokter Obgyn"],
+        iconName: "Heart",
+      },
+      {
+        id: "fisioterapi",
+        title: "Instalasi Fisioterapi & Rehabilitasi",
+        category: "Layanan Rawat Jalan & Bedah",
+        image: "/assets/fasilitas/fisio.jpg",
+        badge: "Pemulihan Optimal",
+        description: "Layanan pemulihan fungsi gerak tubuh pasca stroke, cedera otot, pasca operasi, serta stimulasi motorik anak oleh fisioterapis ahli.",
+        features: ["Modalitas Terapi Elektro & Panas", "Gymnasium Rehabilitasi Medik", "Program Pemulihan Cedera Olahraga"],
+        iconName: "Zap",
+      },
+    ],
+  },
+  {
+    categoryName: "Penunjang Medis & Diagnostik",
+    categorySlug: "diagnostic-support",
+    description: "Sarana laboratorium otomatis, radiologi digital, serta layanan transportasi darurat.",
+    items: [
+      {
+        id: "laboratorium",
+        title: "Laboratorium Klinik 24 Jam",
+        category: "Penunjang Medis & Diagnostik",
+        image: "/assets/fasilitas/lab.jpg",
+        badge: "Akurat & Cepat",
+        description: "Laboratorium otomatis melayani pemeriksaan hematologi, kimia darah, urinalisis, mikrobiologi, dan imunologi dengan hasil cepat dan akurat.",
+        features: ["Auto-Analyzer Otomatis Presisi Tinggi", "Pemeriksaan Darah Rutin & Parameter Khusus", "Buka 24 Jam untuk Pasien Rawat Inap & IGD"],
+        iconName: "Microscope",
+      },
+      {
+        id: "radiologi",
+        title: "Instalasi Radiologi & USG 4D",
+        category: "Penunjang Medis & Diagnostik",
+        image: "/assets/fasilitas/radiologi.jpg",
+        badge: "Digital Imaging",
+        description: "Sarana diagnostik pencitraan sinar-X digital (Digital X-Ray) dosis rendah dan USG 4D kebidanan untuk akurasi diagnosa medis.",
+        features: ["Foto Rontgen Digital Resolusi Tinggi", "USG 4D Real-time Kebidanan & Abdomen", "Hasil Dibaca Dokter Spesialis Radiologi"],
+        iconName: "Scan",
+      },
+      {
+        id: "farmasi",
+        title: "Instalasi Farmasi 24 Jam",
+        category: "Penunjang Medis & Diagnostik",
+        image: "/assets/fasilitas/rawatjalan.jpg",
+        badge: "Jaminan Obat Halal",
+        description: "Pelayanan obat-obatan lengkap dan berkualitas dengan sistem telaah resep ganda (double-check) oleh apoteker berlisensi.",
+        features: ["Formularium Obat Halal & Terdaftar BPOM", "Konseling Penggunaan Obat oleh Apoteker", "Pelayanan Resep 24 Jam Siaga"],
+        iconName: "Pill",
+      },
+      {
+        id: "ambulan",
+        title: "Ambulans Emergency & Transportasi Medis",
+        category: "Penunjang Medis & Diagnostik",
+        image: "/assets/fasilitas/ambulan.jpg",
+        badge: "Layanan Siaga 24 Jam",
+        description: "Armada ambulans siap siaga 24 jam dilengkapi brankar otomatis, oksigen portabel, AED, serta tim evakuasi medis terampil.",
+        features: ["Penjemputan Pasien Darurat 24 Jam", "Rujukan Antar Rumah Sakit", "Peralatan Bantuan Hidup Dasar (BHD)"],
+        iconName: "Car",
+      },
+    ],
+  },
+  {
+    categoryName: "Fasilitas Umum & Bernuansa Syariah",
+    categorySlug: "general-syariah",
+    description: "Fasilitas penunjang kenyamanan keluarga pasien dan pemenuhan kebutuhan ibadah.",
+    items: [
+      {
+        id: "musholla",
+        title: "Masjid & Sarana Ibadah Nyaman",
+        category: "Fasilitas Umum & Syariah",
+        image: "/assets/hero/Baner.svg",
+        badge: "Bersih & Luas",
+        description: "Tersedia masjid dan musholla yang bersih, sejuk ber-AC, serta perlengkapan shalat higienis bagi keluarga pasien dan pengunjung.",
+        features: ["Tempat Wudhu Bersih & Terpisah Pria/Wanita", "Jadwal Shalat Berjamaah & Bimbingan Doa", "Penyediaan Al-Qur'an & Buku Doa"],
+        iconName: "Building2",
+      },
+      {
+        id: "ruang-tunggu",
+        title: "Ruang Tunggu & Area Parkir Nyaman",
+        category: "Fasilitas Umum & Syariah",
+        image: "/assets/fasilitas/rawatjalan.jpg",
+        badge: "Ramah Pengunjung",
+        description: "Ruang tunggu luas berpendingin udara, akses Wi-Fi gratis, area parkir luas dengan pengamanan 24 jam, dan akses kursi roda ramah difabel.",
+        features: ["Free Wi-Fi Berkecepatan Tinggi", "Akses Jalur Khusus Kursi Roda / Disabilitas", "Keamanan Satpam & CCTV 24 Jam"],
+        iconName: "ShieldCheck",
+      },
+    ],
+  },
 ];
 
 export const allFacilities: Facility[] = [
@@ -31,36 +253,55 @@ export const allFacilities: Facility[] = [
   {
     id: "fisioterapi",
     title: "Fisioterapi",
-    image: "/assets/fasilitas/fisioterapi.jpg"
+    image: "/assets/fasilitas/fisioterapi.jpg",
+    description: "Layanan pemulihan fungsi fisik, otot, dan saraf dengan bimbingan fisioterapis ahli.",
   },
   {
     id: "kamar-operasi",
     title: "Kamar Operasi",
-    image: "/assets/fasilitas/kamar-operasi.jpg"
+    image: "/assets/fasilitas/bedah.jpg",
+    description: "Ruang operasi steril dengan peralatan bedah modern berstandar internasional.",
   },
   {
     id: "laboratorium",
     title: "Laboratorium",
-    image: "/assets/fasilitas/laboratorium.jpg"
+    image: "/assets/fasilitas/laboratorium.jpg",
+    description: "Pemeriksaan sampel klinis lengkap dengan alat otomatisasi modern.",
   },
   {
     id: "picu",
     title: "PICU",
-    image: "/assets/fasilitas/picu.jpg"
+    image: "/assets/fasilitas/picu.jpg",
+    description: "Ruang perawatan intensif khusus untuk anak yang membutuhkan pemantauan medis ketat.",
   },
   {
     id: "poliklinik",
     title: "Poliklinik Spesialis",
-    image: "/assets/fasilitas/poliklinik.jpg"
+    image: "/assets/fasilitas/rawatjalan.jpg",
+    description: "Konsultasi rawat jalan bersama dokter spesialis berpengalaman di berbagai bidang medis.",
   },
   {
     id: "radiologi",
     title: "Radiologi",
-    image: "/assets/fasilitas/radiologi.jpg"
+    image: "/assets/fasilitas/radiologi.jpg",
+    description: "Layanan foto rontgen digital dan ultrasonografi (USG) akurat untuk menunjang diagnosa.",
   },
   {
     id: "ruang-bersalin",
     title: "Ruang Bersalin",
-    image: "/assets/fasilitas/ruang-bersalin.jpg"
-  }
+    image: "/assets/fasilitas/ruang-bersalin.jpg",
+    description: "Ruang persalinan nyaman dan bernuansa syariah dengan pengawasan bidan & dokter spesialis.",
+  },
+  {
+    id: "gigi",
+    title: "Poli Gigi & Mulut",
+    image: "/assets/fasilitas/gigi.jpg",
+    description: "Perawatan kesehatan gigi, penambalan, pencabutan, dan pembersihan karang gigi.",
+  },
+  {
+    id: "ambulan",
+    title: "Ambulans 24 Jam",
+    image: "/assets/fasilitas/ambulan.jpg",
+    description: "Layanan penjemputan dan evakuasi medis darurat berstandar gawat darurat.",
+  },
 ];

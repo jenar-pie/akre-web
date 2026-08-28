@@ -20,7 +20,7 @@ export default function Services() {
             </p>
           </div>
           <Link
-            href="/layanan"
+            href="/layanan/layanan-unggulan"
             className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white text-sm font-medium px-4 py-2 rounded transition-colors flex-shrink-0 self-start"
           >
             <span>Lihat layanan lainnya</span>

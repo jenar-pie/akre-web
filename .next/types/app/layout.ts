@@ -1,4 +1,4 @@
-// File: C:\Users\LOQ\Downloads\webridhoka-antgrav\app\layout.tsx
+// File: /Users/amarzaid/Downloads/webridhoka-antgrav/akre-web/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

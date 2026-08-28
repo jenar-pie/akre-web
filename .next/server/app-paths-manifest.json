@@ -1,3 +1,10 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
+  "/layanan/page": "app/layanan/page.js",
+  "/tentang-kami/visi-misi/page": "app/tentang-kami/visi-misi/page.js",
+  "/spesialis-kami/page": "app/spesialis-kami/page.js",
+  "/informasi/promosi/page": "app/informasi/promosi/page.js",
+  "/cari-dokter/page": "app/cari-dokter/page.js"
 }
