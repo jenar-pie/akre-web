@@ -1,8 +1,8 @@
 {
-  "/tentang-kami/sejarah/page": "app/tentang-kami/sejarah/page.js",
-  "/tentang-kami/visi-misi/page": "app/tentang-kami/visi-misi/page.js",
-  "/informasi/artikel-kesehatan/page": "app/informasi/artikel-kesehatan/page.js",
-  "/page": "app/page.js",
-  "/informasi/promosi/page": "app/informasi/promosi/page.js",
+  "/janji-temu/page": "app/janji-temu/page.js",
+  "/kesyariahan/program/page": "app/kesyariahan/program/page.js",
+  "/layanan/fasilitas/page": "app/layanan/fasilitas/page.js",
+  "/spesialis-kami/page": "app/spesialis-kami/page.js",
+  "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
   "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
 }
