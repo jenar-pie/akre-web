@@ -1,0 +1,458 @@
+export interface Doctor {
+  name: string;
+  title: string;
+  subspecialty?: string;
+  schedule?: string;
+  experience?: string;
+  avatar: string;
+}
+
+export interface Specialist {
+  id: string;
+  slug: string;
+  title: string;
+  code: string;
+  category: "ibu-anak" | "penyakit-dalam-saraf" | "bedah-ortopedi" | "organ-khusus" | "lainnya";
+  categoryLabel: string;
+  shortDescription: string;
+  fullDescription: string;
+  iconName: string;
+  image: string;
+  doctors: Doctor[];
+  services: string[];
+  isFeatured: boolean;
+  badge?: string;
+}
+
+export const specialistsData: Specialist[] = [
+  {
+    id: "anak",
+    slug: "anak",
+    title: "Spesialis Anak (Pediatri)",
+    code: "Sp.A",
+    category: "ibu-anak",
+    categoryLabel: "Ibu & Anak",
+    shortDescription: "Pelayanan kesehatan menyeluruh untuk bayi, balita, dan anak mencakup imunisasi, tumbuh kembang, serta rawat inap ramah anak.",
+    fullDescription: "Poliklinik Spesialis Anak RS Ridhoka Salma melayani pemeriksaan kesehatan anak secara komprehensif mulai dari neonatologi (bayi baru lahir), balita, hingga remaja. Didukung ruang periksa ceria ramah anak, fasilitas vaksinasi lengkap, serta ruang rawat inap anak bernuansa Islami.",
+    iconName: "Baby",
+    image: "/assets/fasilitas/anak.jpg",
+    isFeatured: true,
+    badge: "Favorit Keluarga",
+    doctors: [
+      {
+        name: "dr. H. Ahmad Fauzi, Sp.A",
+        title: "Dokter Spesialis Anak",
+        subspecialty: "Pediatri Umum & Tumbuh Kembang",
+        schedule: "Senin - Sabtu: 08.00 - 14.00 WIB",
+        experience: "15+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+      {
+        name: "dr. Nurul Aini, Sp.A, M.Ked.Klin",
+        title: "Dokter Spesialis Anak",
+        subspecialty: "Neonatologi & Nutrisi Pediatrik",
+        schedule: "Senin - Jumat: 15.00 - 20.00 WIB",
+        experience: "10+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+    ],
+    services: [
+      "Konsultasi Tumbuh Kembang & Stimulasi Anak",
+      "Vaksinasi & Imunisasi Dasar Lengkap",
+      "Penanganan Infeksi Akut & Kronis Anak",
+      "Layanan Perinatologi & NICU / PICU 24 Jam",
+      "Konsultasi Gizi & Alergi Anak",
+    ],
+  },
+  {
+    id: "kebidanan",
+    slug: "kebidanan",
+    title: "Spesialis Kebidanan & Kandungan",
+    code: "Sp.OG",
+    category: "ibu-anak",
+    categoryLabel: "Ibu & Anak",
+    shortDescription: "Layanan kesehatan reproduksi wanita, pemeriksaan kehamilan (ANC), USG 4D, persalinan normal & Caesar ERACS berwawasan syariah.",
+    fullDescription: "Poliklinik Kebidanan dan Kandungan (Obgyn) RS Ridhoka Salma mengedepankan kenyamanan dan syiar Islami dalam menjaga aurat dan kehormatan ibu. Kami menyediakan tim dokter spesialis dan bidan perempuan berpengalaman, teknologi USG 4D, senam hamil syariah, serta persalinan dengan metode ERACS untuk pemulihan lebih cepat.",
+    iconName: "HeartHandshake",
+    image: "/assets/fasilitas/ruang-bersalin.jpg",
+    isFeatured: true,
+    badge: "Layanan Syariah",
+    doctors: [
+      {
+        name: "dr. Hj. Siti Rahmawati, Sp.OG",
+        title: "Dokter Spesialis Kebidanan & Kandungan",
+        subspecialty: "Fetomaternal & Persalinan Alami",
+        schedule: "Senin - Kamis: 09.00 - 15.00 WIB",
+        experience: "14+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+      {
+        name: "dr. Muhammad Ridwan, Sp.OG, Subsp.Obginsos",
+        title: "Dokter Spesialis Kebidanan & Kandungan",
+        subspecialty: "Bedah Ginekologi & Fertilitas",
+        schedule: "Senin, Rabu, Jumat: 16.00 - 21.00 WIB",
+        experience: "12+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Pemeriksaan Antenatal Care (ANC) & USG 4D",
+      "Persalinan Normal & Sesar Metode ERACS",
+      "Program Perencanaan Kehamilan & Promil",
+      "Penanganan Miom, Kista, & Gangguan Menstruasi",
+      "Pemeriksaan Skrining Kanker Serviks (Pap Smear)",
+    ],
+  },
+  {
+    id: "penyakit-dalam",
+    slug: "penyakit-dalam",
+    title: "Spesialis Penyakit Dalam (Internis)",
+    code: "Sp.PD",
+    category: "penyakit-dalam-saraf",
+    categoryLabel: "Penyakit Dalam & Saraf",
+    shortDescription: "Diagnosis dan tata laksana komprehensif berbagai penyakit organ dalam dewasa: diabetes, hipertensi, saluran cerna, hati, ginjal, dan infeksi.",
+    fullDescription: "Poliklinik Penyakit Dalam RS Ridhoka Salma menangani pencegahan, diagnosis, dan terapi tanpa bedah untuk beragam gangguan organ internal pada pasien dewasa dan lansia (geriatri) dengan pendekatan holistik.",
+    iconName: "Stethoscope",
+    image: "/assets/fasilitas/poliklinik.jpg",
+    isFeatured: true,
+    badge: "Layanan Utama",
+    doctors: [
+      {
+        name: "dr. Hendra Wijaya, Sp.PD, FINASIM",
+        title: "Dokter Spesialis Penyakit Dalam",
+        subspecialty: "Gastroenterohepatologi & Diabetes",
+        schedule: "Senin - Sabtu: 08.00 - 13.00 WIB",
+        experience: "16+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+      {
+        name: "dr. Farhan Abdurrahman, Sp.PD",
+        title: "Dokter Spesialis Penyakit Dalam",
+        subspecialty: "Nefrologi & Penyakit Tropis Infeksi",
+        schedule: "Senin - Jumat: 14.00 - 19.00 WIB",
+        experience: "9+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Manajemen Diabetes Mellitus, Kolesterol & Asam Urat",
+      "Penanganan Hipertensi & Penyakit Kardiovaskular Dewasa",
+      "Terapi Gangguan Saluran Pencernaan & Maag Kronis",
+      "Skrining & Terapi Gangguan Ginjal dan Hati",
+      "Penanganan Demam Berdarah, Tifoid, & Infeksi Tropis",
+    ],
+  },
+  {
+    id: "bedah-umum",
+    slug: "bedah-umum",
+    title: "Spesialis Bedah Umum",
+    code: "Sp.B",
+    category: "bedah-ortopedi",
+    categoryLabel: "Bedah & Ortopedi",
+    shortDescription: "Tindakan operatif terencana dan cito darurat berstandar kamar operasi modern dengan sistem filtrasi HEPA untuk keamanan maksimal.",
+    fullDescription: "Poliklinik Bedah Umum RS Ridhoka Salma didukung fasilitas kamar operasi berstandar internasional, perlengkapan bedah minimal invasif, serta dokter spesialis bedah bersertifikasi nasional untuk tindakan operatif digestif, tumor lunak, dan trauma.",
+    iconName: "Activity",
+    image: "/assets/fasilitas/kamar-operasi.jpg",
+    isFeatured: true,
+    badge: "Kamar Operasi HEPA",
+    doctors: [
+      {
+        name: "dr. Bambang Sudarmono, Sp.B",
+        title: "Dokter Spesialis Bedah Umum",
+        subspecialty: "Bedah Digestif & Onkologi Bedah",
+        schedule: "Senin - Jumat: 10.00 - 16.00 WIB",
+        experience: "18+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+      {
+        name: "dr. Ari Wibowo, Sp.B, FICS",
+        title: "Dokter Spesialis Bedah Umum",
+        subspecialty: "Bedah Laparoskopi & Hernia",
+        schedule: "Selasa, Kamis, Sabtu: 13.00 - 18.00 WIB",
+        experience: "11+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Operasi Usus Buntu (Apendektomi)",
+      "Operasi Hernia & Wasir / Hemoroid",
+      "Pengangkatan Tumor Jinak, Kista, & Lipoma",
+      "Sirkumsisi (Khitan) Medis Anak & Dewasa",
+      "Penanganan Luka Akut, Trauma & Infeksi Jaringan Lunak",
+    ],
+  },
+  {
+    id: "saraf",
+    slug: "saraf",
+    title: "Spesialis Saraf (Neurologi)",
+    code: "Sp.N / Sp.S",
+    category: "penyakit-dalam-saraf",
+    categoryLabel: "Penyakit Dalam & Saraf",
+    shortDescription: "Penanganan gangguan otak dan sistem saraf: stroke, nyeri kepala kronis, vertigo, epilepsi, tremor, neuropati, dan saraf kejepit (HNP).",
+    fullDescription: "Poliklinik Saraf RS Ridhoka Salma menangani berbagai kondisi neurologis mulai dari tata laksana darurat stroke (Golden Period), terapi pemulihan pasca-stroke, diagnosis kejang dengan EEG, hingga terapi intervensi nyeri saraf tulang belakang.",
+    iconName: "Zap",
+    image: "/assets/fasilitas/radiologi.jpg",
+    isFeatured: true,
+    badge: "Pusat Stroke & Nyeri",
+    doctors: [
+      {
+        name: "dr. Zainal Arifin, Sp.N",
+        title: "Dokter Spesialis Neurologi (Saraf)",
+        subspecialty: "Stroke & Neurovaskular",
+        schedule: "Senin - Kamis: 08.30 - 14.00 WIB",
+        experience: "13+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+      {
+        name: "dr. Maya Kartika, Sp.S",
+        title: "Dokter Spesialis Saraf",
+        subspecialty: "Nyeri Saraf & Gangguan Gerak",
+        schedule: "Rabu - Sabtu: 15.00 - 20.00 WIB",
+        experience: "8+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+    ],
+    services: [
+      "Pencegahan & Manajemen Pasca Stroke Terpadu",
+      "Pemeriksaan Gelombang Otak (EEG)",
+      "Terapi Nyeri Kepala (Migrain, Tension Headache) & Vertigo",
+      "Penanganan Saraf Terjepit (HNP) & Sciatica",
+      "Tata Laksana Kesemutan, Neuropati & Tremor",
+    ],
+  },
+  {
+    id: "jantung",
+    slug: "jantung",
+    title: "Spesialis Jantung & Pembuluh Darah",
+    code: "Sp.JP",
+    category: "penyakit-dalam-saraf",
+    categoryLabel: "Penyakit Dalam & Saraf",
+    shortDescription: "Pemeriksaan EKG, Echocardiography, pencegahan penyakit jantung koroner, aritmia, serta pemulihan pasca-serangan jantung.",
+    fullDescription: "Layanan Poliklinik Jantung RS Ridhoka Salma berfokus pada deteksi dini, diagnosis tepat, dan manajemen penyakit kardiovaskular dengan peralatan EKG dan USG Jantung (Echocardiography) mutakhir.",
+    iconName: "HeartPulse",
+    image: "/assets/fasilitas/icu.jpg",
+    isFeatured: true,
+    badge: "Diagnostik Cepat",
+    doctors: [
+      {
+        name: "dr. Ilham Pratama, Sp.JP, FIHA",
+        title: "Dokter Spesialis Jantung & Pembuluh Darah",
+        subspecialty: "Kardiologi Klinis & Ekokardiografi",
+        schedule: "Senin, Rabu, Jumat: 16.00 - 20.00 WIB",
+        experience: "11+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Rekam Jantung Elektrokardiogram (EKG)",
+      "Pemeriksaan USG Jantung (Echocardiography)",
+      "Konsultasi Nyeri Dada & Pencegahan Serangan Jantung",
+      "Manajemen Hipertensi Berat & Gangguan Irama Jantung",
+    ],
+  },
+  {
+    id: "mata",
+    slug: "mata",
+    title: "Spesialis Mata (Oftalmologi)",
+    code: "Sp.M",
+    category: "organ-khusus",
+    categoryLabel: "Organ Khusus & Indera",
+    shortDescription: "Pemeriksaan refraksi mata, skrining katarak, glaukoma, retinopati diabetes, serta penanganan infeksi dan iritasi mata.",
+    fullDescription: "Poliklinik Mata RS Ridhoka Salma menyediakan layanan kesehatan indera penglihatan mulai dari koreksi kacamata anak dan dewasa, operasi katarak modern, hingga skrining penyakit mata akibat komplikasi sistemik.",
+    iconName: "Eye",
+    image: "/assets/fasilitas/radiologi3.jpg",
+    isFeatured: false,
+    badge: "Peralatan Modern",
+    doctors: [
+      {
+        name: "dr. Rina Anggraini, Sp.M",
+        title: "Dokter Spesialis Mata",
+        subspecialty: "Katarak & Refraksi",
+        schedule: "Selasa, Kamis, Sabtu: 09.00 - 13.00 WIB",
+        experience: "12+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+    ],
+    services: [
+      "Pemeriksaan Tajam Penglihatan & Resep Kacamata",
+      "Skrining & Konsultasi Operasi Katarak Phacoemulsifikasi",
+      "Pemeriksaan Tekanan Bola Mata (Deteksi Glaukoma)",
+      "Penanganan Infeksi, Alergi, & Trauma Ringan Mata",
+    ],
+  },
+  {
+    id: "tht",
+    slug: "tht",
+    title: "Spesialis THT-KL",
+    code: "Sp.THT-KL",
+    category: "organ-khusus",
+    categoryLabel: "Organ Khusus & Indera",
+    shortDescription: "Pemeriksaan dan terapi gangguan telinga, hidung, tenggorokan, amandel, alergi rinitis, serta endoskopi THT terpadu.",
+    fullDescription: "Poliklinik THT-KL RS Ridhoka Salma melayani pasien segala usia untuk keluhan pendengaran, infeksi sinus, amandel, suara serak, dan benda asing pada saluran THT dengan panduan kamera endoskopi.",
+    iconName: "Headphones",
+    image: "/assets/fasilitas/lab2.jpg",
+    isFeatured: false,
+    badge: "Endoskopi THT",
+    doctors: [
+      {
+        name: "dr. Arif Wicaksono, Sp.THT-KL",
+        title: "Dokter Spesialis THT-BKL",
+        subspecialty: "Rinologi & Alergi THT",
+        schedule: "Senin, Rabu, Jumat: 13.00 - 17.00 WIB",
+        experience: "9+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Pemeriksaan Kamera Endoskopi THT",
+      "Pembersihan Serumen & Terapi Infeksi Telinga",
+      "Penanganan Sinusitis, Polip Hidung & Alergi Rinitis",
+      "Konsultasi Amandel (Tonsilitis) & Radang Tenggorokan",
+    ],
+  },
+  {
+    id: "gigi",
+    slug: "gigi",
+    title: "Spesialis Gigi & Bedah Mulut",
+    code: "drg. / Sp.BM",
+    category: "organ-khusus",
+    categoryLabel: "Organ Khusus & Indera",
+    shortDescription: "Perawatan gigi keluarga, tambal estetik, pencabutan gigi bungsu impaksi (odontektomi), scaling karang gigi, dan behel.",
+    fullDescription: "Klinik Gigi & Mulut RS Ridhoka Salma didesain higienis, ramah anak dan keluarga dengan prosedur sterilisasi instrumen autoklaf bertaraf rumah sakit.",
+    iconName: "Smile",
+    image: "/assets/fasilitas/gigi.jpg",
+    isFeatured: false,
+    badge: "Ramah Gigi Anak & Dewasa",
+    doctors: [
+      {
+        name: "drg. Dian Permatasari, Sp.KG",
+        title: "Dokter Gigi Spesialis Konservasi Gigi",
+        subspecialty: "Perawatan Saluran Akar & Estetik",
+        schedule: "Senin - Kamis: 09.00 - 14.00 WIB",
+        experience: "10+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+      {
+        name: "drg. Fajar Nugroho",
+        title: "Dokter Gigi Umum",
+        schedule: "Senin - Sabtu: 15.00 - 20.00 WIB",
+        experience: "7+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Pembersihan Karang Gigi (Scaling) Ultrasonik",
+      "Penambalan Gigi Estetik Sinar (Komposit)",
+      "Pencabutan Gigi & Operasi Gigi Bungsu (Odontektomi)",
+      "Perawatan Saluran Akar & Pembuatan Gigi Tiruan",
+    ],
+  },
+  {
+    id: "ortopedi",
+    slug: "ortopedi",
+    title: "Spesialis Ortopedi & Traumatologi",
+    code: "Sp.OT",
+    category: "bedah-ortopedi",
+    categoryLabel: "Bedah & Ortopedi",
+    shortDescription: "Penanganan patah tulang (fraktur), cedera ligamen & sendi, osteoartritis lutut, kelainan tulang belakang, dan trauma.",
+    fullDescription: "Poliklinik Ortopedi dan Traumatologi RS Ridhoka Salma menangani beragam kasus cedera kecelakaan, olahraga, penyakit degeneratif tulang dan sendi, hingga tindakan pemasangan/pelepasan fiksasi implan tulang.",
+    iconName: "Shield",
+    image: "/assets/fasilitas/bedah.jpg",
+    isFeatured: false,
+    badge: "Trauma & Sendi",
+    doctors: [
+      {
+        name: "dr. Deni Kurniawan, Sp.OT",
+        title: "Dokter Spesialis Ortopedi & Traumatologi",
+        subspecialty: "Trauma Bedah Tulang & Rekonstruksi Sendi",
+        schedule: "Selasa, Kamis, Sabtu: 16.00 - 20.00 WIB",
+        experience: "11+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Penanganan Patah Tulang & Dislokasi Sendi (Fraktur)",
+      "Terapi Nyeri Sendi Lutut & Injeksi Pelumas Sendi",
+      "Konsultasi Skrining Kepadatan Tulang (Osteoporosis)",
+      "Tindakan Operasi Implan Tulang & Pemulihan Cedera",
+    ],
+  },
+  {
+    id: "paru",
+    slug: "paru",
+    title: "Spesialis Paru (Pulmonologi)",
+    code: "Sp.P",
+    category: "penyakit-dalam-saraf",
+    categoryLabel: "Penyakit Dalam & Saraf",
+    shortDescription: "Pengobatan asma, PPOK, bronkitis kronis, batuk lama, infeksi paru/TBC, dan pemeriksaan fungsi pernapasan (Spirometri).",
+    fullDescription: "Poliklinik Paru RS Ridhoka Salma menyediakan penanganan menyeluruh gangguan sistem pernapasan dan saluran napas dengan ruang inhalasi khusus dan pemeriksaan penunjang radiologi digital.",
+    iconName: "Wind",
+    image: "/assets/fasilitas/lab3.jpg",
+    isFeatured: false,
+    badge: "Kesehatan Pernapasan",
+    doctors: [
+      {
+        name: "dr. Laila Fitriani, Sp.P",
+        title: "Dokter Spesialis Paru & Pernapasan",
+        subspecialty: "Asma, PPOK, & Infeksi Saluran Napas",
+        schedule: "Senin - Kamis: 13.00 - 17.00 WIB",
+        experience: "8+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-female.svg",
+      },
+    ],
+    services: [
+      "Pemeriksaan Uji Fungsi Paru (Spirometri)",
+      "Terapi Nebulisasi & Inhalasi Gangguan Pernapasan",
+      "Tata Laksana Asma Eksaserbasi & PPOK",
+      "Diagnosis & Program Pengobatan TBC Paru",
+    ],
+  },
+  {
+    id: "rehabilitasi-medik",
+    slug: "rehabilitasi-medik",
+    title: "Spesialis Rehabilitasi Medik & Fisioterapi",
+    code: "Sp.KFR",
+    category: "lainnya",
+    categoryLabel: "Rehabilitasi & Pemulihan",
+    shortDescription: "Program pemulihan fungsi gerak tubuh, fisioterapi pasca stroke, pemulihan cedera fisik, dan okupasi terapi.",
+    fullDescription: "Unit Fisioterapi & Kedokteran Fisik RS Ridhoka Salma membantu pasien mengembalikan kemampuan motorik, meredakan nyeri otot/sendi kronis, dan mempercepat pemulihan kemandirian beraktivitas harian.",
+    iconName: "Sparkles",
+    image: "/assets/fasilitas/fisio.jpg",
+    isFeatured: false,
+    badge: "Fasilitas Fisioterapi",
+    doctors: [
+      {
+        name: "dr. Wahyu Hidayat, Sp.KFR",
+        title: "Dokter Spesialis Kedokteran Fisik & Rehabilitasi",
+        subspecialty: "Rehabilitasi Neuromuskuler & Fisioterapi",
+        schedule: "Senin, Rabu, Jumat: 08.00 - 13.00 WIB",
+        experience: "9+ Tahun Pengalaman",
+        avatar: "/assets/doctors/doctor-male.svg",
+      },
+    ],
+    services: [
+      "Fisioterapi Nyeri Pinggang, Leher, & Punggung",
+      "Rehabilitasi Gerak Pasca Stroke & Trauma",
+      "Latihan Penguatan Otot & Fleksibilitas Sendi",
+      "Modalitas Terapi Panas, Ultrasonik & Stimulasi Listrik (TENS)",
+    ],
+  },
+];
+
+export const featuredSpecialists = specialistsData.filter((s) => s.isFeatured);
+
+export const specialistCategories = [
+  { id: "semua", label: "Semua Spesialis" },
+  { id: "ibu-anak", label: "Ibu & Anak" },
+  { id: "penyakit-dalam-saraf", label: "Penyakit Dalam & Saraf" },
+  { id: "bedah-ortopedi", label: "Bedah & Ortopedi" },
+  { id: "organ-khusus", label: "Organ Khusus & Indera" },
+  { id: "lainnya", label: "Rehabilitasi & Pemulihan" },
+];
+
+export const specialistStats = [
+  { value: "30+", label: "Dokter Spesialis & Subspesialis", desc: "Berpengalaman & bersertifikasi resmi" },
+  { value: "12+", label: "Poliklinik Spesialis", desc: "Melayani berbagai cabang keilmuan medis" },
+  { value: "24 Jam", label: "Dokter Spesialis On-Call", desc: "Siaga penanganan kegawatdaruratan IGD" },
+  { value: "100%", label: "Pelayanan Berlandaskan Syariah", desc: "Menjaga etika, kesantunan & aurat pasien" },
+];

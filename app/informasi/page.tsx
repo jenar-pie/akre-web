@@ -1,23 +1,66 @@
+import React from "react";
 import Link from "next/link";
-import { ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, Tag, BookOpen, FileText, Calendar, Briefcase, ArrowRight, Sparkles } from "lucide-react";
 
-export default function InformasiPage() {
+const infoCards = [
+  { title: "Promosi & Paket Kesehatan", desc: "Penawaran spesial paket MCU, persalinan syariah, dan vaksinasi.", href: "/informasi/promosi", icon: Tag },
+  { title: "Artikel Kesehatan", desc: "Edukasi kesehatan umum dan panduan medis terpercaya.", href: "/informasi/artikel-kesehatan", icon: BookOpen },
+  { title: "Artikel Islami", desc: "Bimbingan ibadah orang sakit, fiqih kesehatan, dan doa harian.", href: "/informasi/artikel-islami", icon: BookOpen },
+  { title: "E-Leaflet & Brosur", desc: "Unduh brosur digital dan panduan edukasi kesehatan pasien.", href: "/informasi/e-leaflet", icon: FileText },
+  { title: "Event & Kegiatan", desc: "Jadwal seminar kesehatan, donor darah, dan kelas senam hamil.", href: "/informasi/event", icon: Calendar },
+  { title: "Karir & Rekrutmen", desc: "Informasi lowongan kerja medis dan non-medis di RS Ridhoka Salma.", href: "/informasi/karir", icon: Briefcase },
+];
+
+export default function InformasiHubPage() {
   return (
-    <div className="max-w-[1240px] mx-auto px-4 py-16 text-center min-h-[50vh] flex flex-col items-center justify-center">
-      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
-        <Info className="w-8 h-8" />
+    <div className="bg-surface-bg min-h-screen">
+      <div className="relative w-full bg-gradient-to-r from-primary-dark via-primary to-primary-hover text-white py-10 sm:py-14">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 mb-3">
+            <Link href="/" className="text-xs text-teal-100 hover:text-white transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Kembali ke Beranda</span>
+            </Link>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold mb-3 border border-white/20">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>PUSAT INFORMASI</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Pusat Informasi & Berita</h1>
+          <p className="text-sm text-teal-50 max-w-xl leading-relaxed">
+            Akses seluruh informasi promosi, artikel edukasi, kegiatan rumah sakit, dan karir RS Ridhoka Salma.
+          </p>
+        </div>
       </div>
-      <h1 className="text-3xl font-bold text-primary mb-2">Informasi RS Ridhoka Salma</h1>
-      <p className="text-gray-600 max-w-md mb-6">
-        Pusat informasi promosi, artikel kesehatan, artikel Islami, event, dan karir.
-      </p>
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-md font-medium text-sm transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        <span>Kembali ke Beranda</span>
-      </Link>
+
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {infoCards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg group-hover:text-primary transition-colors mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">{card.desc}</p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-primary">
+                  <span>Lihat Selengkapnya</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

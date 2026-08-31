@@ -1,10 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
-  "/layanan/page": "app/layanan/page.js",
+  "/tentang-kami/sejarah/page": "app/tentang-kami/sejarah/page.js",
   "/tentang-kami/visi-misi/page": "app/tentang-kami/visi-misi/page.js",
-  "/spesialis-kami/page": "app/spesialis-kami/page.js",
+  "/informasi/artikel-kesehatan/page": "app/informasi/artikel-kesehatan/page.js",
+  "/page": "app/page.js",
   "/informasi/promosi/page": "app/informasi/promosi/page.js",
-  "/cari-dokter/page": "app/cari-dokter/page.js"
+  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
 }
