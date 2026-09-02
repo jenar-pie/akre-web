@@ -1,8 +1,9 @@
 {
-  "/janji-temu/page": "app/janji-temu/page.js",
-  "/kesyariahan/program/page": "app/kesyariahan/program/page.js",
   "/layanan/fasilitas/page": "app/layanan/fasilitas/page.js",
-  "/spesialis-kami/page": "app/spesialis-kami/page.js",
+  "/janji-temu/page": "app/janji-temu/page.js",
+  "/cari-dokter/page": "app/cari-dokter/page.js",
   "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
-  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
+  "/layanan/layanan-unggulan/page": "app/layanan/layanan-unggulan/page.js",
+  "/layanan/page": "app/layanan/page.js",
+  "/page": "app/page.js"
 }
