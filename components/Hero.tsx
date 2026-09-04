@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full overflow-hidden bg-[#198782]">
+    <section className="w-full overflow-hidden bg-[#3A9D9A]">
       {/* Hero - responsive scaling without cropping */}
       <div className="relative w-full">
         {/* Use a responsive aspect ratio that maintains the full image */}

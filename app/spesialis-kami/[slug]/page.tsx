@@ -18,6 +18,8 @@ import {
   Sparkles,
   ArrowRight,
   UserCheck,
+  User,
+  Plus,
   Calendar,
   Clock,
   CheckCircle2,
@@ -210,12 +212,8 @@ export default function SpecialistDetailPage({ params }: PageProps) {
                   <span>Buat Janji Temu Online</span>
                 </Link>
                 <a
-                  href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin mendaftar ke ${specialist.title}.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-colors"
-                >
-                  <span>Chat WhatsApp Pendaftaran</span>
+                href={`https://wa.me/${new URL(contacts.whatsappLink).pathname.replace(/\D/g,"")}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin mendaftar ke ${specialist.title}.`)}`}target="_blank"rel="noopener noreferrer"className="w-full text-center inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-colors">
+                <span>Chat WhatsApp Pendaftaran</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -235,70 +233,95 @@ export default function SpecialistDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Doctor Team Cards with Avatars */}
+        {/* Doctor Team Cards (Cari Dokter Style) */}
         <section>
-          <div className="mb-6">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
               Tim Dokter Spesialis
             </h2>
-            <p className="text-xs sm:text-sm text-gray-600 mt-1">
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               Daftar dokter yang berpraktik di {specialist.title} RS Ridhoka Salma.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {specialist.doctors.map((doctor, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-card hover:shadow-lg transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-teal-400 text-white flex items-center justify-center flex-shrink-0 shadow-xs font-bold text-lg">
-                      <UserCheck className="w-7 h-7" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {specialist.doctors.map((doctor, idx) => {
+              const dummyDoctorPhotos = [
+                "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1594824813501-483525287f3b?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
+              ];
+              const doctorPhoto = doctor.image || doctor.avatar || dummyDoctorPhotos[idx % dummyDoctorPhotos.length];
+
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Doctor Image */}
+                    <div className="relative w-full aspect-square bg-[#edf6f5] overflow-hidden">
+                      <Image
+                        src={doctorPhoto}
+                        alt={doctor.name}
+                        fill
+                        className="object-cover object-bottom group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                      {/* Specialty Pill Badge on Image */}
+                      <div className="absolute top-3.5 left-3.5">
+                        <span className="inline-block bg-white/95 backdrop-blur-xs text-[#2A7B78] text-xs font-bold px-3 py-1 rounded-lg shadow-xs border border-gray-100">
+                          {specialist.title.replace(/\s*\(.*?\)\s*/g, "")}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-base sm:text-lg leading-tight">
-                        {doctor.name}
-                      </h3>
-                      <p className="text-xs font-semibold text-primary mt-0.5">
-                        {doctor.title}
-                      </p>
-                      {doctor.subspecialty && (
-                        <p className="text-xs text-gray-500 mt-0.5">
-                          {doctor.subspecialty}
+
+                    {/* Body Content */}
+                    <div className="p-5 space-y-3.5">
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-[#3A9D9A] transition-colors leading-snug">
+                          {doctor.name}
+                        </h3>
+                        <p className="text-xs text-gray-400 font-medium mt-0.5">
+                          {specialist.code}
                         </p>
-                      )}
+                      </div>
+
+                      {/* Metadata: Experience & Schedule / Poli */}
+                      <div className="space-y-2 pt-1">
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                            <User className="w-3 h-3" />
+                          </div>
+                          <span>{doctor.experience || "10+ Tahun Pengalaman"}</span>
+                        </div>
+
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                            <Plus className="w-3 h-3" />
+                          </div>
+                          <span className="truncate">{doctor.schedule || `Poli ${specialist.title}`}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="space-y-2 text-xs bg-surface-bg p-3.5 rounded-xl border border-gray-100 mb-4">
-                    {doctor.schedule && (
-                      <div className="flex items-center gap-2 text-gray-700">
-                        <Clock className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span className="font-medium">{doctor.schedule}</span>
-                      </div>
-                    )}
-                    {doctor.experience && (
-                      <div className="flex items-center gap-2 text-gray-600">
-                        <CheckCircle2 className="w-4 h-4 text-accent-green flex-shrink-0" />
-                        <span>{doctor.experience}</span>
-                      </div>
-                    )}
+                  {/* Card Footer Button */}
+                  <div className="p-5 pt-0">
+                    <Link
+                      href="/janji-temu"
+                      className="w-full bg-[#3A9D9A] hover:bg-[#2A7B78] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                    >
+                      <span>Pilih Dokter & Janji Temu</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
-
-                <div className="pt-3 border-t border-gray-100 flex items-center gap-2">
-                  <Link
-                    href="/janji-temu"
-                    className="flex-1 text-center inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors shadow-xs"
-                  >
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>Pilih Dokter & Janji Temu</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

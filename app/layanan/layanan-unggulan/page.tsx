@@ -271,7 +271,9 @@ export default function LayananUnggulanPage() {
                       <span>Daftar / Janji Temu</span>
                     </Link>
                     <a
-                      href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin konsultasi mengenai layanan: ${service.title}`)}`}
+                      href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                        `Halo RS Ridhoka Salma, saya ingin konsultasi mengenai layanan: ${service.title}`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm font-semibold py-3 px-4 rounded-xl transition-colors"

@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/spesialis-kami/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/spesialis-kami/[slug]/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,10 +16,35 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/tentang-kami/visi-misi/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/visi-misi/page.js"
+      "static/chunks/app/_not-found/page.js"
+    ],
+    "/cari-dokter/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cari-dokter/page.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/tentang-kami/akreditasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tentang-kami/akreditasi/page.js"
+    ],
+    "/spesialis-kami/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/spesialis-kami/page.js"
+    ],
+    "/layanan/layanan-unggulan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/layanan-unggulan/page.js"
     ],
     "/tentang-kami/sejarah/page": [
       "static/chunks/webpack.js",
@@ -31,35 +56,45 @@
       "static/chunks/main-app.js",
       "static/chunks/app/tentang-kami/page.js"
     ],
+    "/tentang-kami/visi-misi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tentang-kami/visi-misi/page.js"
+    ],
+    "/tentang-kami/struktur-organisasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tentang-kami/struktur-organisasi/page.js"
+    ],
     "/layanan/fasilitas/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/layanan/fasilitas/page.js"
-    ],
-    "/janji-temu/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/janji-temu/page.js"
-    ],
-    "/cari-dokter/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cari-dokter/page.js"
-    ],
-    "/layanan/rawat-inap/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layanan/rawat-inap/page.js"
     ],
     "/layanan/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/layanan/page.js"
     ],
-    "/layanan/layanan-unggulan/page": [
+    "/janji-temu/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/layanan/layanan-unggulan/page.js"
+      "static/chunks/app/janji-temu/page.js"
+    ],
+    "/layanan/rawat-inap/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/rawat-inap/page.js"
+    ],
+    "/informasi/promosi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/informasi/promosi/page.js"
+    ],
+    "/kesyariahan/program/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesyariahan/program/page.js"
     ]
   }
 }

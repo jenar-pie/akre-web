@@ -34,7 +34,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Kenyamanan Maksimal, Kemewahan, dan Privasi Mutlak Bersama Keluarga",
     badge: "Kelas Tertinggi",
     capacity: "1 Pasien per Kamar (Kamar Tunggal Eksekutif)",
-    image: "/assets/fasilitas/rawat-inap.jpg",
+    image: "/assets/fasilitas/rawat-inap-vvip.png",
     description: "Ruang rawat inap paling eksklusif dengan area yang sangat luas, perabotan elegan, ruang tamu keluarga terpisah, serta bimbingan ibadah syariah privat harian.",
     features: [
       "1 Tempat Tidur Pasien Elektrik Otomatis (Full Motorized Bed)",
@@ -56,7 +56,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Ruangan Privat Nyaman untuk Istirahat Tenang dan Pemulihan Cepat",
     badge: "Kelas Utama",
     capacity: "1 Pasien per Kamar (Kamar Tunggal)",
-    image: "/assets/fasilitas/rawat-inap.jpg",
+    image: "/assets/fasilitas/rawat-inap-vip.png",
     description: "Kamar perawatan privat 1 tempat tidur yang tenang dan nyaman, memberikan keleluasaan istirahat bagi pasien dan kenyamanan bagi penunggu pasien.",
     features: [
       "1 Tempat Tidur Pasien Elektrik / Crank Otomatis",
@@ -77,7 +77,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Kombinasi Kesejukan, Kerapian, dan Kenyamanan Bersama",
     badge: "Favorit Pasien",
     capacity: "2 Pasien per Kamar",
-    image: "/assets/fasilitas/rawat-inap.jpg",
+    image: "/assets/fasilitas/rawat-inap-kelas1.png",
     description: "Kamar perawatan berkapasitas 2 tempat tidur yang dilengkapi tirai penyekat privasi rapat, pendingin ruangan sejuk, dan fasilitas penunjang yang tertata rapi.",
     features: [
       "2 Tempat Tidur Pasien dengan Tirai Pembatas Privasi Rapat",
@@ -97,7 +97,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Fasilitas Perawatan yang Nyaman, Bersih, dan Ekonomis",
     badge: "Standar Nyaman",
     capacity: "3–4 Pasien per Kamar",
-    image: "/assets/fasilitas/rawat-inap.jpg",
+    image: "/assets/fasilitas/rawat-inap-kelas2.png",
     description: "Pilihan kamar yang lega, bersih, dan sejuk berpendingin udara dengan sekat pembatas antar tempat tidur untuk menjaga kenyamanan dan ketenangan istirahat.",
     features: [
       "3–4 Tempat Tidur Pasien Berstandar Medis",
@@ -117,7 +117,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Akses Pelayanan Medis Paripurna yang Ramah & Tanpa Diskriminasi",
     badge: "BPJS & Umum",
     capacity: "4–6 Pasien per Kamar",
-    image: "/assets/fasilitas/rawat-inap.jpg",
+    image: "/assets/fasilitas/rawat-inap-standar.png",
     description: "Kamar rawat inap yang memenuhi standar Kelas Rawat Inap Standar (KRIS) BPJS Kesehatan dengan sirkulasi udara optimal, kebersihan terjamin, dan pelayanan penuh ketulusan.",
     features: [
       "Tempat Tidur Medis Nyaman dengan Jarak Antar Bed Sesuai Standar KRIS",
@@ -137,7 +137,7 @@ export const roomTypesData: RoomType[] = [
     tagline: "Pengawasan Intensif 24 Jam dengan Peralatan Life-Support Tercanggih",
     badge: "Critical Care",
     capacity: "Unit Khusus Pemantauan Intensif",
-    image: "/assets/fasilitas/icu.jpg",
+    image: "/assets/fasilitas/nicu-picu1.png",
     description: "Unit perawatan intensif berstandar tinggi untuk penanganan pasien gawat yang membutuhkan pemantauan fungsi organ vital secara terus-menerus.",
     features: [
       "Ventilator Mekanik & Bedside Multi-Parameter Monitor Digital",

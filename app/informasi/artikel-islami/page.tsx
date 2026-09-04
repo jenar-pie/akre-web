@@ -25,7 +25,7 @@ const islamicArticles = [
     title: "Menjaga Kesehatan Jasmani dan Ruhani dalam Perspektif Islam",
     category: "Gaya Hidup Islami",
     date: "18 Februari 2026",
-    image: "/assets/layanan/senam-hamil.jpg",
+    image: "/assets/layanan/jasmani.jpeg",
     excerpt: "Keseimbangan antara konsumsi makanan halal thayyib, istirahat cukup, dan dzikir harian sebagai ikhtiar kesehatan paripurna.",
   },
 ];

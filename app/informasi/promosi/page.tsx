@@ -88,7 +88,7 @@ export default function PromosiPage() {
               {/* Action Button - Primary Theme */}
               <div className="mt-4 pt-2">
                 <a
-                  href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin bertanya tentang ${promo.title}.`)}`}
+                  href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin bertanya tentang ${promo.title}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-primary hover:bg-primary-dark active:scale-[0.99] text-white font-semibold text-xs sm:text-sm py-2.5 sm:py-3 rounded-lg text-center transition-all shadow-xs block"
@@ -115,7 +115,7 @@ export default function PromosiPage() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent("Halo RS Ridhoka Salma, saya ingin bertanya tentang promo kesehatan.")}`}
+              href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent("Halo RS Ridhoka Salma, saya ingin bertanya tentang promo kesehatan.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary-dark px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-colors shadow-xs"

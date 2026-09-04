@@ -174,50 +174,50 @@ export const visiMisiData = {
     },
   ] as MissionItem[],
   budayaKerja: {
-    title: "Tata Nilai Budaya Kerja: I.B.A.D.A.H",
+    title: "Tata Nilai Budaya Kerja: I.K.H.L.A.S",
     subtitle: "Nilai-nilai inti yang dihayati dan diamalkan oleh setiap insan RS Ridhoka Salma dalam bertindak dan melayani",
     values: [
       {
         letter: "I",
-        title: "Ikhlas",
-        meaning: "Melayani dengan Niat Beribadah",
-        description: "Menjalankan setiap tugas dan pelayanan dengan niat tulus semata-mata mengharap ridha Allah SWT, bukan sekadar menggugurkan kewajiban.",
-        iconName: "HeartHandshake",
-      },
-      {
-        letter: "B",
-        title: "Berkualitas",
-        meaning: "Mengutamakan Mutu & Keselamatan",
-        description: "Bekerja sesuai standar prosedur operasional tertinggi, teliti, dan mengutamakan keselamatan serta kesembuhan pasien.",
-        iconName: "CheckCircle2",
-      },
-      {
-        letter: "A",
-        title: "Amanah",
-        meaning: "Jujur, Terpercaya & Bertanggung Jawab",
-        description: "Menjaga kerahasiaan medis pasien, bertindak jujur, transparan, serta menjaga amanah yang diberikan oleh pasien dan keluarga.",
+        title: "Integritas",
+        meaning: "Jujur, Transparan & Amanah",
+        description: "Menjunjung tinggi kejujuran, keterbukaan informasi, dan memegang teguh amanah dalam setiap tindakan serta pelayanan kepada pasien.",
         iconName: "Shield",
       },
       {
-        letter: "D",
-        title: "Disiplin & Profesional",
-        meaning: "Tepat Waktu & Ahli di Bidangnya",
-        description: "Menegakkan disiplin kerja, tepat waktu dalam penanganan medis, dan terus meningkatkan kompetensi keahlian profesi.",
+        letter: "K",
+        title: "Kedisiplinan",
+        meaning: "Tepat Waktu & Taat Prosedur",
+        description: "Menegakkan disiplin kerja, ketepatan waktu dalam pelayanan medis, serta konsisten menjalankan standar operasional prosedur.",
         iconName: "Clock",
       },
       {
-        letter: "A",
-        title: "Adaptif & Inovatif",
-        meaning: "Tanggap Perkembangan & Terus Berbenah",
-        description: "Terbuka terhadap inovasi teknologi, cepat tanggap terhadap perubahan kebutuhan pasien, dan selalu mencari solusi terbaik.",
+        letter: "H",
+        title: "Harmoni",
+        meaning: "Kerjasama & Saling Menghargai",
+        description: "Menciptakan lingkungan kerja yang sinergis, saling mendukung antarprofesi, serta memperlakukan pasien dan keluarga dengan penuh rasa hormat.",
+        iconName: "HeartHandshake",
+      },
+      {
+        letter: "L",
+        title: "Lakukan",
+        meaning: "Tindakan Cepat & Solutif",
+        description: "Berorientasi pada tindakan nyata, responsif terhadap kebutuhan pasien, dan selalu berupaya memberikan solusi terbaik dengan sepenuh hati.",
         iconName: "Zap",
       },
       {
-        letter: "H",
-        title: "Hangat & Bersahabat",
-        meaning: "Senyum, Salam, Sapa, Sopan, Santun (5S)",
-        description: "Menghadirkan pelayanan yang ramah, hangat, penuh empati, dan menyejukkan hati bagi pasien beserta keluarganya.",
+        letter: "A",
+        title: "Akhlak",
+        meaning: "Santun, Ramah & Beretika Islami",
+        description: "Mengedepankan budi pekerti luhur, tutur kata yang santun, senyum, sapa, dan menjaga etika islami dalam setiap interaksi.",
         iconName: "Smile",
+      },
+      {
+        letter: "S",
+        title: "Sedekah",
+        meaning: "Ikhlas Melayani & Berbagi Kebaikan",
+        description: "Menjadikan setiap pelayanan, bantuan tenaga, dan kebaikan sebagai ladang sedekah serta ibadah untuk meraih keberkahan bersama.",
+        iconName: "HeartHandshake",
       },
     ] as ValueItem[],
   },
@@ -240,6 +240,7 @@ export const strukturOrganisasiData = {
       title: "Dewan Pengawas Syariah",
       category: "pengawas",
       division: "Pengawasan Syariah",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
       description: "Memastikan seluruh operasional pelayanan medis, akad transaksi, dan bimbingan rohani RS berjalan selaras dengan fatwa DSN-MUI.",
     },
     {
@@ -248,6 +249,7 @@ export const strukturOrganisasiData = {
       title: "Dewan Pengawas Syariah",
       category: "pengawas",
       division: "Pengawasan Syariah",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
       description: "Membina dan mengawal implementasi fiqih kesehatan dan etika islami tenaga medis RS Ridhoka Salma.",
     },
     {
@@ -256,6 +258,7 @@ export const strukturOrganisasiData = {
       title: "Pimpinan Eksekutif",
       category: "direksi",
       division: "Direksi Rumah Sakit",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
       description: "Memimpin strategi menyeluruh, pengembangan visi jangka panjang, dan keberlanjutan operasional RS Ridhoka Salma.",
     },
     {
@@ -264,6 +267,7 @@ export const strukturOrganisasiData = {
       title: "Pimpinan Operasional Rumah Sakit",
       category: "direksi",
       division: "Direksi Rumah Sakit",
+      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
       description: "Bertanggung jawab atas jalannya tata kelola rumah sakit, mutu layanan kesehatan, dan keselamatan pasien.",
     },
     {
@@ -272,6 +276,7 @@ export const strukturOrganisasiData = {
       title: "Direksi Medis",
       category: "direksi",
       division: "Pelayanan Medis",
+      image: "https://images.unsplash.com/photo-1594824813501-483525287f3b?auto=format&fit=crop&w=600&q=80",
       description: "Mengoordinasikan mutu pelayanan medis, dokter spesialis, keperawatan, instalasi farmasi, laboratorium, dan radiologi.",
     },
     {
@@ -280,6 +285,7 @@ export const strukturOrganisasiData = {
       title: "Direksi Umum & Keuangan",
       category: "direksi",
       division: "Umum & Keuangan",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
       description: "Mengelola manajemen finansial, pengembangan SDM, sarana prasarana penunjang, serta hubungan kelembagaan.",
     },
     {
@@ -288,6 +294,7 @@ export const strukturOrganisasiData = {
       title: "Komite Rumah Sakit",
       category: "komite",
       division: "Komite Medik",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
       description: "Mengawal kredensial dokter, mutu profesi medis, dan penegakan etika kode etik kedokteran di rumah sakit.",
     },
     {
@@ -296,6 +303,7 @@ export const strukturOrganisasiData = {
       title: "Komite Rumah Sakit",
       category: "komite",
       division: "Komite Keperawatan",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
       description: "Menjaga kompetensi perawat dan bidan, standar asuhan keperawatan syariah, dan pembinaan etika perawat.",
     },
     {
@@ -304,6 +312,7 @@ export const strukturOrganisasiData = {
       title: "Komite Rumah Sakit",
       category: "komite",
       division: "Komite PMKP",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
       description: "Mengawal indikator mutu nasional (INM), manajemen risiko klinis, serta kepatuhan akreditasi rumah sakit.",
     },
     {
@@ -312,6 +321,7 @@ export const strukturOrganisasiData = {
       title: "Komite Rumah Sakit",
       category: "komite",
       division: "Komite Syariah",
+      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
       description: "Mengkoordinasikan program bimbingan ibadah pasien, fiqih medis, sertifikasi halal dapur gizi, dan konsultasi rohani.",
     },
     {
@@ -320,6 +330,7 @@ export const strukturOrganisasiData = {
       title: "Komite Rumah Sakit",
       category: "komite",
       division: "Komite PPI",
+      image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
       description: "Memastikan protokol pencegahan infeksi rumah sakit berjalan secara maksimal di seluruh unit pelayanan.",
     },
     {
@@ -328,6 +339,7 @@ export const strukturOrganisasiData = {
       title: "Manajemen Rumah Sakit",
       category: "manajemen",
       division: "Penunjang Medis",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
       description: "Mengelola kefarmasian halal, instalasi laboratorium, radiologi, dan rekam medis digital.",
     },
     {
@@ -336,6 +348,7 @@ export const strukturOrganisasiData = {
       title: "Manajemen Rumah Sakit",
       category: "manajemen",
       division: "Teknologi Informasi",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
       description: "Mengembangkan sistem rekam medis elektronik (RME), integrasi SatuSehat Kemenkes, dan aplikasi layanan digital pasien.",
     },
     {
@@ -344,6 +357,7 @@ export const strukturOrganisasiData = {
       title: "Manajemen Rumah Sakit",
       category: "manajemen",
       division: "Humas & Pemasaran",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
       description: "Mengelola kerjasama korporasi, asuransi, BPJS Kesehatan, program CSR, dan edukasi kesehatan masyarakat.",
     },
   ] as OrgPerson[],

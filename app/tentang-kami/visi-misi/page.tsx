@@ -23,7 +23,7 @@ import { visiMisiData } from "@/data/about";
 
 export const metadata: Metadata = {
   title: "Visi, Misi & Budaya Kerja RS Ridhoka Salma",
-  description: "Visi, 4 Misi Strategis, Moto Pelayanan, serta Tata Nilai Budaya Kerja I.B.A.D.A.H RS Ridhoka Salma Cikarang.",
+  description: "Visi, 4 Misi Strategis, Moto Pelayanan, serta Tata Nilai Budaya Kerja I.K.H.L.A.S RS Ridhoka Salma Cikarang.",
 };
 
 const missionIcons: Record<string, React.ElementType> = {

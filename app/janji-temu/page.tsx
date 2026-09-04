@@ -15,8 +15,8 @@ export default function JanjiTemuPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Halo RS Ridhoka Salma, saya ingin membuat janji temu online:%0A- Nama Pasien: ${patientName}%0A- No HP/WA: ${patientPhone}%0A- Poliklinik: ${selectedSpecialist || "Umum"}%0A- Rencana Tanggal: ${appointmentDate}%0A- Keluhan/Catatan: ${notes || "-"}`;
-    window.open(`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${text}`, "_blank");
+    const text = `Halo RS Ridhoka Salma, saya ingin membuat janji temu online:\n- Nama Pasien: ${patientName}\n- No HP/WA: ${patientPhone}\n- Poliklinik: ${selectedSpecialist || "Umum"}\n- Rencana Tanggal: ${appointmentDate}\n- Keluhan/Catatan: ${notes || "-"}`;
+    window.open(`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (

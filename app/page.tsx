@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import QuickAccess from "@/components/QuickAccess";
-import Facilities from "@/components/Facilities";
+import Gallery from "@/components/Gallery";
 import Services from "@/components/Services";
 import Specialists from "@/components/Specialists";
 import Promotions from "@/components/Promotions";
@@ -11,10 +11,11 @@ export default function Home() {
       <Hero />
       <QuickAccess />
       <Specialists />
-      <Facilities />
+      <Gallery />
       <Services />
       <Promotions />
     </>
   );
 }
+
 

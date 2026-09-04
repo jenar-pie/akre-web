@@ -1,20 +1,83 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Users2, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles, User, Award, ArrowRight, ShieldCheck, BookOpen } from "lucide-react";
 
-const dpsMembers = [
-  { name: "KH. Dr. Muhammad Syukron, M.A.", role: "Ketua Dewan Pengawas Syariah", desc: "Pakar Fiqih Muamalah & Sertifikasi DSN-MUI Pusat." },
-  { name: "Ust. H. Ahmad Rofiq, Lc., M.E.I.", role: "Anggota Dewan Pengawas Syariah", desc: "Konsultan Syariah Rumah Sakit & Pengajar Fiqih Medis." },
-  { name: "dr. H. Muhammad Fachri, Sp.A", role: "Ketua Komite Syariah Rumah Sakit", desc: "Koordinator penerapan standar mutu syariah medis internal." },
+interface DPSMember {
+  id: string;
+  name: string;
+  role: string;
+  badge: string;
+  code: string;
+  experience: string;
+  focus: string;
+  image: string;
+}
+
+const dpsMembers: DPSMember[] = [
+  {
+    id: "dps-1",
+    name: "KH. Dr. Muhammad Syukron, M.A.",
+    role: "Ketua Dewan Pengawas Syariah",
+    badge: "Ketua DPS",
+    code: "Pakar Fiqih Muamalah",
+    experience: "Sertifikasi DSN-MUI Pusat",
+    focus: "Pengawasan & Kebijakan Syariah",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: "dps-2",
+    name: "Ust. H. Ahmad Rofiq, Lc., M.E.I.",
+    role: "Anggota Dewan Pengawas Syariah",
+    badge: "Anggota DPS",
+    code: "Pengajar Fiqih Medis",
+    experience: "12+ Tahun Pengalaman",
+    focus: "Konsultan Syariah Rumah Sakit",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: "dps-3",
+    name: "dr. H. Muhammad Fachri, Sp.A",
+    role: "Ketua Komite Syariah Rumah Sakit",
+    badge: "Ketua Komite Syariah",
+    code: "Sp.A (Spesialis Anak)",
+    experience: "15+ Tahun Pengalaman Medis",
+    focus: "Standar Mutu Pelayanan Medis Syariah",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: "dps-4",
+    name: "Hj. Siti Aminah, S.Kep., Ners., M.Kep.",
+    role: "Sekretaris Komite Syariah",
+    badge: "Komite Syariah",
+    code: "Keperawatan Syariah",
+    experience: "10+ Tahun Pengalaman",
+    focus: "Bimbingan Ibadah & Etika Aurat Pasien",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: "dps-5",
+    name: "Ust. H. Fauzan Mansur, S.Th.I., M.Ag.",
+    role: "Anggota Komite Syariah",
+    badge: "Komite Syariah",
+    code: "Bimbingan Rohani & Ruqyah",
+    experience: "8+ Tahun Pengalaman",
+    focus: "Pendampingan Sakaratul Maut & Doa",
+    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+  },
 ];
 
 export default function ProfilDPSPage() {
   return (
     <div className="bg-surface-bg min-h-screen">
-      <div className="relative w-full bg-gradient-to-r from-primary-dark via-primary to-primary-hover text-white py-10 sm:py-14">
+      {/* Header Banner */}
+      <div className="relative w-full bg-[#3A9D9A] text-white py-10 sm:py-14">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 mb-3">
-            <Link href="/kesyariahan" className="text-xs text-teal-100 hover:text-white transition-colors flex items-center gap-1">
+            <Link
+              href="/kesyariahan"
+              className="text-xs text-teal-100 hover:text-white transition-colors flex items-center gap-1"
+            >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Kembali ke Menu Kesyariahan</span>
             </Link>
@@ -23,26 +86,80 @@ export default function ProfilDPSPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>STRUKTUR KESYARIAHAN</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Profil DPS & Komite Syariah</h1>
-          <p className="text-sm text-teal-50 max-w-xl leading-relaxed">
-            Mengenal jajaran Dewan Pengawas Syariah dan Komite Syariah RS Ridhoka Salma.
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-2">
+            Profil DPS & Komite Syariah
+          </h1>
+          <p className="text-xs sm:text-sm text-teal-50 max-w-xl leading-relaxed">
+            Mengenal jajaran Dewan Pengawas Syariah dan Komite Syariah RS Ridhoka Salma yang memastikan seluruh layanan medis dan operasional sesuai prinsip Islam.
           </p>
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {dpsMembers.map((member, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card flex flex-col justify-between">
+      {/* Cards Grid */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {dpsMembers.map((member) => (
+            <div
+              key={member.id}
+              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+            >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
-                  <Users2 className="w-7 h-7" />
+                {/* Top Dummy Image */}
+                <div className="relative w-full aspect-[4/3] bg-[#edf6f5] overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  {/* Badge Pill on Image */}
+                  <div className="absolute bottom-3.5 left-3.5">
+                    <span className="inline-block bg-white/95 backdrop-blur-xs text-[#2A7B78] text-xs font-bold px-3 py-1 rounded-lg shadow-xs border border-gray-100">
+                      {member.badge}
+                    </span>
+                  </div>
                 </div>
-                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary mb-2 inline-block">
-                  {member.role}
-                </span>
-                <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-2">{member.name}</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">{member.desc}</p>
+
+                {/* Body Content */}
+                <div className="p-5 space-y-3.5">
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-[#3A9D9A] transition-colors leading-snug">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs text-gray-400 font-medium mt-0.5">
+                      {member.code}
+                    </p>
+                  </div>
+
+                  {/* Metadata: Experience & Focus */}
+                  <div className="space-y-2 pt-1">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                        <Award className="w-3 h-3" />
+                      </div>
+                      <span className="truncate">{member.experience}</span>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                        <BookOpen className="w-3 h-3" />
+                      </div>
+                      <span className="truncate">{member.focus}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card Footer Button */}
+              <div className="p-5 pt-0">
+                <Link
+                  href="/kesyariahan/kebijakan-mutu"
+                  className="w-full bg-[#3A9D9A] hover:bg-[#2A7B78] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                >
+                  <span>Lihat Kebijakan Syariah</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           ))}
@@ -51,3 +168,4 @@ export default function ProfilDPSPage() {
     </div>
   );
 }
+

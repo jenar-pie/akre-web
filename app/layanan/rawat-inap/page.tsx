@@ -135,7 +135,9 @@ export default function RawatInapPage() {
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
-                    href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent("Halo RS Ridhoka Salma, saya ingin menanyakan informasi ketersediaan kamar rawat inap.")}`}
+                    href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                      "Halo RS Ridhoka Salma, saya ingin menanyakan informasi ketersediaan kamar rawat inap."
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary-dark text-xs font-bold py-3 px-4 rounded-xl transition-colors shadow-xs"
@@ -201,37 +203,46 @@ export default function RawatInapPage() {
           </div>
         </section>
 
-        {/* Room Types Showcase */}
+        {/* Room Types Showcase (Follow Reference UI) */}
         <section className="space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="space-y-6">
+            {/* Header Content */}
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] text-xs font-bold uppercase tracking-wider mb-3">
                 <Building className="w-3.5 h-3.5" />
                 <span>PILIHAN KELAS KAMAR</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Pilihan Kamar & Fasilitas Rawat Inap
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1a2e35] leading-tight">
+                Pilihan Kamar & Fasilitas Rawat<br className="hidden sm:inline" /> Inap
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1">
-                Pilih kamar yang sesuai dengan kenyamanan dan kebutuhan perawatan keluarga Anda.
+              <p className="text-sm sm:text-base text-gray-500 mt-3 leading-relaxed">
+                Pilih kamar yang sesuai dengan kenyamanan dan kebutuhan perawatan Anda dan keluarga.
               </p>
             </div>
 
-            {/* Room Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
-              {roomFilters.map((f) => (
-                <button
-                  key={f.id}
-                  onClick={() => setSelectedFilter(f.id)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                    selectedFilter === f.id
-                      ? "bg-primary text-white shadow-xs"
-                      : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
-                  }`}
-                >
-                  {f.label}
-                </button>
-              ))}
+            {/* Room Filter Tags (Follow Reference UI) */}
+            <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-none">
+              {roomFilters.map((f) => {
+                const isActive = selectedFilter === f.id;
+                return (
+                  <button
+                    key={f.id}
+                    onClick={() => setSelectedFilter(f.id)}
+                    className={`inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer shadow-2xs ${
+                      isActive
+                        ? "bg-[#3A9D9A] text-white shadow-sm"
+                        : "bg-white text-gray-800 hover:text-[#3A9D9A] hover:bg-teal-50/40 border border-gray-200/80"
+                    }`}
+                  >
+                    {isActive && (
+                      <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-white text-[10px]">
+                        ✓
+                      </span>
+                    )}
+                    <span>{f.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

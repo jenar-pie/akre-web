@@ -9,11 +9,11 @@ import { footerNavigation } from "@/data/navigation";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-primary text-white">
+    <footer className="w-full bg-gradient-to-r from-[#1C5555] to-[#3A9D9A] text-white">
       <div className="max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8 py-8 lg:py-10">
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 pb-6 border-b border-teal-600/50">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 pb-6 border-b border-white/15">
 
           {/* Column 1: Logo + Info */}
           <div className="lg:col-span-4 space-y-3">
@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-5 text-xs">
 
             <div>
-              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-teal-500/40">Tentang Kami</h3>
+              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-white/15">Tentang Kami</h3>
               <ul className="space-y-1.5 text-teal-100">
                 {footerNavigation.tentangKami.map((item) => (
                   <li key={item.label}>
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-teal-500/40">Layanan</h3>
+              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-white/15">Layanan</h3>
               <ul className="space-y-1.5 text-teal-100">
                 {footerNavigation.layanan.map((item) => (
                   <li key={item.label}>
@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-teal-500/40">Informasi</h3>
+              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-white/15">Informasi</h3>
               <ul className="space-y-1.5 text-teal-100">
                 {footerNavigation.informasi.map((item) => (
                   <li key={item.label}>
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-teal-500/40">Kesyariahan</h3>
+              <h3 className="font-bold text-white text-sm mb-2.5 pb-1.5 border-b border-white/15">Kesyariahan</h3>
               <ul className="space-y-1.5 text-teal-100">
                 {footerNavigation.kesyariahan.map((item) => (
                   <li key={item.label}>
@@ -116,7 +116,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-colors"
                   aria-label={social.name}
                   title={social.name}
                 >

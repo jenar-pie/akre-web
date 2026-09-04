@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Users2,
@@ -216,7 +217,7 @@ export default function StrukturOrganisasiPage() {
           </div>
 
           {/* Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredMembers.map((person, idx) => {
               const badge = getCategoryBadge(person.category);
               const BadgeIcon = badge.icon;
@@ -224,45 +225,57 @@ export default function StrukturOrganisasiPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    {/* Badge */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${badge.bg}`}
-                      >
-                        <BadgeIcon className="w-3.5 h-3.5" />
-                        <span>{badge.label}</span>
-                      </span>
-                      {person.division && (
-                        <span className="text-[11px] font-medium text-gray-400">
-                          {person.division}
-                        </span>
+                    {/* Top Dummy Image */}
+                    <div className="relative w-full aspect-[4/3] bg-[#edf6f5] overflow-hidden">
+                      {person.image ? (
+                        <Image
+                          src={person.image}
+                          alt={person.name}
+                          fill
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                          sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-teal-50 text-primary">
+                          <UserCheck className="w-16 h-16 opacity-40" />
+                        </div>
                       )}
+
+                      {/* Badge Pill on Image */}
+                      <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between gap-1.5">
+                        <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-xs text-primary-dark text-xs font-bold px-2.5 py-1 rounded-lg shadow-xs border border-gray-100 truncate">
+                          <BadgeIcon className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          <span className="truncate">{badge.label}</span>
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Avatar Initials Placeholder */}
-                    <div className="flex items-center gap-3.5 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary font-bold text-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <UserCheck className="w-6 h-6" />
-                      </div>
+                    {/* Body Content */}
+                    <div className="p-5 space-y-3">
                       <div>
-                        <h3 className="text-base font-bold text-gray-900 group-hover:text-primary transition-colors leading-tight">
+                        <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-primary transition-colors leading-snug">
                           {person.name}
                         </h3>
-                        <p className="text-xs font-semibold text-primary mt-0.5">
+                        <p className="text-xs font-semibold text-primary mt-1">
                           {person.role}
                         </p>
+                        {person.division && (
+                          <p className="text-[11px] font-medium text-gray-400 mt-0.5">
+                            {person.division}
+                          </p>
+                        )}
                       </div>
-                    </div>
 
-                    {/* Description */}
-                    {person.description && (
-                      <p className="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
-                        {person.description}
-                      </p>
-                    )}
+                      {/* Description */}
+                      {person.description && (
+                        <p className="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                          {person.description}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               );

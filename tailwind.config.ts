@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#198782",
-          dark: "#12635f",
-          light: "#e6f6f5",
-          hover: "#157570",
+          DEFAULT: "#3A9D9A",
+          dark: "#2A7B78",
+          light: "#EAF6F5",
+          hover: "#328B88",
         },
         accent: {
           red: "#D32F2F",

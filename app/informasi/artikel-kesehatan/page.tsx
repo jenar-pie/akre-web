@@ -19,7 +19,7 @@ const articles = [
     category: "Kebidanan & Kandungan",
     date: "25 Februari 2026",
     author: "dr. Hj. Siti Rahmawati, Sp.OG",
-    image: "/assets/fasilitas/ruang-bersalin.jpg",
+    image: "/assets/layanan/eracs.jpg",
     excerpt: "Metode operasi Caesar ERACS memungkinkan ibu pulih lebih cepat dan dapat segera bergerak serta menyusui buah hati.",
   },
   {

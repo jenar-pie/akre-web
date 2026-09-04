@@ -38,7 +38,7 @@ export default function KonsultasiSyariahPage() {
           </div>
           <div className="pt-2">
             <a
-              href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent("Halo Tim Kesyariahan RS Ridhoka Salma, saya ingin berkonsultasi mengenai bimbingan syariah.")}`}
+              href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent("Halo Tim Kesyariahan RS Ridhoka Salma, saya ingin berkonsultasi mengenai bimbingan syariah.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-colors shadow-xs"
