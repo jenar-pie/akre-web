@@ -462,13 +462,15 @@ export default function RawatInapPage() {
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto flex-wrap sm:flex-nowrap justify-center">
             <a
-              href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent("Halo RS Ridhoka Salma, saya ingin reservasi kamar rawat inap.")}`}
+              href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                "Halo RS Ridhoka Salma, saya ingin menanyakan informasi ketersediaan kamar rawat inap."
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary-dark px-5 py-3 rounded-xl font-bold text-sm transition-colors shadow-xs"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary-dark text-xs font-bold py-3 px-4 rounded-xl transition-colors shadow-xs"
             >
               <span>Chat WhatsApp Admisi</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
             <Link
               href="/layanan/layanan-unggulan"

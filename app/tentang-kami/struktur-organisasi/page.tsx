@@ -57,7 +57,7 @@ export default function StrukturOrganisasiPage() {
         };
       default:
         return {
-          label: "Staf",
+          label: "Staff",
           bg: "bg-gray-50 text-gray-700 border-gray-200",
           icon: Users2,
         };
@@ -111,7 +111,7 @@ export default function StrukturOrganisasiPage() {
                   Dewan Pengawas Syariah (DPS)
                 </h4>
                 <p className="text-xs text-gray-600 mt-1">
-                  Dr. KH. M. Anwar Syahid & Ustadz H. Ahmad Fauzi
+                  Dr. Latief Awaludin & Muhammad Yunus, S.H.I, M.E.SY
                 </p>
               </div>
 
@@ -120,10 +120,10 @@ export default function StrukturOrganisasiPage() {
                   <Building className="w-4 h-4" />
                 </div>
                 <h4 className="text-xs font-bold text-primary-dark uppercase tracking-wider">
-                  Dewan Komisaris & Direktur Utama
+                  Direktur Utama
                 </h4>
                 <p className="text-xs text-gray-600 mt-1">
-                  Hj. Roziana Ghani (Direktur Utama)
+                  Roziana Ghani
                 </p>
               </div>
             </div>
@@ -135,10 +135,10 @@ export default function StrukturOrganisasiPage() {
             <div className="max-w-md mx-auto">
               <div className="p-5 rounded-xl bg-primary text-white text-center shadow-md">
                 <h3 className="text-sm sm:text-base font-bold">
-                  dr. H. Hendra Budiman, MARS
+                  dr. Purwanto Wahyu Irawan, Sp.A(K), M.Kes
                 </h3>
                 <p className="text-xs text-teal-100 mt-0.5">
-                  Direktur Utama Rumah Sakit
+                  Direktur Rumah Sakit
                 </p>
               </div>
             </div>
@@ -150,18 +150,18 @@ export default function StrukturOrganisasiPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-white border-2 border-primary/30 text-center shadow-xs">
                 <h4 className="text-xs sm:text-sm font-bold text-gray-900">
-                  dr. Siti Rahmawati, Sp.A
+                  dr. Hj. Rosiana Ambarwati, MARS
                 </h4>
                 <p className="text-xs text-primary font-medium mt-0.5">
-                  Wadir Pelayanan Medis & Keperawatan
+                  Wakil Direktur Pelayanan Medis & Keperawatan
                 </p>
               </div>
               <div className="p-4 rounded-xl bg-white border-2 border-primary/30 text-center shadow-xs">
                 <h4 className="text-xs sm:text-sm font-bold text-gray-900">
-                  H. Bambang Sutejo, S.E., M.M.
+                  Hosni Ramaly, SE, MM, Ak., CA
                 </h4>
                 <p className="text-xs text-primary font-medium mt-0.5">
-                  Wadir Umum, SDM & Keuangan
+                  Wakil Direktur Administrasi & Keuangan
                 </p>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function StrukturOrganisasiPage() {
           </div>
 
           {/* Members Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredMembers.map((person, idx) => {
               const badge = getCategoryBadge(person.category);
               const BadgeIcon = badge.icon;

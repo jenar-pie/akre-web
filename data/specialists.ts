@@ -86,7 +86,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Layanan kesehatan reproduksi wanita, pemeriksaan kehamilan (ANC), USG 4D, persalinan normal & Caesar ERACS berwawasan syariah.",
     fullDescription: "Poliklinik Kebidanan dan Kandungan (Obgyn) RS Ridhoka Salma mengedepankan kenyamanan dan syiar Islami dalam menjaga aurat dan kehormatan ibu. Kami menyediakan tim dokter spesialis dan bidan perempuan berpengalaman, teknologi USG 4D, senam hamil syariah, serta persalinan dengan metode ERACS untuk pemulihan lebih cepat.",
     iconName: "HeartHandshake",
-    image: "/assets/layanan/spesialis-kandungan.jpg",
+    image: "/assets/fasilitas/kandungan.webp",
     isFeatured: true,
     badge: "Layanan Syariah",
     doctors: [
@@ -136,7 +136,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Diagnosis dan tata laksana komprehensif berbagai penyakit organ dalam dewasa: diabetes, hipertensi, saluran cerna, hati, ginjal, dan infeksi.",
     fullDescription: "Poliklinik Penyakit Dalam RS Ridhoka Salma menangani pencegahan, diagnosis, dan terapi tanpa bedah untuk beragam gangguan organ internal pada pasien dewasa dan lansia (geriatri) dengan pendekatan holistik.",
     iconName: "Stethoscope",
-    image: "/assets/layanan/spesialis-penyakit-dalam.webp",
+    image: "/assets/fasilitas/penyakit-dalam.jpg",
     isFeatured: true,
     badge: "Layanan Utama",
     doctors: [
@@ -227,7 +227,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Penanganan gangguan otak dan sistem saraf: stroke, nyeri kepala kronis, vertigo, epilepsi, tremor, neuropati, dan saraf kejepit (HNP).",
     fullDescription: "Poliklinik Saraf RS Ridhoka Salma menangani berbagai kondisi neurologis mulai dari tata laksana darurat stroke (Golden Period), terapi pemulihan pasca-stroke, diagnosis kejang dengan EEG, hingga terapi intervensi nyeri saraf tulang belakang.",
     iconName: "Zap",
-    image: "/assets/fasilitas/radiologi.jpg",
+    image: "/assets/fasilitas/radiologi3.jpg",
     isFeatured: true,
     badge: "Pusat Stroke & Nyeri",
     doctors: [
@@ -268,7 +268,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Pemeriksaan EKG, Echocardiography, pencegahan penyakit jantung koroner, aritmia, serta pemulihan pasca-serangan jantung.",
     fullDescription: "Layanan Poliklinik Jantung RS Ridhoka Salma berfokus pada deteksi dini, diagnosis tepat, dan manajemen penyakit kardiovaskular dengan peralatan EKG dan USG Jantung (Echocardiography) mutakhir.",
     iconName: "HeartPulse",
-    image: "/assets/fasilitas/icu.jpg",
+    image: "/assets/fasilitas/jantung.jpeg",
     isFeatured: true,
     badge: "Diagnostik Cepat",
     doctors: [
@@ -299,7 +299,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Pemeriksaan refraksi mata, skrining katarak, glaukoma, retinopati diabetes, serta penanganan infeksi dan iritasi mata.",
     fullDescription: "Poliklinik Mata RS Ridhoka Salma menyediakan layanan kesehatan indera penglihatan mulai dari koreksi kacamata anak dan dewasa, operasi katarak modern, hingga skrining penyakit mata akibat komplikasi sistemik.",
     iconName: "Eye",
-    image: "/assets/fasilitas/radiologi3.jpg",
+    image: "/assets/fasilitas/radiologi2.jpg",
     isFeatured: false,
     badge: "Peralatan Modern",
     doctors: [
@@ -330,7 +330,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Pemeriksaan dan terapi gangguan telinga, hidung, tenggorokan, amandel, alergi rinitis, serta endoskopi THT terpadu.",
     fullDescription: "Poliklinik THT-KL RS Ridhoka Salma melayani pasien segala usia untuk keluhan pendengaran, infeksi sinus, amandel, suara serak, dan benda asing pada saluran THT dengan panduan kamera endoskopi.",
     iconName: "Headphones",
-    image: "/assets/fasilitas/lab2.jpg",
+    image: "/assets/fasilitas/tht2.jpeg",
     isFeatured: false,
     badge: "Endoskopi THT",
     doctors: [
@@ -416,7 +416,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Penanganan patah tulang (fraktur), cedera ligamen & sendi, osteoartritis lutut, kelainan tulang belakang, dan trauma.",
     fullDescription: "Poliklinik Ortopedi dan Traumatologi RS Ridhoka Salma menangani beragam kasus cedera kecelakaan, olahraga, penyakit degeneratif tulang dan sendi, hingga tindakan pemasangan/pelepasan fiksasi implan tulang.",
     iconName: "Shield",
-    image: "/assets/fasilitas/bedah.jpg",
+    image: "/assets/fasilitas/radiologi.jpg",
     isFeatured: false,
     badge: "Trauma & Bedah Tulang",
     doctors: [
@@ -518,7 +518,7 @@ export const specialistsData: Specialist[] = [
     shortDescription: "Diagnosis dan penanganan gangguan saluran kemih pria & wanita, batu ginjal, prostat, dan organ reproduksi pria.",
     fullDescription: "Poliklinik Urologi RS Ridhoka Salma menangani gangguan saluran perkemihan, pembesaran prostat, infeksi saluran kemih kronis, serta tindakan pemecahan batu saluran kemih.",
     iconName: "Activity",
-    image: "/assets/fasilitas/lab4.jpg",
+    image: "/assets/fasilitas/urologi.webp",
     isFeatured: false,
     badge: "Saluran Kemih & Prostat",
     doctors: [

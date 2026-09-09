@@ -67,7 +67,7 @@ export const featuredServices: ServiceItem[] = [
     id: "rose-aesthetic",
     title: "Rose Aesthetic Clinic",
     subtitle: "Klinik Kecantikan Medis & Perawatan Kulit Syariah",
-    image: "/assets/fasilitas/ghani.png",
+    image: "/assets/layanan/rose.png",
     badge: "Aesthetic & Skincare",
     category: "Estetika Medis",
     description: "Perawatan estetika dan kesehatan kulit wajah yang aman, higienis, berlandaskan prinsip syariah di bawah pengawasan langsung dokter spesialis kulit dan dokter estetika berpengalaman.",

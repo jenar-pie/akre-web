@@ -3,7 +3,24 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Plus, User, ArrowRight } from "lucide-react";
+import {
+  CalendarDays,
+  User,
+  Clock,
+  CheckCircle2,
+  Search,
+  Sparkles,
+  ArrowRight,
+  Stethoscope,
+} from "lucide-react";
+
+type DayOfWeek = "Senin" | "Selasa" | "Rabu" | "Kamis" | "Jumat" | "Sabtu" | "Minggu";
+
+interface ScheduleItem {
+  day: DayOfWeek;
+  time: string;
+  status: "Tersedia" | "Penuh" | "Selesai";
+}
 
 interface DoctorItem {
   id: string;
@@ -14,452 +31,480 @@ interface DoctorItem {
   poli: string;
   image: string;
   slug: string;
+  schedules: ScheduleItem[];
 }
 
-const dummyDoctors: DoctorItem[] = [
-  // Poster 1: Saraf & Anak
+const DAYS: DayOfWeek[] = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+
+const doctorsData: DoctorItem[] = [
   {
-    id: "doc-nurita",
-    name: "dr. Nurita H., Sp.S",
-    specialtyCode: "Sp.S",
-    specialtyBadge: "Spesialis Saraf",
-    experience: "13 Tahun Pengalaman",
-    poli: "Poli Saraf",
-    image: "/assets/profil/nurita.png",
-    slug: "saraf",
+    id: "doc-edward",
+    name: "dr. Edward Morganda Marpaung, Sp.OG., DMAS",
+    specialtyCode: "Sp.OG",
+    specialtyBadge: "Spesialis Obgyn",
+    experience: "10 tahun pengalaman",
+    poli: "Poli Kandungan & Kebidanan",
+    image: "/assets/profil/djoni.png",
+    slug: "kebidanan",
+    schedules: [
+      { day: "Senin", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Selasa", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Rabu", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Kamis", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Jumat", time: "09:00 - 12:00", status: "Tersedia" },
+    ],
   },
   {
-    id: "doc-kinanta",
-    name: "dr. Kinanta, Sp.N",
-    specialtyCode: "Sp.N",
-    specialtyBadge: "Spesialis Saraf",
-    experience: "8 Tahun Pengalaman",
-    poli: "Poli Saraf / Neurologi",
-    image: "/assets/profil/kinanta.png",
-    slug: "saraf",
-  },
-  {
-    id: "doc-nelly",
-    name: "dr. Nelly R., Sp.A",
+    id: "doc-nurhayati",
+    name: "dr. Nur Hayati, Sp. A",
     specialtyCode: "Sp.A",
     specialtyBadge: "Spesialis Anak",
-    experience: "12 Tahun Pengalaman",
+    experience: "5 tahun pengalaman",
     poli: "Poli Anak",
     image: "/assets/profil/nelly.png",
     slug: "anak",
+    schedules: [
+      { day: "Rabu", time: "09:00 - 11:00", status: "Tersedia" },
+      { day: "Kamis", time: "09:00 - 11:00", status: "Tersedia" },
+      { day: "Jumat", time: "09:00 - 11:00", status: "Tersedia" },
+      { day: "Sabtu", time: "09:00 - 11:00", status: "Tersedia" },
+    ],
   },
   {
-    id: "doc-puni",
-    name: "dr. Puni O., Sp.A",
-    specialtyCode: "Sp.A",
-    specialtyBadge: "Spesialis Anak",
-    experience: "10 Tahun Pengalaman",
-    poli: "Poli Anak",
-    image: "/assets/profil/puni.png",
-    slug: "anak",
-  },
-  {
-    id: "doc-shifa",
-    name: "dr. Shifa, M.Ked(Ped), Sp.A",
-    specialtyCode: "Sp.A",
-    specialtyBadge: "Spesialis Anak",
-    experience: "9 Tahun Pengalaman",
-    poli: "Poli Anak",
-    image: "/assets/profil/shifa.png",
-    slug: "anak",
-  },
-
-  // Poster 2 - Row 1
-  {
-    id: "doc-linda",
-    name: "drg. Linda Puspita, Sp.KG",
-    specialtyCode: "Sp.KG",
-    specialtyBadge: "Spesialis Konservasi Gigi",
-    experience: "11 Tahun Pengalaman",
+    id: "doc-sindiawani",
+    name: "drg. Sindiawani Gusvinda Radiani",
+    specialtyCode: "drg.",
+    specialtyBadge: "Dokter Gigi Umum",
+    experience: "2 tahun pengalaman",
     poli: "Poli Gigi & Mulut",
-    image: "/assets/profil/linda.png",
+    image: "/assets/profil/bening.png",
     slug: "gigi",
+    schedules: [
+      { day: "Senin", time: "09:00 - 14:00", status: "Tersedia" },
+      { day: "Selasa", time: "09:00 - 14:00", status: "Tersedia" },
+      { day: "Rabu", time: "09:00 - 14:00", status: "Tersedia" },
+      { day: "Kamis", time: "09:00 - 14:00", status: "Tersedia" },
+      { day: "Jumat", time: "09:00 - 14:00", status: "Tersedia" },
+      { day: "Sabtu", time: "09:00 - 14:00", status: "Tersedia" },
+    ],
   },
   {
-    id: "doc-ferry",
-    name: "dr. Ferry H., Sp. THT-KL",
-    specialtyCode: "Sp.THT-KL",
-    specialtyBadge: "Spesialis THT-KL",
-    experience: "14 Tahun Pengalaman",
-    poli: "Poli THT",
-    image: "/assets/profil/ferry.png",
-    slug: "tht",
+    id: "doc-driyarkara",
+    name: "dr. Driyarkara, Sp.PD",
+    specialtyCode: "Sp.PD",
+    specialtyBadge: "Spesialis Penyakit Dalam",
+    experience: "16 tahun pengalaman",
+    poli: "Poli Penyakit Dalam",
+    image: "/assets/profil/driyarkara.png",
+    slug: "penyakit-dalam",
+    schedules: [
+      { day: "Senin", time: "08:00 - 12:00", status: "Tersedia" },
+      { day: "Selasa", time: "08:00 - 12:00", status: "Tersedia" },
+      { day: "Rabu", time: "08:00 - 12:00", status: "Tersedia" },
+      { day: "Kamis", time: "08:00 - 12:00", status: "Tersedia" },
+      { day: "Jumat", time: "08:00 - 12:00", status: "Tersedia" },
+    ],
+  },
+  {
+    id: "doc-tania",
+    name: "dr. Tania Andriani, Sp.JP",
+    specialtyCode: "Sp.JP",
+    specialtyBadge: "Spesialis Jantung & Pembuluh Darah",
+    experience: "10 tahun pengalaman",
+    poli: "Poli Jantung",
+    image: "/assets/profil/tania.png",
+    slug: "jantung",
+    schedules: [
+      { day: "Senin", time: "13:00 - 16:00", status: "Tersedia" },
+      { day: "Rabu", time: "13:00 - 16:00", status: "Tersedia" },
+      { day: "Kamis", time: "13:00 - 16:00", status: "Tersedia" },
+      { day: "Jumat", time: "13:00 - 16:00", status: "Tersedia" },
+    ],
   },
   {
     id: "doc-gema",
     name: "dr. Gema Putra, Sp.B",
     specialtyCode: "Sp.B",
     specialtyBadge: "Spesialis Bedah Umum",
-    experience: "12 Tahun Pengalaman",
-    poli: "Poli Bedah",
+    experience: "12 tahun pengalaman",
+    poli: "Poli Bedah Umum",
     image: "/assets/profil/gema.png",
     slug: "bedah-umum",
+    schedules: [
+      { day: "Senin", time: "10:00 - 13:00", status: "Tersedia" },
+      { day: "Selasa", time: "10:00 - 13:00", status: "Tersedia" },
+      { day: "Kamis", time: "10:00 - 13:00", status: "Tersedia" },
+      { day: "Sabtu", time: "10:00 - 13:00", status: "Tersedia" },
+    ],
   },
-  {
-    id: "doc-alifarhan",
-    name: "dr. Ali Farhan, Sp.B",
-    specialtyCode: "Sp.B",
-    specialtyBadge: "Spesialis Bedah Umum",
-    experience: "15 Tahun Pengalaman",
-    poli: "Poli Bedah",
-    image: "/assets/profil/ali-farhan.png",
-    slug: "bedah-umum",
-  },
-
-  // Poster 2 - Row 2
   {
     id: "doc-sukirman",
     name: "dr. Sukirman, Sp.M",
     specialtyCode: "Sp.M",
     specialtyBadge: "Spesialis Mata",
-    experience: "15 Tahun Pengalaman",
+    experience: "15 tahun pengalaman",
     poli: "Poli Mata",
     image: "/assets/profil/sukirman.png",
     slug: "mata",
+    schedules: [
+      { day: "Senin", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Selasa", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Rabu", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Kamis", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Jumat", time: "09:00 - 12:00", status: "Tersedia" },
+    ],
   },
   {
     id: "doc-zecky",
-    name: "dr. Zecky E., T., Sp.OT, MARS",
+    name: "dr. Zecky E., Sp.OT, MARS",
     specialtyCode: "Sp.OT",
     specialtyBadge: "Spesialis Bedah Orthopaedi",
-    experience: "16 Tahun Pengalaman",
+    experience: "16 tahun pengalaman",
     poli: "Poli Ortopedi",
     image: "/assets/profil/zecky.png",
     slug: "ortopedi",
+    schedules: [
+      { day: "Senin", time: "14:00 - 17:00", status: "Tersedia" },
+      { day: "Selasa", time: "14:00 - 17:00", status: "Tersedia" },
+      { day: "Kamis", time: "14:00 - 17:00", status: "Tersedia" },
+      { day: "Sabtu", time: "09:00 - 12:00", status: "Tersedia" },
+    ],
   },
   {
-    id: "doc-firmansyah",
-    name: "dr. Firmansyah, Sp. OT",
-    specialtyCode: "Sp.OT",
-    specialtyBadge: "Dokter Spesialis Orthopedi",
-    experience: "12 Tahun Pengalaman",
-    poli: "Poli Ortopedi",
-    image: "/assets/profil/firmansyah.png",
-    slug: "ortopedi",
-  },
-  {
-    id: "doc-kurniadi",
-    name: "dr. Kurniadi Yusuf S., Sp. U",
-    specialtyCode: "Sp.U",
-    specialtyBadge: "Spesialis Urologi",
-    experience: "10 Tahun Pengalaman",
-    poli: "Poli Urologi",
-    image: "/assets/profil/kurniadi.png",
-    slug: "urologi",
-  },
-
-  // Poster 2 - Row 3
-  {
-    id: "doc-margaretha",
-    name: "dr. Margaretha, Sp.KFR",
-    specialtyCode: "Sp.KFR",
-    specialtyBadge: "Spesialis Kedokteran Fisik & Rehabilitasi",
-    experience: "13 Tahun Pengalaman",
-    poli: "Poli Rehabilitasi Medik",
-    image: "/assets/profil/margaretha.png",
-    slug: "rehabilitasi-medik",
-  },
-  {
-    id: "doc-hotman",
-    name: "dr. Hotman, Sp.An",
-    specialtyCode: "Sp.An",
-    specialtyBadge: "Spesialis Anestesi",
-    experience: "14 Tahun Pengalaman",
-    poli: "Anestesi & Terapi Intensif",
-    image: "/assets/profil/hotman.png",
-    slug: "bedah-umum",
-  },
-  {
-    id: "doc-ina",
-    name: "dr. Ina S., Sp.An",
-    specialtyCode: "Sp.An",
-    specialtyBadge: "Spesialis Anestesi",
-    experience: "11 Tahun Pengalaman",
-    poli: "Anestesi & Rawat Kritis",
-    image: "/assets/profil/ina.png",
-    slug: "bedah-umum",
-  },
-  {
-    id: "doc-ryan",
-    name: "dr. Ryan B. R., Sp.PK, MMRS",
-    specialtyCode: "Sp.PK",
-    specialtyBadge: "Penanggung Jawab Lab.",
-    experience: "12 Tahun Pengalaman",
-    poli: "Laboratorium & Patologi Klinik",
-    image: "/assets/profil/ryan-lab.png",
-    slug: "penyakit-dalam",
-  },
-  {
-    id: "doc-dian",
-    name: "dr. Dian A., Sp.Rad",
-    specialtyCode: "Sp.Rad",
-    specialtyBadge: "Spesialis Radiologi",
-    experience: "16 Tahun Pengalaman",
-    poli: "Radiologi & Diagnostik",
-    image: "/assets/profil/dian.png",
-    slug: "saraf",
-  },
-
-  // Poster 2 - Row 4
-  {
-    id: "doc-heru",
-    name: "drg. Heru",
-    specialtyCode: "drg.",
-    specialtyBadge: "Gigi & Mulut",
-    experience: "15 Tahun Pengalaman",
-    poli: "Poli Gigi & Mulut",
-    image: "/assets/profil/heru.png",
-    slug: "gigi",
-  },
-  {
-    id: "doc-arif",
-    name: "drg. Arif",
-    specialtyCode: "drg.",
-    specialtyBadge: "Gigi & Mulut",
-    experience: "10 Tahun Pengalaman",
-    poli: "Poli Gigi & Mulut",
-    image: "/assets/profil/arif.png",
-    slug: "gigi",
-  },
-  {
-    id: "doc-bening",
-    name: "drg. Bening",
-    specialtyCode: "drg.",
-    specialtyBadge: "Gigi & Mulut",
-    experience: "8 Tahun Pengalaman",
-    poli: "Poli Gigi & Mulut",
-    image: "/assets/profil/bening.png",
-    slug: "gigi",
-  },
-  {
-    id: "doc-ryan-gigi",
-    name: "dr. Ryan B. R., Sp.PK, MMRS",
-    specialtyCode: "Sp.PK",
-    specialtyBadge: "Gigi & Mulut",
-    experience: "12 Tahun Pengalaman",
-    poli: "Poli Gigi & Mulut",
-    image: "/assets/profil/ryan-gigi.png",
-    slug: "gigi",
-  },
-  {
-    id: "doc-tuti",
-    name: "dr. Tuti H., M.Biomed (AAM)",
-    specialtyCode: "M.Biomed",
-    specialtyBadge: "Dokter Kecantikan",
-    experience: "10 Tahun Pengalaman",
-    poli: "Klinik Estetika & Kulit",
-    image: "/assets/profil/tuti.png",
-    slug: "rehabilitasi-medik",
-  },
-
-  // Poster 2 - Row 5
-  {
-    id: "doc-murniati",
-    name: "dr. Murniati, Sp. OG",
-    specialtyCode: "Sp.OG",
-    specialtyBadge: "Spesialis Obstetri dan Ginekologi",
-    experience: "15 Tahun Pengalaman",
-    poli: "Poli Kandungan & Kebidanan",
-    image: "/assets/profil/murniati.png",
-    slug: "kebidanan",
-  },
-  {
-    id: "doc-djoni",
-    name: "dr. Djoni N., Sp. OG (K)",
-    specialtyCode: "Sp.OG (K)",
-    specialtyBadge: "Spesialis Obstetri dan Ginekologi",
-    experience: "20 Tahun Pengalaman",
-    poli: "Poli Kandungan (Konsultan)",
-    image: "/assets/profil/djoni.png",
-    slug: "kebidanan",
-  },
-  {
-    id: "doc-rita",
-    name: "dr. Rita F., Sp.OG",
-    specialtyCode: "Sp.OG",
-    specialtyBadge: "Spesialis Obstetri dan Ginekologi",
-    experience: "12 Tahun Pengalaman",
-    poli: "Poli Kandungan & Kebidanan",
-    image: "/assets/profil/rita.png",
-    slug: "kebidanan",
+    id: "doc-ferry",
+    name: "dr. Ferry H., Sp.THT-KL",
+    specialtyCode: "Sp.THT-KL",
+    specialtyBadge: "Spesialis THT-KL",
+    experience: "14 tahun pengalaman",
+    poli: "Poli THT",
+    image: "/assets/profil/ferry.png",
+    slug: "tht",
+    schedules: [
+      { day: "Selasa", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Rabu", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Kamis", time: "09:00 - 12:00", status: "Tersedia" },
+      { day: "Sabtu", time: "13:00 - 16:00", status: "Tersedia" },
+    ],
   },
   {
     id: "doc-tantrie",
     name: "dr. Tantrie D., Sp.P",
     specialtyCode: "Sp.P",
     specialtyBadge: "Spesialis Paru",
-    experience: "11 Tahun Pengalaman",
+    experience: "11 tahun pengalaman",
     poli: "Poli Paru",
     image: "/assets/profil/tantrie.png",
     slug: "paru",
-  },
-
-  // Poster 2 - Row 6
-  {
-    id: "doc-driyarkara",
-    name: "dr. Driyarkara, Sp.PD",
-    specialtyCode: "Sp.PD",
-    specialtyBadge: "Spesialis Penyakit Dalam",
-    experience: "16 Tahun Pengalaman",
-    poli: "Poli Penyakit Dalam",
-    image: "/assets/profil/driyarkara.png",
-    slug: "penyakit-dalam",
+    schedules: [
+      { day: "Selasa", time: "08:00 - 11:00", status: "Tersedia" },
+      { day: "Rabu", time: "08:00 - 11:00", status: "Tersedia" },
+      { day: "Kamis", time: "08:00 - 11:00", status: "Tersedia" },
+    ],
   },
   {
-    id: "doc-muhipah",
-    name: "dr. Muhipah, Sp.PD",
-    specialtyCode: "Sp.PD",
-    specialtyBadge: "Spesialis Penyakit Dalam",
-    experience: "14 Tahun Pengalaman",
-    poli: "Poli Penyakit Dalam",
-    image: "/assets/profil/muhipah.png",
-    slug: "penyakit-dalam",
-  },
-  {
-    id: "doc-teukuemir",
-    name: "dr. Teuku Emir, Sp.PD",
-    specialtyCode: "Sp.PD",
-    specialtyBadge: "Spesialis Penyakit Dalam",
-    experience: "11 Tahun Pengalaman",
-    poli: "Poli Penyakit Dalam",
-    image: "/assets/profil/teuku.png",
-    slug: "penyakit-dalam",
-  },
-  {
-    id: "doc-tania",
-    name: "dr. Tania Andriani, Sp.JP",
-    specialtyCode: "Sp.JP",
-    specialtyBadge: "Spesialis Jantung & P. Darah",
-    experience: "10 Tahun Pengalaman",
-    poli: "Poli Jantung",
-    image: "/assets/profil/tania.png",
-    slug: "jantung",
+    id: "doc-kurniadi",
+    name: "dr. Kurniadi Yusuf S., Sp.U",
+    specialtyCode: "Sp.U",
+    specialtyBadge: "Spesialis Urologi",
+    experience: "10 tahun pengalaman",
+    poli: "Poli Urologi",
+    image: "/assets/profil/kurniadi.png",
+    slug: "urologi",
+    schedules: [
+      { day: "Kamis", time: "15:00 - 18:00", status: "Tersedia" },
+      { day: "Minggu", time: "09:00 - 12:00", status: "Tersedia" },
+    ],
   },
 ];
 
 export default function CariDokterPage() {
+  const [viewMode, setViewMode] = useState<"hari" | "dokter">("hari");
+  const [selectedDay, setSelectedDay] = useState<DayOfWeek>("Senin");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Calculate doctor counts per day
+  const dayDoctorCounts = useMemo(() => {
+    const counts: Record<DayOfWeek, number> = {
+      Senin: 0,
+      Selasa: 0,
+      Rabu: 0,
+      Kamis: 0,
+      Jumat: 0,
+      Sabtu: 0,
+      Minggu: 0,
+    };
+    DAYS.forEach((day) => {
+      counts[day] = doctorsData.filter((doc) =>
+        doc.schedules.some((s) => s.day === day)
+      ).length;
+    });
+    return counts;
+  }, []);
+
+  // Filtered doctors based on search
   const filteredDoctors = useMemo(() => {
-    if (!searchQuery.trim()) return dummyDoctors;
+    if (!searchQuery.trim()) return doctorsData;
     const q = searchQuery.toLowerCase().trim();
-    return dummyDoctors.filter(
-      (d) =>
-        d.name.toLowerCase().includes(q) ||
-        d.specialtyBadge.toLowerCase().includes(q) ||
-        d.specialtyCode.toLowerCase().includes(q) ||
-        d.poli.toLowerCase().includes(q)
+    return doctorsData.filter(
+      (doc) =>
+        doc.name.toLowerCase().includes(q) ||
+        doc.specialtyBadge.toLowerCase().includes(q) ||
+        doc.specialtyCode.toLowerCase().includes(q) ||
+        doc.poli.toLowerCase().includes(q)
     );
   }, [searchQuery]);
 
+  // Doctors for the selected day in "Lihat per Hari" view
+  const doctorsForSelectedDay = useMemo(() => {
+    return filteredDoctors
+      .map((doc) => {
+        const schedule = doc.schedules.find((s) => s.day === selectedDay);
+        return schedule ? { doc, schedule } : null;
+      })
+      .filter((item): item is { doc: DoctorItem; schedule: ScheduleItem } => item !== null);
+  }, [filteredDoctors, selectedDay]);
+
   return (
-    <div className="bg-white min-h-screen py-10 sm:py-16">
+    <div className="bg-[#f8fbfb] min-h-screen py-8 sm:py-14">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="mb-8 sm:mb-12 max-w-3xl">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-[#e6f6f5] text-[#3A9D9A] text-xs font-bold uppercase tracking-wider mb-3">
-            TIM MEDIS
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2A7B78] leading-tight">
-            Dokter Profesional<br />untuk Anda
-          </h1>
-          <p className="text-sm sm:text-base text-gray-500 mt-3 leading-relaxed">
-            Didukung oleh dokter berpengalaman dari berbagai bidang spesialisasi untuk memberikan pelayanan kesehatan terbaik bagi pasien.
-          </p>
-
-          {/* Search Bar */}
-          <div className="mt-6 relative max-w-md">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              placeholder="Cari dokter atau bidang spesialis..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#198782]/30 focus:border-[#198782] transition-all"
-            />
-          </div>
-          <p className="text-xs text-gray-400 mt-2 font-medium">
-            Menampilkan <span className="font-bold text-[#198782]">{filteredDoctors.length}</span> dari {dummyDoctors.length} dokter spesialis & tenaga medis
-          </p>
-        </div>
-
-        {/* Doctor Cards Grid (31 Cards) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredDoctors.map((doc) => (
+        {/* Top View Toggle Switcher */}
+        <div className="flex justify-center mb-8 sm:mb-10">
+          <div className="relative inline-flex p-1.5 bg-white rounded-2xl border border-gray-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] select-none">
+            {/* Smooth Sliding Background Pill (Zero Delay / Hardware Accelerated) */}
             <div
-              key={doc.id}
-              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-gradient-to-r from-[#198782] to-[#259b95] rounded-xl shadow-[0_4px_16px_rgba(25,135,130,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] border border-teal-500/30 transition-transform duration-200 ease-out pointer-events-none ${
+                viewMode === "hari" ? "left-1.5 translate-x-0" : "left-1.5 translate-x-full"
+              }`}
+            />
+
+            <button
+              type="button"
+              onClick={() => setViewMode("hari")}
+              className={`relative z-10 flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
+                viewMode === "hari" ? "text-white" : "text-gray-600 hover:text-gray-900"
+              }`}
             >
-              <div>
-                {/* Doctor Image */}
-                <div className="relative w-full aspect-square bg-[#edf6f5] overflow-hidden">
-                  <Image
-                    src={doc.image}
-                    alt={doc.name}
-                    fill
-                    className="object-cover object-bottom group-hover:scale-105 transition-transform duration-500 ease-out"
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                  {/* Specialty Pill Badge on Image */}
-                  <div className="absolute top-3.5 left-3.5">
-                    <span className="inline-block bg-white/95 backdrop-blur-xs text-[#2A7B78] text-xs font-bold px-3 py-1 rounded-lg shadow-xs border border-gray-100">
-                      {doc.specialtyBadge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Body Content */}
-                <div className="p-5 space-y-3.5">
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-[#3A9D9A] transition-colors leading-snug">
-                      {doc.name}
-                    </h3>
-                    <p className="text-xs text-gray-400 font-medium mt-0.5">
-                      {doc.specialtyCode}
-                    </p>
-                  </div>
-
-                  {/* Metadata: Experience & Poli */}
-                  <div className="space-y-2 pt-1">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
-                        <User className="w-3 h-3" />
-                      </div>
-                      <span>{doc.experience}</span>
-                    </div>
-
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
-                        <Plus className="w-3 h-3" />
-                      </div>
-                      <span>{doc.poli}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Footer Button */}
-              <div className="p-5 pt-0">
-                <Link
-                  href={`/spesialis-kami/${doc.slug}`}
-                  className="w-full bg-[#3A9D9A] hover:bg-[#2A7B78] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors shadow-xs"
-                >
-                  <span>Lihat Profil</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-          ))}
+              <CalendarDays className="w-4 h-4 shrink-0" />
+              <span>Lihat per Hari</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("dokter")}
+              className={`relative z-10 flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
+                viewMode === "dokter" ? "text-white" : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              <User className="w-4 h-4 shrink-0" />
+              <span>Lihat per Dokter</span>
+            </button>
+          </div>
         </div>
+
+        {/* Search Bar */}
+        <div className="max-w-md mx-auto mb-8 sm:mb-10 relative">
+          <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <input
+            type="text"
+            placeholder="Cari dokter atau bidang spesialis..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-gray-200/90 text-xs sm:text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#198782]/20 focus:border-[#198782] shadow-[0_4px_16px_-2px_rgba(0,0,0,0.05)] transition-all"
+          />
+        </div>
+
+        {/* VIEW 1: LIHAT PER HARI */}
+        {viewMode === "hari" && (
+          <div>
+            {/* Horizontal Day Selector Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 mb-8 sm:mb-10">
+              {DAYS.map((day) => {
+                const isActive = selectedDay === day;
+                const count = dayDoctorCounts[day];
+
+                return (
+                  <button
+                    key={day}
+                    onClick={() => setSelectedDay(day)}
+                    className={`p-4 sm:p-5 rounded-2xl text-center transition-all duration-200 ${
+                      isActive
+                        ? "bg-gradient-to-br from-[#198782] via-[#1d918b] to-[#126b67] text-white shadow-[0_10px_28px_-4px_rgba(25,135,130,0.45),inset_0_1px_1px_rgba(255,255,255,0.3)] border border-teal-400/40 -translate-y-0.5"
+                        : "bg-white text-gray-800 border border-gray-200/90 shadow-[0_4px_14px_-2px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_-4px_rgba(25,135,130,0.15)] hover:border-[#198782]/50 hover:-translate-y-0.5"
+                    }`}
+                  >
+                    <div
+                      className={`font-bold text-sm sm:text-base mb-1 ${
+                        isActive ? "text-white" : "text-[#198782]"
+                      }`}
+                    >
+                      {day}
+                    </div>
+                    <div
+                      className={`text-xs ${
+                        isActive ? "text-teal-100 font-medium" : "text-gray-500 font-normal"
+                      }`}
+                    >
+                      {count} dokter
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Heading: Jadwal [Hari] */}
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1a4a47]">
+                Jadwal {selectedDay}
+              </h2>
+            </div>
+
+            {/* Doctors List for Selected Day (2 Kolom) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+              {doctorsForSelectedDay.map(({ doc, schedule }) => (
+                <div
+                  key={doc.id}
+                  className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_40px_-8px_rgba(25,135,130,0.14)] hover:border-teal-200 transition-all duration-300 p-5 sm:p-6 flex flex-col justify-between"
+                >
+                  {/* Doctor Profile Top Row */}
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#edf6f5] to-white shrink-0 border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-2 ring-teal-50">
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover object-bottom"
+                        sizes="64px"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-gray-900 text-sm sm:text-base leading-snug truncate">
+                        {doc.name}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-semibold text-[#198782] mt-0.5">
+                        {doc.specialtyBadge}
+                      </p>
+                      <p className="text-xs text-gray-400 font-medium mt-0.5">
+                        {doc.experience}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bottom Schedule Banner */}
+                  <div className="bg-gradient-to-r from-gray-50/90 to-teal-50/30 rounded-2xl px-4 py-3 flex items-center justify-between text-xs sm:text-sm mt-4 border border-gray-200/70 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]">
+                    <div className="flex items-center gap-2 text-gray-700 font-medium">
+                      <Clock className="w-4 h-4 text-[#198782] shrink-0" />
+                      <span>{schedule.time}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-emerald-600 font-bold shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      <span>{schedule.status}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {doctorsForSelectedDay.length === 0 && (
+                <div className="col-span-full bg-white rounded-3xl p-10 text-center border border-gray-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+                  <p className="text-gray-500 text-sm">
+                    Tidak ada dokter yang berpraktek pada hari {selectedDay} untuk kriteria pencarian ini.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* VIEW 2: LIHAT PER DOKTER */}
+        {viewMode === "dokter" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            {filteredDoctors.map((doc) => (
+              <div
+                key={doc.id}
+                className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_40px_-8px_rgba(25,135,130,0.14)] hover:border-teal-200 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Top Doctor Info */}
+                  <div className="flex items-center gap-3.5 mb-2">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#edf6f5] to-white shrink-0 border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-2 ring-teal-50">
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover object-bottom"
+                        sizes="64px"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-base leading-snug">
+                        {doc.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-[#198782] mt-0.5">
+                        {doc.specialtyBadge}
+                      </p>
+                      <p className="text-xs text-gray-400 font-medium mt-0.5">
+                        {doc.experience}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Weekly Schedule Section */}
+                  <div className="mt-5 pt-4 border-t border-gray-100">
+                    <h4 className="font-bold text-gray-900 text-sm mb-3">
+                      Jadwal Mingguan
+                    </h4>
+
+                    <div className="space-y-1.5">
+                      {doc.schedules.map((s, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between text-xs sm:text-sm py-2 px-2.5 rounded-xl hover:bg-teal-50/50 transition-colors border-b border-gray-100/60 last:border-none"
+                        >
+                          <span className="font-bold text-gray-900 w-16">
+                            {s.day}
+                          </span>
+                          <span className="text-gray-600 font-medium text-center flex-1">
+                            {s.time}
+                          </span>
+                          <span className="text-emerald-600 font-semibold flex items-center gap-1 justify-end shrink-0">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>{s.status}</span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Link to Doctor/Specialist profile */}
+                <div className="mt-6 pt-4 border-t border-gray-100/80">
+                  <Link
+                    href={`/spesialis-kami/${doc.slug}`}
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-2xl bg-gradient-to-r from-teal-50 to-[#edf6f5] hover:from-[#198782] hover:to-[#20948e] text-[#198782] hover:text-white font-semibold text-xs border border-teal-200/60 hover:border-transparent shadow-[0_2px_8px_rgba(25,135,130,0.08)] hover:shadow-[0_6px_18px_rgba(25,135,130,0.25)] transition-all duration-200"
+                  >
+                    <span>Lihat Layanan Spesialis</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+
+            {filteredDoctors.length === 0 && (
+              <div className="col-span-full bg-white rounded-3xl p-12 text-center border border-gray-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] max-w-md mx-auto my-8">
+                <p className="text-gray-600 text-sm font-medium">
+                  Tidak ada dokter yang sesuai dengan pencarian &quot;{searchQuery}&quot;
+                </p>
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="mt-4 px-5 py-2.5 bg-[#198782] text-white text-xs font-semibold rounded-full hover:bg-[#2A7B78] shadow-sm transition-colors"
+                >
+                  Reset Pencarian
+                </button>
+              </div>
+            )}
+          </div>
+        )}
 
       </div>
     </div>
   );
 }
-

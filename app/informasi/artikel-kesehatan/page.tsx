@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, BookOpen, Calendar, UserCheck, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowLeft, Calendar, ArrowRight, Sparkles } from "lucide-react";
 
 const articles = [
   {
@@ -10,8 +10,9 @@ const articles = [
     category: "Kesehatan Jantung",
     date: "28 Februari 2026",
     author: "Tim Medis RS Ridhoka Salma",
-    image: "/assets/fasilitas/icu.jpg",
+    image: "/assets/fasilitas/jantung.jpg",
     excerpt: "Panduan pola makan sehat, olahraga teratur, dan kontrol stres untuk mencegah penyakit jantung koroner sejak dini.",
+    url: "https://www.kompas.com/tren/read/2022/12/17/110500765/6-cara-menjaga-kesehatan-jantung-apa-saja-?page=all",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const articles = [
     author: "dr. Hj. Siti Rahmawati, Sp.OG",
     image: "/assets/layanan/eracs.jpg",
     excerpt: "Metode operasi Caesar ERACS memungkinkan ibu pulih lebih cepat dan dapat segera bergerak serta menyusui buah hati.",
+    url: "https://www.rsridhokasalma.com/mengenal-lahiran-caesar-dengan-metode-eracs/",
   },
   {
     id: 3,
@@ -28,8 +30,9 @@ const articles = [
     category: "Kesehatan Anak",
     date: "20 Februari 2026",
     author: "dr. H. Ahmad Fauzi, Sp.A",
-    image: "/assets/fasilitas/anak.jpg",
+    image: "/assets/fasilitas/anak2.png",
     excerpt: "Jadwal imunisasi dasar dan vaksin tambahan untuk melindungi anak dari penyakit berbahaya dan infeksi menular.",
+    url: "https://www.halodoc.com/artikel/pentingnya-imunisasi-dasar-lengkap-kemenkes-bagi-buah-hati?srsltid=AfmBOory_s2Cka98_qAd-xKcowx5e1ckd0SQb9PZXqlaQX_IsvrbnBP4",
   },
 ];
 
@@ -65,9 +68,12 @@ export default function ArtikelKesehatanPage() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((art) => (
-            <div
+            <a
               key={art.id}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-lg transition-all group flex flex-col justify-between"
+              href={art.url || "https://www.google.com"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-lg transition-all group flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden">
@@ -102,7 +108,7 @@ export default function ArtikelKesehatanPage() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -9,7 +9,7 @@ const islamicArticles = [
     title: "Adab dan Doa Menjenguk Orang Sakit Sesuai Sunnah Rasulullah",
     category: "Fiqih Kesehatan",
     date: "27 Februari 2026",
-    image: "/assets/fasilitas/rawatjalan.jpg",
+    image: "/assets/layanan/jasmani.jpeg",
     excerpt: "Panduan adab bertamu, waktu yang tepat, dan bacaan doa yang diajarkan Nabi Muhammad SAW saat menjenguk keluarga yang sedang sakit.",
   },
   {
@@ -17,7 +17,7 @@ const islamicArticles = [
     title: "Panduan Ibadah Shalat bagi Pasien Rawat Inap dalam Kondisi Sakit",
     category: "Bimbingan Ibadah",
     date: "22 Februari 2026",
-    image: "/assets/fasilitas/rawat inap.jpg",
+    image: "/assets/layanan/jasmani.jpeg",
     excerpt: "Kemudahan dalam Islam: tata cara bersuci (tayammum) dan posisi shalat bagi pasien yang sedang menjalani perawatan di rumah sakit.",
   },
   {
