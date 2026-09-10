@@ -62,7 +62,7 @@ export default function ArtikelIslamiPage() {
           {islamicArticles.map((art) => (
             <div
               key={art.id}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-lg transition-all group flex flex-col justify-between"
+              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden">

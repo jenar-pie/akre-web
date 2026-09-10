@@ -33,7 +33,7 @@ export default function Facilities() {
           {featuredFacilities.map((facility) => (
             <div
               key={facility.id}
-              className="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow group"
+              className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
                 <Image

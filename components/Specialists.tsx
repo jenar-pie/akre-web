@@ -64,7 +64,7 @@ export default function Specialists() {
               <Link
                 key={specialist.id}
                 href={`/spesialis-kami/${specialist.slug}`}
-                className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-md hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 group flex flex-col justify-between"
+                className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-xl hover:shadow-teal-900/10 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   {/* Top: Dummy Image Banner with overlay code & category */}

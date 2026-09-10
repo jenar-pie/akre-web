@@ -120,7 +120,7 @@ export default function VisiMisiPage() {
               return (
                 <div
                   key={misi.number}
-                  className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Header */}
@@ -181,7 +181,7 @@ export default function VisiMisiPage() {
               return (
                 <div
                   key={val.letter + val.title}
-                  className="bg-surface-bg/60 rounded-xl p-5 sm:p-6 border border-gray-200/70 hover:border-primary/50 hover:bg-white hover:shadow-md transition-all duration-300 group"
+                  className="bg-surface-bg/60 rounded-xl p-5 sm:p-6 border border-gray-200/70 hover:border-primary/50 hover:bg-white hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-11 h-11 rounded-lg bg-primary text-white font-extrabold text-xl flex items-center justify-center shadow-xs flex-shrink-0">

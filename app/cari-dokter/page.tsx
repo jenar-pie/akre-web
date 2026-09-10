@@ -358,47 +358,78 @@ export default function CariDokterPage() {
               </h2>
             </div>
 
-            {/* Doctors List for Selected Day (2 Kolom) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {/* Doctors List for Selected Day (3 Kolom Grid) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {doctorsForSelectedDay.map(({ doc, schedule }) => (
                 <div
                   key={doc.id}
-                  className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_40px_-8px_rgba(25,135,130,0.14)] hover:border-teal-200 transition-all duration-300 p-5 sm:p-6 flex flex-col justify-between"
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
-                  {/* Doctor Profile Top Row */}
-                  <div className="flex items-center gap-3.5 sm:gap-4">
-                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#edf6f5] to-white shrink-0 border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-2 ring-teal-50">
+                  <div>
+                    {/* Doctor Image with Specialty Badge */}
+                    <div className="relative w-full aspect-square bg-[#edf6f5] overflow-hidden">
                       <Image
                         src={doc.image}
                         alt={doc.name}
                         fill
-                        className="object-cover object-bottom"
-                        sizes="64px"
+                        className="object-cover object-bottom group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       />
+                      {/* Specialty Pill Badge on Image */}
+                      <div className="absolute top-3.5 left-3.5">
+                        <span className="inline-block bg-white/95 backdrop-blur-xs text-[#2A7B78] text-xs font-bold px-3 py-1 rounded-lg shadow-xs border border-gray-100">
+                          {doc.specialtyBadge}
+                        </span>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="font-bold text-gray-900 text-sm sm:text-base leading-snug truncate">
-                        {doc.name}
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-[#198782] mt-0.5">
-                        {doc.specialtyBadge}
-                      </p>
-                      <p className="text-xs text-gray-400 font-medium mt-0.5">
-                        {doc.experience}
-                      </p>
+
+                    {/* Body Content */}
+                    <div className="p-5 space-y-3.5">
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-[#3A9D9A] transition-colors leading-snug">
+                          {doc.name}
+                        </h3>
+                        <p className="text-xs text-gray-400 font-medium mt-0.5">
+                          {doc.specialtyCode ? `${doc.specialtyCode} • ` : ""}{doc.poli}
+                        </p>
+                      </div>
+
+                      {/* Metadata: Experience & Selected Day Schedule */}
+                      <div className="space-y-2 pt-1">
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                            <User className="w-3 h-3" />
+                          </div>
+                          <span>{doc.experience || "10+ Tahun Pengalaman"}</span>
+                        </div>
+
+                        <div className="flex items-center justify-between gap-2 text-xs text-gray-500">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div className="w-5 h-5 rounded-full bg-[#e6f6f5] text-[#3A9D9A] flex items-center justify-center flex-shrink-0">
+                              <Clock className="w-3 h-3" />
+                            </div>
+                            <span className="font-medium text-gray-700 truncate">
+                              {selectedDay}: {schedule.time}
+                            </span>
+                          </div>
+                          <span className="text-emerald-600 font-bold text-[11px] shrink-0 flex items-center gap-1">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>{schedule.status}</span>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Bottom Schedule Banner */}
-                  <div className="bg-gradient-to-r from-gray-50/90 to-teal-50/30 rounded-2xl px-4 py-3 flex items-center justify-between text-xs sm:text-sm mt-4 border border-gray-200/70 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]">
-                    <div className="flex items-center gap-2 text-gray-700 font-medium">
-                      <Clock className="w-4 h-4 text-[#198782] shrink-0" />
-                      <span>{schedule.time}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-emerald-600 font-bold shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      <span>{schedule.status}</span>
-                    </div>
+                  {/* Card Footer Button */}
+                  <div className="p-5 pt-0">
+                    <Link
+                      href="/janji-temu"
+                      className="w-full bg-[#3A9D9A] hover:bg-[#2A7B78] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                    >
+                      <span>Pilih Dokter & Janji Temu</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -420,7 +451,7 @@ export default function CariDokterPage() {
             {filteredDoctors.map((doc) => (
               <div
                 key={doc.id}
-                className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_40px_-8px_rgba(25,135,130,0.14)] hover:border-teal-200 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
+                className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_22px_48px_-8px_rgba(25,135,130,0.22),0_8px_16px_-4px_rgba(0,0,0,0.06)] hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Doctor Info */}

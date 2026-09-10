@@ -63,7 +63,7 @@ interface BentoCardProps {
 function BentoCard({ item, className = "" }: BentoCardProps) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gray-100 shadow-sm hover:shadow-md transition-all duration-300 ${className}`}
+      className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gray-100 shadow-sm hover:shadow-2xl hover:shadow-teal-900/15 hover:-translate-y-1 transition-all duration-300 ${className}`}
     >
       {/* Dummy Image */}
       <Image

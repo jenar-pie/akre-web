@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/tentang-kami/struktur-organisasi/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/struktur-organisasi/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,76 +16,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/tentang-kami/visi-misi/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/visi-misi/page.js"
-    ],
-    "/tentang-kami/akreditasi/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/akreditasi/page.js"
-    ],
-    "/kesyariahan/program/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/program/page.js"
-    ],
-    "/layanan/fasilitas/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layanan/fasilitas/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/tentang-kami/sejarah/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/sejarah/page.js"
-    ],
-    "/informasi/e-leaflet/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/e-leaflet/page.js"
-    ],
-    "/kesyariahan/konsultan/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/konsultan/page.js"
-    ],
-    "/informasi/event/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/event/page.js"
-    ],
-    "/informasi/karir/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/karir/page.js"
-    ],
-    "/kesyariahan/profil-dps/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/profil-dps/page.js"
-    ],
-    "/informasi/artikel-kesehatan/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/artikel-kesehatan/page.js"
-    ],
-    "/kesyariahan/kebijakan-mutu/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/kebijakan-mutu/page.js"
-    ],
     "/cari-dokter/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -96,20 +26,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/spesialis-kami/[slug]/page.js"
     ],
-    "/informasi/promosi/page": [
+    "/layanan/rawat-inap/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/informasi/promosi/page.js"
-    ],
-    "/informasi/artikel-islami/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/artikel-islami/page.js"
-    ],
-    "/layanan/layanan-unggulan/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layanan/layanan-unggulan/page.js"
+      "static/chunks/app/layanan/rawat-inap/page.js"
     ]
   }
 }

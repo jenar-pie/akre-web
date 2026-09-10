@@ -130,7 +130,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
             <div className="flex items-center gap-2.5">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-75 transition-opacity"
@@ -139,7 +139,7 @@ export default function Navbar() {
                 <Facebook className="w-3.5 h-3.5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/rs.ridhokasalma?stkn=aGc1enQzbTFuN284"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-75 transition-opacity"
@@ -148,7 +148,23 @@ export default function Navbar() {
                 <Instagram className="w-3.5 h-3.5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.threads.com/@rs.ridhokasalma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-75 transition-opacity"
+                aria-label="Threads"
+              >
+                <div className="relative w-3.5 h-3.5">
+                  <Image
+                    src="/assets/social-media/threads.svg"
+                    alt="Threads"
+                    fill
+                    className="object-contain brightness-0 invert"
+                  />
+                </div>
+              </a>
+              <a
+                href="https://youtube.com/@rs.ridhokasalma2727?si=7gZ-kNcj9btRWf7i"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-75 transition-opacity"

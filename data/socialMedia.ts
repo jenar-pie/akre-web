@@ -16,7 +16,13 @@ export const socialMediaLinks: SocialMediaItem[] = [
     id: "instagram",
     name: "Instagram",
     icon: "/assets/social-media/instagram.svg",
-    url: "https://www.instagram.com/rsridhokasalma",
+    url: "https://www.instagram.com/rs.ridhokasalma?stkn=aGc1enQzbTFuN284",
+  },
+  {
+    id: "threads",
+    name: "Threads",
+    icon: "/assets/social-media/threads.svg",
+    url: "https://www.threads.com/@rs.ridhokasalma",
   },
   {
     id: "youtube",

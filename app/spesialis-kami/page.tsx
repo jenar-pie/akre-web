@@ -186,7 +186,7 @@ export default function SpesialisKamiPage() {
                 return (
                   <div
                     key={specialist.id}
-                    className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-xl hover:border-primary/30 transition-all duration-300 group flex flex-col justify-between"
+                    className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
                   >
                     <div>
                       {/* Top Dummy Image Banner */}

@@ -99,7 +99,7 @@ export default function SejarahPage() {
             {sejarahData.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-5 sm:p-6 border border-gray-100 shadow-xs hover:shadow-md transition-all duration-300 group text-center sm:text-left"
+                className="bg-white rounded-xl p-5 sm:p-6 border border-gray-100 shadow-xs hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group text-center sm:text-left"
               >
                 <div className="text-3xl sm:text-4xl font-extrabold text-primary mb-1 group-hover:scale-105 transition-transform origin-left">
                   {stat.value}
@@ -163,7 +163,7 @@ export default function SejarahPage() {
                         isEven ? "md:text-right" : "md:text-left"
                       }`}
                     >
-                      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-card hover:shadow-lg transition-all duration-300 group relative">
+                      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group relative">
                         {/* Header inside card */}
                         <div
                           className={`flex items-center gap-3 mb-3 ${

@@ -41,7 +41,7 @@ export default function InformasiHubPage() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all group flex flex-col justify-between"
+                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">

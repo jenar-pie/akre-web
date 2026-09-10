@@ -159,7 +159,7 @@ export default function FasilitasPage() {
                   return (
                     <div
                       key={facility.id}
-                      className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                      className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
                     >
                       <div>
                         {/* Image Thumbnail */}

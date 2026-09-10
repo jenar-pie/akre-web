@@ -1,9 +1,6 @@
 {
-  "/tentang-kami/struktur-organisasi/page": "app/tentang-kami/struktur-organisasi/page.js",
+  "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
+  "/cari-dokter/page": "app/cari-dokter/page.js",
   "/page": "app/page.js",
-  "/kesyariahan/program/page": "app/kesyariahan/program/page.js",
-  "/kesyariahan/konsultan/page": "app/kesyariahan/konsultan/page.js",
-  "/kesyariahan/kebijakan-mutu/page": "app/kesyariahan/kebijakan-mutu/page.js",
-  "/tentang-kami/sejarah/page": "app/tentang-kami/sejarah/page.js",
-  "/kesyariahan/profil-dps/page": "app/kesyariahan/profil-dps/page.js"
+  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
 }

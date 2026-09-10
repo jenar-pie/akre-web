@@ -166,7 +166,7 @@ export default function TentangKamiHubPage() {
                 <Link
                   key={card.href}
                   href={card.href}
-                  className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">

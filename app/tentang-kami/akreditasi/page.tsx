@@ -81,7 +81,7 @@ export default function AkreditasiPage() {
                       : isSyariah
                       ? "border-emerald-300 shadow-md ring-1 ring-emerald-200"
                       : "border-gray-200 shadow-card"
-                  } hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative overflow-hidden`}
+                  } hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative overflow-hidden`}
                 >
                   {/* Decorative Corner Ribbon */}
                   {isParipurna && (
@@ -227,7 +227,7 @@ export default function AkreditasiPage() {
             {akreditasiData.awards.map((award) => (
               <div
                 key={award.id}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">

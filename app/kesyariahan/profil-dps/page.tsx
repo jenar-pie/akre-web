@@ -3,69 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Sparkles, User, Award, ArrowRight, ShieldCheck, BookOpen } from "lucide-react";
 
-interface DPSMember {
-  id: string;
-  name: string;
-  role: string;
-  badge: string;
-  code: string;
-  experience: string;
-  focus: string;
-  image: string;
-}
-
-const dpsMembers: DPSMember[] = [
-  {
-    id: "dps-1",
-    name: "KH. Dr. Muhammad Syukron, M.A.",
-    role: "Ketua Dewan Pengawas Syariah",
-    badge: "Ketua DPS",
-    code: "Pakar Fiqih Muamalah",
-    experience: "Sertifikasi DSN-MUI Pusat",
-    focus: "Pengawasan & Kebijakan Syariah",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: "dps-2",
-    name: "Ust. H. Ahmad Rofiq, Lc., M.E.I.",
-    role: "Anggota Dewan Pengawas Syariah",
-    badge: "Anggota DPS",
-    code: "Pengajar Fiqih Medis",
-    experience: "12+ Tahun Pengalaman",
-    focus: "Konsultan Syariah Rumah Sakit",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: "dps-3",
-    name: "dr. H. Muhammad Fachri, Sp.A",
-    role: "Ketua Komite Syariah Rumah Sakit",
-    badge: "Ketua Komite Syariah",
-    code: "Sp.A (Spesialis Anak)",
-    experience: "15+ Tahun Pengalaman Medis",
-    focus: "Standar Mutu Pelayanan Medis Syariah",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: "dps-4",
-    name: "Hj. Siti Aminah, S.Kep., Ners., M.Kep.",
-    role: "Sekretaris Komite Syariah",
-    badge: "Komite Syariah",
-    code: "Keperawatan Syariah",
-    experience: "10+ Tahun Pengalaman",
-    focus: "Bimbingan Ibadah & Etika Aurat Pasien",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: "dps-5",
-    name: "Ust. H. Fauzan Mansur, S.Th.I., M.Ag.",
-    role: "Anggota Komite Syariah",
-    badge: "Komite Syariah",
-    code: "Bimbingan Rohani & Ruqyah",
-    experience: "8+ Tahun Pengalaman",
-    focus: "Pendampingan Sakaratul Maut & Doa",
-    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
-  },
-];
+import { dpsMembersData } from "@/data/dps";
 
 export default function ProfilDPSPage() {
   return (
@@ -98,10 +36,10 @@ export default function ProfilDPSPage() {
       {/* Cards Grid */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {dpsMembers.map((member) => (
+          {dpsMembersData.map((member) => (
             <div
               key={member.id}
-              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Top Dummy Image */}
@@ -154,10 +92,10 @@ export default function ProfilDPSPage() {
               {/* Card Footer Button */}
               <div className="p-5 pt-0">
                 <Link
-                  href="/kesyariahan/kebijakan-mutu"
+                  href={`/kesyariahan/profil-dps/${member.slug}`}
                   className="w-full bg-[#3A9D9A] hover:bg-[#2A7B78] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                 >
-                  <span>Lihat Kebijakan Syariah</span>
+                  <span>Lihat Profil</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

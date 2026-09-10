@@ -99,7 +99,7 @@ export default function LayananUnggulanPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-card hover:shadow-md transition-all duration-300 group"
+                  className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-card hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-primary-light text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors shadow-xs">
                     <Icon className="w-5 h-5" />
@@ -173,7 +173,7 @@ export default function LayananUnggulanPage() {
               return (
                 <div
                   key={service.id}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Visual & Badges */}

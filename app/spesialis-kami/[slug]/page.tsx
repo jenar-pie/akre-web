@@ -259,7 +259,7 @@ export default function SpecialistDetailPage({ params }: PageProps) {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Doctor Image */}
@@ -352,7 +352,7 @@ export default function SpecialistDetailPage({ params }: PageProps) {
                 <Link
                   key={other.id}
                   href={`/spesialis-kami/${other.slug}`}
-                  className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-md hover:border-primary/40 transition-all group flex flex-col justify-between"
+                  className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-xl hover:shadow-teal-900/10 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
                     {/* Dummy image thumbnail */}

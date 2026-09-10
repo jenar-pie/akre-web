@@ -39,6 +39,8 @@ const config: Config = {
       boxShadow: {
         subtle: "0 2px 12px rgba(0, 0, 0, 0.06)",
         card: "0 4px 20px rgba(0, 0, 0, 0.05)",
+        "card-hover": "0 20px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.06)",
+        "card-glow": "0 16px 36px -4px rgba(58, 157, 154, 0.18), 0 6px 16px -2px rgba(0, 0, 0, 0.06)",
       }
     },
   },

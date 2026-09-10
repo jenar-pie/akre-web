@@ -57,7 +57,7 @@ export default function EventPage() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((ev) => (
-            <div key={ev.id} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all flex flex-col justify-between">
+            <div key={ev.id} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary mb-3 inline-block">
                   {ev.badge}

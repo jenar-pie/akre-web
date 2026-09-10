@@ -163,7 +163,7 @@ export default function ELeafletPage() {
             <div
               key={item.id}
               onClick={() => setSelectedPreview(item)}
-              className="group relative aspect-[210/297] rounded-3xl overflow-hidden shadow-card hover:shadow-xl border border-gray-100 bg-gray-900 cursor-pointer transition-all duration-300"
+              className="group relative aspect-[210/297] rounded-3xl overflow-hidden shadow-card hover:shadow-2xl hover:shadow-teal-900/20 hover:-translate-y-1.5 border border-gray-100 bg-gray-900 cursor-pointer transition-all duration-300"
             >
               {/* Plain Image (Format 1:1 Standar Poster A4) */}
               <Image

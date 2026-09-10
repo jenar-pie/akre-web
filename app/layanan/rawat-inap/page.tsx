@@ -181,7 +181,7 @@ export default function RawatInapPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-lg transition-all duration-300 group flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-primary-light text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors shadow-xs">
@@ -252,7 +252,7 @@ export default function RawatInapPage() {
                 key={room.id}
                 className={`bg-white rounded-2xl overflow-hidden border ${
                   room.highlight ? "border-primary/40 shadow-lg ring-1 ring-primary/20" : "border-gray-100 shadow-card"
-                } hover:shadow-xl transition-all duration-300 flex flex-col justify-between group`}
+                } hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group`}
               >
                 <div>
                   {/* Image & Badges */}
@@ -323,9 +323,12 @@ export default function RawatInapPage() {
                 </div>
 
                 {/* Card Action */}
+                {/* Card Action */}
                 <div className="p-6 sm:p-8 pt-0 flex items-center gap-3">
                   <a
-                    href={`https://wa.me/${contacts.whatsappLink.split("/").pop()}?text=${encodeURIComponent(`Halo RS Ridhoka Salma, saya ingin menanyakan ketersediaan kamar: ${room.name}`)}`}
+                    href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                      `Halo RS Ridhoka Salma, saya ingin menanyakan ketersediaan kamar: ${room.name}`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-xs sm:text-sm font-bold py-3 px-4 rounded-xl transition-colors shadow-xs"

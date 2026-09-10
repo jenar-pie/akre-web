@@ -91,95 +91,28 @@ export default function StrukturOrganisasiPage() {
               <span>BAGAN TATA KELOLA</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Bagan Hierarki Kepemimpinan
+              Bagan Struktur Kepemimpinan
             </h2>
             <p className="text-xs sm:text-sm text-gray-600 mt-2">
-              Struktur tata kelola terpadu yang memadukan pengawasan syariah dengan manajemen rumah sakit modern.
+              Struktur tata kelola terpadu yang memadukan pengawasan syariah dengan manajemen rumah sakit.
             </p>
           </div>
 
-          {/* Graphical Hierarchy Tree */}
-          <div className="max-w-4xl mx-auto space-y-6">
-            
-            {/* Level 1: Dewan Pengawas Syariah & Dewan Komisaris */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 text-center">
-                <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto mb-2 shadow-xs">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <h4 className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                  Dewan Pengawas Syariah (DPS)
-                </h4>
-                <p className="text-xs text-gray-600 mt-1">
-                  Dr. Latief Awaludin & Muhammad Yunus, S.H.I, M.E.SY
-                </p>
-              </div>
-
-              <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 text-center">
-                <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-2 shadow-xs">
-                  <Building className="w-4 h-4" />
-                </div>
-                <h4 className="text-xs font-bold text-primary-dark uppercase tracking-wider">
-                  Direktur Utama
-                </h4>
-                <p className="text-xs text-gray-600 mt-1">
-                  Roziana Ghani
-                </p>
-              </div>
+          {/* Org Chart Image Display */}
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden border border-gray-200/80 p-3 sm:p-6 shadow-sm">
+            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin">
+              <Image
+                src="/assets/about/struktur-organisasi-chart.jpg"
+                alt="Struktur Organisasi Rumah Sakit Ridhoka Salma"
+                width={1400}
+                height={990}
+                className="w-full h-auto object-contain rounded-xl min-w-[720px] md:min-w-0 mx-auto"
+                priority
+              />
             </div>
-
-            {/* Connecting line */}
-            <div className="w-0.5 h-6 bg-primary/40 mx-auto" />
-
-            {/* Level 2: Direktur RS */}
-            <div className="max-w-md mx-auto">
-              <div className="p-5 rounded-xl bg-primary text-white text-center shadow-md">
-                <h3 className="text-sm sm:text-base font-bold">
-                  dr. Purwanto Wahyu Irawan, Sp.A(K), M.Kes
-                </h3>
-                <p className="text-xs text-teal-100 mt-0.5">
-                  Direktur Rumah Sakit
-                </p>
-              </div>
+            <div className="text-center mt-3 text-xs text-gray-400">
+              * Geser horizontal untuk melihat bagan struktur secara lengkap pada layar perangkat kecil
             </div>
-
-            {/* Connecting line */}
-            <div className="w-0.5 h-6 bg-primary/40 mx-auto" />
-
-            {/* Level 3: Wakil Direktur */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-white border-2 border-primary/30 text-center shadow-xs">
-                <h4 className="text-xs sm:text-sm font-bold text-gray-900">
-                  dr. Hj. Rosiana Ambarwati, MARS
-                </h4>
-                <p className="text-xs text-primary font-medium mt-0.5">
-                  Wakil Direktur Pelayanan Medis & Keperawatan
-                </p>
-              </div>
-              <div className="p-4 rounded-xl bg-white border-2 border-primary/30 text-center shadow-xs">
-                <h4 className="text-xs sm:text-sm font-bold text-gray-900">
-                  Hosni Ramaly, SE, MM, Ak., CA
-                </h4>
-                <p className="text-xs text-primary font-medium mt-0.5">
-                  Wakil Direktur Administrasi & Keuangan
-                </p>
-              </div>
-            </div>
-
-            {/* Level 4: Komite & Unit */}
-            <div className="p-4 rounded-xl bg-surface-bg border border-gray-200 text-center">
-              <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">
-                Komite-Komite Medis & Pengendali Mutu
-              </h4>
-              <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-gray-600">
-                <span className="px-2.5 py-1 bg-white rounded-md border border-gray-200">Komite Medik</span>
-                <span className="px-2.5 py-1 bg-white rounded-md border border-gray-200">Komite Keperawatan</span>
-                <span className="px-2.5 py-1 bg-white rounded-md border border-gray-200">Komite PMKP (Mutu & Keselamatan)</span>
-                <span className="px-2.5 py-1 bg-white rounded-md border border-gray-200">Komite Syariah</span>
-                <span className="px-2.5 py-1 bg-white rounded-md border border-gray-200">Komite PPI</span>
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -225,7 +158,7 @@ export default function StrukturOrganisasiPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Top Dummy Image */}

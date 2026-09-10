@@ -39,7 +39,7 @@ export default function Promotions() {
           {promotionsData.map((promo) => (
             <div
               key={promo.id}
-              className="bg-white rounded-2xl p-3.5 sm:p-4 border border-gray-200 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+              className="bg-white rounded-2xl p-3.5 sm:p-4 border border-gray-200 shadow-xs hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Top Promo Banner Image */}
