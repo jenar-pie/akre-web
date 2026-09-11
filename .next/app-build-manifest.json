@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/informasi/e-leaflet/page": [
+    "/janji-temu/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/informasi/e-leaflet/page.js"
+      "static/chunks/app/janji-temu/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,15 +16,45 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/informasi/event/page": [
+    "/layanan/rawat-inap/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/informasi/event/page.js"
+      "static/chunks/app/layanan/rawat-inap/page.js"
     ],
-    "/informasi/karir/page": [
+    "/kesyariahan/konsultan/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/informasi/karir/page.js"
+      "static/chunks/app/kesyariahan/konsultan/page.js"
+    ],
+    "/tentang-kami/struktur-organisasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tentang-kami/struktur-organisasi/page.js"
+    ],
+    "/kesyariahan/profil-dps/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesyariahan/profil-dps/page.js"
+    ],
+    "/kesyariahan/profil-dps/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesyariahan/profil-dps/[slug]/page.js"
+    ],
+    "/kesyariahan/program/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesyariahan/program/page.js"
+    ],
+    "/kesyariahan/kebijakan-mutu/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesyariahan/kebijakan-mutu/page.js"
+    ],
+    "/spesialis-kami/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/spesialis-kami/[slug]/page.js"
     ]
   }
 }

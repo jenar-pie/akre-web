@@ -135,7 +135,7 @@ export default function RawatInapPage() {
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
-                    href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                    href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(
                       "Halo RS Ridhoka Salma, saya ingin menanyakan informasi ketersediaan kamar rawat inap."
                     )}`}
                     target="_blank"
@@ -326,7 +326,7 @@ export default function RawatInapPage() {
                 {/* Card Action */}
                 <div className="p-6 sm:p-8 pt-0 flex items-center gap-3">
                   <a
-                    href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                    href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(
                       `Halo RS Ridhoka Salma, saya ingin menanyakan ketersediaan kamar: ${room.name}`
                     )}`}
                     target="_blank"
@@ -465,7 +465,7 @@ export default function RawatInapPage() {
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto flex-wrap sm:flex-nowrap justify-center">
             <a
-              href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+              href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(
                 "Halo RS Ridhoka Salma, saya ingin menanyakan informasi ketersediaan kamar rawat inap."
               )}`}
               target="_blank"

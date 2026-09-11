@@ -271,7 +271,7 @@ export default function LayananUnggulanPage() {
                       <span>Daftar / Janji Temu</span>
                     </Link>
                     <a
-                      href={`https://wa.me/6281517152225?text=${encodeURIComponent(
+                      href={`https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(
                         `Halo RS Ridhoka Salma, saya ingin konsultasi mengenai layanan: ${service.title}`
                       )}`}
                       target="_blank"
