@@ -111,7 +111,7 @@ export default function StrukturOrganisasiPage() {
               />
             </div>
             <div className="text-center mt-3 text-xs text-gray-400">
-              * Geser horizontal untuk melihat bagan struktur secara lengkap pada layar perangkat kecil
+              * Struktur Organisasi Terbaru
             </div>
           </div>
         </section>

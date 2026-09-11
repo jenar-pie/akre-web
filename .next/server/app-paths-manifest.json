@@ -1,6 +1,5 @@
 {
-  "/layanan/rawat-inap/page": "app/layanan/rawat-inap/page.js",
-  "/cari-dokter/page": "app/cari-dokter/page.js",
-  "/page": "app/page.js",
-  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
+  "/informasi/e-leaflet/page": "app/informasi/e-leaflet/page.js",
+  "/informasi/karir/page": "app/informasi/karir/page.js",
+  "/informasi/event/page": "app/informasi/event/page.js"
 }

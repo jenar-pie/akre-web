@@ -86,11 +86,52 @@ export default function ELeafletPage() {
     return matchesCategory && matchesSearch;
   });
 
-  const handleDownload = (item: LeafletItem) => {
+  const handleDownload = async (item: LeafletItem) => {
     setDownloadedId(item.id);
-    setTimeout(() => {
-      setDownloadedId(null);
-    }, 2000);
+    try {
+      const fileSource = item.fileUrl || item.image;
+      const cleanTitle = item.title
+        .replace(/[^a-zA-Z0-9\s-_]/g, "")
+        .trim()
+        .replace(/\s+/g, "-");
+
+      let ext = "png";
+      if (fileSource.includes(".pdf")) ext = "pdf";
+      else if (fileSource.includes(".jpg") || fileSource.includes(".jpeg")) ext = "jpg";
+      else if (fileSource.includes(".png")) ext = "png";
+      else if (fileSource.includes(".webp")) ext = "webp";
+
+      const filename = `${cleanTitle}.${ext}`;
+
+      // Fetch file sebagai blob agar browser langsung memicu unduhan berkas
+      const response = await fetch(fileSource, { mode: "cors" });
+      if (!response.ok) throw new Error("Gagal mengambil berkas");
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch {
+      // Fallback jika terjadi pembatasan CORS pada gambar eksternal
+      const fileSource = item.fileUrl || item.image;
+      const link = document.createElement("a");
+      link.href = fileSource;
+      link.download = `${item.title.replace(/[^a-zA-Z0-9\s-_]/g, "").trim().replace(/\s+/g, "-")}.png`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      setTimeout(() => {
+        setDownloadedId(null);
+      }, 2000);
+    }
   };
 
   return (

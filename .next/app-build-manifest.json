@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/informasi/e-leaflet/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/informasi/e-leaflet/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,20 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/cari-dokter/page": [
+    "/informasi/event/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/cari-dokter/page.js"
+      "static/chunks/app/informasi/event/page.js"
     ],
-    "/spesialis-kami/[slug]/page": [
+    "/informasi/karir/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/spesialis-kami/[slug]/page.js"
-    ],
-    "/layanan/rawat-inap/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layanan/rawat-inap/page.js"
+      "static/chunks/app/informasi/karir/page.js"
     ]
   }
 }
