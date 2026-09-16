@@ -100,7 +100,7 @@ export default function StrukturOrganisasiPage() {
 
           {/* Org Chart Image Display */}
           <div className="max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden border border-gray-200/80 p-3 sm:p-6 shadow-sm">
-            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin">
+            <div className="relative w-full overflow-x-auto pb-3.5">
               <Image
                 src="/assets/about/struktur-organisasi-chart.jpg"
                 alt="Struktur Organisasi Rumah Sakit Ridhoka Salma"
@@ -129,7 +129,7 @@ export default function StrukturOrganisasiPage() {
             </div>
 
             {/* Filter buttons */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-3">
               {strukturOrganisasiData.tabs.map((tab) => {
                 const isCurrent = activeCategory === tab.id;
                 return (

@@ -221,7 +221,7 @@ export default function RawatInapPage() {
             </div>
 
             {/* Room Filter Tags (Follow Reference UI) */}
-            <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-3.5">
               {roomFilters.map((f) => {
                 const isActive = selectedFilter === f.id;
                 return (

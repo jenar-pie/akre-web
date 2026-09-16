@@ -166,7 +166,7 @@ export default function ELeafletPage() {
         {/* Filters & Search Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           {/* Category Filter Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-3.5 md:pb-0">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (

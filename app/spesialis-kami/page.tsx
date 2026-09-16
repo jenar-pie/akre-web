@@ -113,7 +113,7 @@ export default function SpesialisKamiPage() {
             </div>
 
             {/* Category Filter Pills (Desktop & Tablet) */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-3 md:pb-0">
               {specialistCategories.map((cat) => {
                 const isSelected = selectedCategory === cat.id;
                 return (

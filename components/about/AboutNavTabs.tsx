@@ -45,7 +45,7 @@ export default function AboutNavTabs() {
   return (
     <div className="w-full bg-white border-b border-gray-200 sticky top-10 z-40 shadow-xs">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2 overflow-x-auto py-2.5 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pt-2.5 pb-3.5">
           {tabs.map((tab) => {
             const isActive = pathname === tab.href;
             const Icon = tab.icon;

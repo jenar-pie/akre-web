@@ -12,6 +12,7 @@ import {
   Sparkles,
   ArrowRight,
   Stethoscope,
+  ChevronDown,
 } from "lucide-react";
 
 type DayOfWeek = "Senin" | "Selasa" | "Rabu" | "Kamis" | "Jumat" | "Sabtu" | "Minggu";
@@ -221,6 +222,13 @@ export default function CariDokterPage() {
   const [viewMode, setViewMode] = useState<"hari" | "dokter">("hari");
   const [selectedDay, setSelectedDay] = useState<DayOfWeek>("Senin");
   const [searchQuery, setSearchQuery] = useState("");
+  const [expandedDoctorIds, setExpandedDoctorIds] = useState<string[]>(["doc-edward"]);
+
+  const toggleDoctorSchedule = (id: string) => {
+    setExpandedDoctorIds((prev) =>
+      prev.includes(id) ? prev.filter((docId) => docId !== id) : [...prev, id]
+    );
+  };
 
   // Calculate doctor counts per day
   const dayDoctorCounts = useMemo(() => {
@@ -447,77 +455,115 @@ export default function CariDokterPage() {
 
         {/* VIEW 2: LIHAT PER DOKTER */}
         {viewMode === "dokter" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            {filteredDoctors.map((doc) => (
-              <div
-                key={doc.id}
-                className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_22px_48px_-8px_rgba(25,135,130,0.22),0_8px_16px_-4px_rgba(0,0,0,0.06)] hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Top Doctor Info */}
-                  <div className="flex items-center gap-3.5 mb-2">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#edf6f5] to-white shrink-0 border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-2 ring-teal-50">
-                      <Image
-                        src={doc.image}
-                        alt={doc.name}
-                        fill
-                        className="object-cover object-bottom"
-                        sizes="64px"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-base leading-snug">
-                        {doc.name}
-                      </h3>
-                      <p className="text-xs font-semibold text-[#198782] mt-0.5">
-                        {doc.specialtyBadge}
-                      </p>
-                      <p className="text-xs text-gray-400 font-medium mt-0.5">
-                        {doc.experience}
-                      </p>
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-start">
+            {filteredDoctors.map((doc) => {
+              const isExpanded = expandedDoctorIds.includes(doc.id);
 
-                  {/* Weekly Schedule Section */}
-                  <div className="mt-5 pt-4 border-t border-gray-100">
-                    <h4 className="font-bold text-gray-900 text-sm mb-3">
-                      Jadwal Mingguan
-                    </h4>
+              return (
+                <div
+                  key={doc.id}
+                  className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_6px_28px_-6px_rgba(0,0,0,0.07),0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_22px_48px_-8px_rgba(25,135,130,0.22),0_8px_16px_-4px_rgba(0,0,0,0.06)] hover:border-teal-300 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Top Doctor Info with Dropdown Button */}
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3.5 min-w-0">
+                        <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#edf6f5] to-white shrink-0 border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-2 ring-teal-50">
+                          <Image
+                            src={doc.image}
+                            alt={doc.name}
+                            fill
+                            className="object-cover object-bottom"
+                            sizes="64px"
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-bold text-gray-900 text-base leading-snug">
+                            {doc.name}
+                          </h3>
+                          <p className="text-xs font-semibold text-[#198782] mt-0.5">
+                            {doc.specialtyBadge}
+                          </p>
+                          <p className="text-xs text-gray-400 font-medium mt-0.5">
+                            {doc.experience}
+                          </p>
+                        </div>
+                      </div>
 
-                    <div className="space-y-1.5">
-                      {doc.schedules.map((s, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center justify-between text-xs sm:text-sm py-2 px-2.5 rounded-xl hover:bg-teal-50/50 transition-colors border-b border-gray-100/60 last:border-none"
-                        >
-                          <span className="font-bold text-gray-900 w-16">
-                            {s.day}
-                          </span>
-                          <span className="text-gray-600 font-medium text-center flex-1">
-                            {s.time}
-                          </span>
-                          <span className="text-emerald-600 font-semibold flex items-center gap-1 justify-end shrink-0">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                            <span>{s.status}</span>
+                      {/* Dropdown Accordion Toggle Button */}
+                      <button
+                        type="button"
+                        onClick={() => toggleDoctorSchedule(doc.id)}
+                        className={`p-2.5 rounded-2xl border transition-all duration-200 shrink-0 cursor-pointer flex items-center justify-center ${
+                          isExpanded
+                            ? "bg-[#198782] text-white border-transparent shadow-[0_4px_12px_rgba(25,135,130,0.3)]"
+                            : "bg-teal-50/80 hover:bg-[#198782]/15 text-[#198782] border-teal-100"
+                        }`}
+                        aria-label={isExpanded ? "Tutup Jadwal Mingguan" : "Buka Jadwal Mingguan"}
+                        title={isExpanded ? "Tutup Jadwal Mingguan" : "Lihat Jadwal Mingguan"}
+                      >
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform duration-300 ${
+                            isExpanded ? "rotate-180 text-white" : "rotate-0 text-[#198782]"
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Weekly Schedule Section (Collapsible Accordion) */}
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isExpanded
+                          ? "grid-rows-[1fr] opacity-100 mt-5 pt-4 border-t border-gray-100"
+                          : "grid-rows-[0fr] opacity-0 overflow-hidden mt-0 pt-0 border-transparent"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="font-bold text-gray-900 text-sm">
+                            Jadwal Mingguan
+                          </h4>
+                          <span className="text-[11px] font-medium text-gray-400">
+                            {doc.schedules.length} Hari Praktek
                           </span>
                         </div>
-                      ))}
+
+                        <div className="space-y-1.5">
+                          {doc.schedules.map((s, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-center justify-between text-xs sm:text-sm py-2 px-2.5 rounded-xl hover:bg-teal-50/50 transition-colors border-b border-gray-100/60 last:border-none"
+                            >
+                              <span className="font-bold text-gray-900 w-16">
+                                {s.day}
+                              </span>
+                              <span className="text-gray-600 font-medium text-center flex-1">
+                                {s.time}
+                              </span>
+                              <span className="text-emerald-600 font-semibold flex items-center gap-1 justify-end shrink-0">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                                <span>{s.status}</span>
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Link to Doctor/Specialist profile */}
-                <div className="mt-6 pt-4 border-t border-gray-100/80">
-                  <Link
-                    href={`/spesialis-kami/${doc.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-2xl bg-gradient-to-r from-teal-50 to-[#edf6f5] hover:from-[#198782] hover:to-[#20948e] text-[#198782] hover:text-white font-semibold text-xs border border-teal-200/60 hover:border-transparent shadow-[0_2px_8px_rgba(25,135,130,0.08)] hover:shadow-[0_6px_18px_rgba(25,135,130,0.25)] transition-all duration-200"
-                  >
-                    <span>Lihat Layanan Spesialis</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  {/* Link to Doctor/Specialist profile */}
+                  <div className="mt-6 pt-4 border-t border-gray-100/80">
+                    <Link
+                      href={`/spesialis-kami/${doc.slug}`}
+                      className="w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-2xl bg-gradient-to-r from-teal-50 to-[#edf6f5] hover:from-[#198782] hover:to-[#20948e] text-[#198782] hover:text-white font-semibold text-xs border border-teal-200/60 hover:border-transparent shadow-[0_2px_8px_rgba(25,135,130,0.08)] hover:shadow-[0_6px_18px_rgba(25,135,130,0.25)] transition-all duration-200"
+                    >
+                      <span>Lihat Layanan Spesialis</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             {filteredDoctors.length === 0 && (
               <div className="col-span-full bg-white rounded-3xl p-12 text-center border border-gray-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] max-w-md mx-auto my-8">

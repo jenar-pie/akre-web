@@ -144,7 +144,7 @@ export default function LayananUnggulanPage() {
           </div>
 
           {/* Category Filter Buttons */}
-          <div className="flex items-center gap-2 pt-6 overflow-x-auto scrollbar-none">
+          <div className="flex items-center gap-2 pt-6 pb-3.5 overflow-x-auto">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat.id;
               return (

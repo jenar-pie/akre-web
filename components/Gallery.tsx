@@ -97,7 +97,7 @@ export default function Gallery() {
           {/* Card 1: Large Featured Card (2x2) */}
           <BentoCard
             item={galleryItems[0]}
-            className="sm:col-span-2 sm:row-span-2 min-h-[300px] sm:min-h-0"
+            className="sm:col-span-2 sm:row-span-2 min-h-[220px] sm:min-h-0"
           />
 
           {/* Card 2: Compact Card (1x1) */}
@@ -109,7 +109,7 @@ export default function Gallery() {
           {/* Card 3: Tall Vertical Card (1x2) */}
           <BentoCard
             item={galleryItems[2]}
-            className="sm:col-span-1 sm:row-span-2 min-h-[300px] sm:min-h-0"
+            className="sm:col-span-1 sm:row-span-2 min-h-[220px] sm:min-h-0"
           />
 
           {/* Card 4: Compact Card (1x1) */}

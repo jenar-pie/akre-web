@@ -1,9 +1,11 @@
 {
-  "/kesyariahan/konsultan/page": "app/kesyariahan/konsultan/page.js",
-  "/janji-temu/page": "app/janji-temu/page.js",
-  "/kesyariahan/profil-dps/page": "app/kesyariahan/profil-dps/page.js",
-  "/kesyariahan/profil-dps/[slug]/page": "app/kesyariahan/profil-dps/[slug]/page.js",
   "/kesyariahan/kebijakan-mutu/page": "app/kesyariahan/kebijakan-mutu/page.js",
-  "/kesyariahan/program/page": "app/kesyariahan/program/page.js",
-  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js"
+  "/informasi/artikel-kesehatan/page": "app/informasi/artikel-kesehatan/page.js",
+  "/informasi/e-leaflet/page": "app/informasi/e-leaflet/page.js",
+  "/informasi/event/page": "app/informasi/event/page.js",
+  "/informasi/artikel-islami/page": "app/informasi/artikel-islami/page.js",
+  "/informasi/promosi/page": "app/informasi/promosi/page.js",
+  "/spesialis-kami/[slug]/page": "app/spesialis-kami/[slug]/page.js",
+  "/tentang-kami/sejarah/page": "app/tentang-kami/sejarah/page.js",
+  "/layanan/fasilitas/page": "app/layanan/fasilitas/page.js"
 }
