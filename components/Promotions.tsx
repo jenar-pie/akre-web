@@ -8,8 +8,14 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Promotions() {
   return (
-    <section className="w-full py-6 sm:py-8 bg-white">
-      <div className="max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8">
+    <section className="relative w-full py-8 sm:py-12 bg-white overflow-hidden">
+      {/* Ambient Mesh Glow Backdrop */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-20 -left-20 w-[450px] h-[450px] bg-teal-400/8 rounded-full blur-[130px]" />
+        <div className="absolute -bottom-20 -right-20 w-[450px] h-[450px] bg-purple-300/10 rounded-full blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8">
 
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-6">

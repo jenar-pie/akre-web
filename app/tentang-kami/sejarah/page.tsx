@@ -85,8 +85,8 @@ export default function SejarahPage() {
                 <h3 className="text-sm sm:text-base font-bold text-primary-dark mb-1">
                   Filosofi Pendirian
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 italic">
-                  &ldquo;Keikhlasan Melayani Adalah Ibadahku — Menjadi ikhtiar kami dalam menghadirkan kesembuhan bagi setiap pasien dengan memadukan keunggulan medis dan kesejukan akhlak Islami.&rdquo;
+                <p className="font-serif italic text-xs sm:text-sm text-gray-700 leading-relaxed">
+                  &ldquo;Barokah Bersama Kami — Menjadi ikhtiar kami dalam menghadirkan kesembuhan bagi setiap pasien dengan memadukan keunggulan medis dan kesejukan akhlak Islami.&rdquo;
                 </p>
               </div>
             </div>

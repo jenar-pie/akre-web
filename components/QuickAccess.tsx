@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import {
-  Calendar,
   ExternalLink,
   Phone,
   Mail,
   Clock,
   Siren,
   MessageCircle,
+  MapPin,
+  ShieldCheck,
+  CheckCircle2,
 } from "lucide-react";
 import { contacts } from "@/data/contacts";
 
@@ -18,38 +19,63 @@ const MAPS_EMBED_URL =
 
 export default function QuickAccess() {
   return (
-    <section className="w-full py-8 sm:py-12 bg-surface-bg">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="quick-access" className="relative w-full py-8 sm:py-12 bg-surface-bg overflow-hidden">
+      {/* Ambient Mesh Glow Backdrop */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-20 -left-20 w-[450px] h-[450px] bg-teal-400/10 rounded-full blur-[130px]" />
+        <div className="absolute -bottom-20 -right-20 w-[450px] h-[450px] bg-sky-300/10 rounded-full blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Teal Container */}
         <div className="bg-[#3A9D9A] rounded-3xl sm:rounded-[36px] p-6 sm:p-8 lg:p-10 shadow-lg text-white">
           
           {/* Top Row: Info & Maps Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Content (5 cols) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-                Akses cepat<br />layanan kami
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-xs border border-white/20 text-xs font-semibold text-teal-50 mb-3.5 w-fit">
+                <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
+                <span>Pusat Layanan & Bantuan RS</span>
+              </div>
+
+              {/* Enhanced Headline */}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.2]">
+                Akses Cepat &amp;<br className="hidden sm:inline" /> Informasi Layanan
               </h2>
-              <p className="text-xs sm:text-sm text-teal-50/90 mt-3 leading-relaxed max-w-md">
-                Kami siap melayani Anda dengan cepat kapanpun dan dimanapun Anda berada.
+
+              {/* Elevated Sub-headline */}
+              <p className="text-xs sm:text-sm text-teal-50/95 mt-3 leading-relaxed max-w-lg font-normal">
+                Dapatkan kemudahan akses rute lokasi rumah sakit, informasi kontak darurat, serta layanan kesehatan terpadu dan profesional yang selalu siap mendampingi Anda dan keluarga.
               </p>
 
-              <div>
-                <Link
-                  href="/janji-temu"
-                  className="mt-6 inline-flex items-center gap-2 bg-white hover:bg-teal-50 text-[#3A9D9A] font-bold text-xs sm:text-sm px-6 py-3.5 rounded-2xl shadow-sm transition-all duration-200 active:scale-95"
-                >
-                  <Calendar className="w-4 h-4 text-[#3A9D9A]" />
-                  <span>Buat Janji Temu</span>
-                </Link>
+              {/* Value Highlights */}
+              <div className="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5 text-xs text-white/90">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-200 flex-shrink-0" />
+                  <span className="font-medium">IGD &amp; Ambulans 24 Jam</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-200 flex-shrink-0" />
+                  <span className="font-medium">Pelayanan Syariah Ramah</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-200 flex-shrink-0" />
+                  <span className="font-medium">Lokasi Strategis Cikarang</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-200 flex-shrink-0" />
+                  <span className="font-medium">Respon Tanggap Darurat</span>
+                </div>
               </div>
             </div>
 
             {/* Right Map Card (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="relative w-full h-[230px] sm:h-[280px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-4 border-white/20 bg-gray-100">
+              <div className="relative w-full h-[240px] sm:h-[280px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-4 border-white/20 bg-gray-100">
                 <iframe
                   src={MAPS_EMBED_URL}
                   className="w-full h-full border-0"
@@ -65,8 +91,9 @@ export default function QuickAccess() {
                   rel="noopener noreferrer"
                   className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-gray-800 hover:text-[#3A9D9A] text-xs font-bold px-3.5 py-1.5 rounded-xl shadow-md border border-gray-100 transition-colors z-10"
                 >
-                  <span>Buka di Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#3A9D9A]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#3A9D9A]" />
+                  <span>Buka di Google Maps</span>
+                  <ExternalLink className="w-3 h-3 text-gray-400 ml-0.5" />
                 </a>
               </div>
             </div>
@@ -90,7 +117,7 @@ export default function QuickAccess() {
                   <Siren className="w-5 h-5 animate-pulse" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-500">Emergency</div>
+                  <div className="text-xs font-semibold text-gray-500">Emergency &amp; IGD 24 Jam</div>
                   <div className="text-xs sm:text-sm font-bold text-gray-900 truncate">
                     {contacts.emergency}
                   </div>
@@ -106,7 +133,7 @@ export default function QuickAccess() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-500">Telepon</div>
+                  <div className="text-xs font-semibold text-gray-500">Call Center &amp; Info</div>
                   <div className="text-xs sm:text-sm font-bold text-gray-900 truncate">
                     {contacts.phone}
                   </div>
@@ -124,7 +151,7 @@ export default function QuickAccess() {
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-500">WhatsApp</div>
+                  <div className="text-xs font-semibold text-gray-500">WhatsApp Pelayanan</div>
                   <div className="text-xs sm:text-sm font-bold text-gray-900 truncate">
                     {contacts.whatsapp}
                   </div>
@@ -140,7 +167,7 @@ export default function QuickAccess() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-500">E-mail</div>
+                  <div className="text-xs font-semibold text-gray-500">E-mail &amp; Kemitraan</div>
                   <div className="text-xs sm:text-sm font-bold text-gray-900 truncate">
                     {contacts.email}
                   </div>
@@ -158,14 +185,14 @@ export default function QuickAccess() {
               </div>
               <div className="text-xs sm:text-sm font-semibold">
                 <span className="font-bold text-[#3A9D9A] mr-2">
-                  Jam Layanan:
+                  Jam Operasional:
                 </span>
-                <span className="text-gray-800 font-bold">
-                  IGD 24 Jam
+                <span className="text-gray-900 font-bold">
+                  IGD &amp; Farmasi 24 Jam Siaga
                 </span>
-                <span className="mx-2 text-gray-400">|</span>
+                <span className="mx-2.5 text-gray-300">|</span>
                 <span className="text-gray-700">
-                  Poliklinik 07.00 - 20.00 WIB
+                  Poliklinik Spesialis: 07.00 - 20.00 WIB
                 </span>
               </div>
             </div>

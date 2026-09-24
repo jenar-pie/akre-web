@@ -18,6 +18,9 @@ import {
   Clock,
   Shield,
   Layers,
+  Home,
+  HeartHandshake,
+  Smile,
 } from "lucide-react";
 import LayananHero from "@/components/layanan/LayananHero";
 import LayananNavTabs from "@/components/layanan/LayananNavTabs";
@@ -31,6 +34,10 @@ const iconMap: Record<string, React.ElementType> = {
   Heart,
   Activity,
   ShieldCheck,
+  Home,
+  HeartHandshake,
+  Smile,
+  Clock,
 };
 
 const valueHighlights = [
@@ -61,11 +68,12 @@ export default function LayananUnggulanPage() {
 
   const categories = [
     { id: "all", label: "Semua Layanan Unggulan" },
-    { id: "Pemeriksaan & Skrining", label: "Pemeriksaan & Skrining" },
+    { id: "Rawat Jalan & Poliklinik", label: "Rawat Jalan & Poliklinik" },
     { id: "Ibu & Anak", label: "Ibu & Anak" },
+    { id: "Rawat Inap & Bedah", label: "Rawat Inap & Bedah" },
+    { id: "Pemeriksaan & Skrining", label: "Medical Check Up" },
+    { id: "Pemeriksaan & Imunisasi", label: "Vaksinasi" },
     { id: "Estetika Medis", label: "Estetika Medis" },
-    { id: "Persalinan & Kehamilan", label: "Persalinan & Kehamilan" },
-    { id: "Pemeriksaan & Imunisasi", label: "Vaksinasi & Imunisasi" },
   ];
 
   const filteredServices = selectedCategory === "all"

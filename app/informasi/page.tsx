@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, Tag, BookOpen, FileText, Calendar, Briefcase, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowLeft, Tag, BookOpen, FileText, Calendar, Briefcase, Share2, ArrowRight, Sparkles } from "lucide-react";
 
 const infoCards = [
   { title: "Promosi & Paket Kesehatan", desc: "Penawaran spesial paket MCU, persalinan syariah, dan vaksinasi.", href: "/informasi/promosi", icon: Tag },
-  { title: "Artikel Kesehatan", desc: "Edukasi kesehatan umum dan panduan medis terpercaya.", href: "/informasi/artikel-kesehatan", icon: BookOpen },
-  { title: "Artikel Islami", desc: "Bimbingan ibadah orang sakit, fiqih kesehatan, dan doa harian.", href: "/informasi/artikel-islami", icon: BookOpen },
+  { title: "Artikel & Edukasi", desc: "Edukasi kesehatan umum, tips medis, dan khazanah rohani islami.", href: "/informasi/artikel", icon: BookOpen },
+  { title: "Sosial Media Resmi", desc: "Kanal resmi Instagram, TikTok, Facebook, Threads, dan YouTube.", href: "/informasi/sosial-media", icon: Share2 },
   { title: "E-Leaflet & Brosur", desc: "Unduh brosur digital dan panduan edukasi kesehatan pasien.", href: "/informasi/e-leaflet", icon: FileText },
   { title: "Event & Kegiatan", desc: "Jadwal seminar kesehatan, donor darah, dan kelas senam hamil.", href: "/informasi/event", icon: Calendar },
   { title: "Karir & Rekrutmen", desc: "Informasi lowongan kerja medis dan non-medis di RS Ridhoka Salma.", href: "/informasi/karir", icon: Briefcase },
@@ -14,7 +14,7 @@ const infoCards = [
 export default function InformasiHubPage() {
   return (
     <div className="bg-surface-bg min-h-screen">
-      <div className="relative w-full bg-gradient-to-r from-primary-dark via-primary to-primary-hover text-white py-10 sm:py-14">
+      <div className="relative w-full bg-[#3A9D9A] text-white py-10 sm:py-14">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 mb-3">
             <Link href="/" className="text-xs text-teal-100 hover:text-white transition-colors flex items-center gap-1">

@@ -1,100 +1,296 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/beranda/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/app/beranda/page-3ba891ffffbe3444.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/css/4f20bada78571be2.css",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/layout-d4541f967df6862c.js"
     ],
     "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/not-found-e9f81af31b9b6ccf.js"
     ],
-    "/cari-dokter/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cari-dokter/page.js"
-    ],
-    "/kesyariahan/kebijakan-mutu/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/kebijakan-mutu/page.js"
-    ],
-    "/kesyariahan/program/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/program/page.js"
-    ],
-    "/kesyariahan/konsultan/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/konsultan/page.js"
-    ],
-    "/kesyariahan/profil-dps/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/kesyariahan/profil-dps/page.js"
-    ],
-    "/informasi/promosi/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/promosi/page.js"
-    ],
-    "/informasi/artikel-kesehatan/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/artikel-kesehatan/page.js"
-    ],
-    "/spesialis-kami/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/spesialis-kami/[slug]/page.js"
-    ],
-    "/spesialis-kami/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/spesialis-kami/page.js"
-    ],
-    "/layanan/fasilitas/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layanan/fasilitas/page.js"
-    ],
-    "/janji-temu/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/janji-temu/page.js"
-    ],
-    "/tentang-kami/struktur-organisasi/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/struktur-organisasi/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/app/_not-found/page-01fa115f35dcb55d.js"
     ],
     "/informasi/event/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/event/page.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/informasi/event/page-4911cb338d580787.js"
+    ],
+    "/informasi/artikel/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/informasi/artikel/page-864939be7a6b7bdd.js"
+    ],
+    "/cari-dokter/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/cari-dokter/page-381d8ef049a79f04.js"
+    ],
+    "/informasi/artikel-kesehatan/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/app/informasi/artikel-kesehatan/page-8648e303aacced7c.js"
+    ],
+    "/informasi/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/informasi/page-6707631e3f13e886.js"
+    ],
+    "/informasi/karir/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/informasi/karir/page-d677f38c7f63d9e1.js"
+    ],
+    "/informasi/sosial-media/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/informasi/sosial-media/page-8b89778c61f34c57.js"
     ],
     "/informasi/e-leaflet/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/e-leaflet/page.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/informasi/e-leaflet/page-d4c00925080affc3.js"
+    ],
+    "/informasi/promosi/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/informasi/promosi/page-95de96694b2db4f6.js"
+    ],
+    "/janji-temu/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/8345-2adc1ab17ddb9057.js",
+      "static/chunks/app/janji-temu/page-a79645fee2ff62b7.js"
+    ],
+    "/kesyariahan/kebijakan-mutu/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/kesyariahan/kebijakan-mutu/page-c0bc457dd3ad9090.js"
+    ],
+    "/kesyariahan/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/kesyariahan/page-635be1645bbd9cb4.js"
+    ],
+    "/kesyariahan/konsultan/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/kesyariahan/konsultan/page-82791bc136052699.js"
     ],
     "/informasi/artikel-islami/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/informasi/artikel-islami/page.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/app/informasi/artikel-islami/page-7482ad9692d48654.js"
+    ],
+    "/kesyariahan/profil-dps/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/kesyariahan/profil-dps/page-6477fd659bf7a50f.js"
+    ],
+    "/kesyariahan/program/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/kesyariahan/program/page-e310a2e146db63b2.js"
+    ],
+    "/layanan/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/layanan/page-dbe694264589b368.js"
+    ],
+    "/layanan/layanan-unggulan/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/4787-def43f15ae8dd4f6.js",
+      "static/chunks/app/layanan/layanan-unggulan/page-f03dc179886243cd.js"
+    ],
+    "/layanan/fasilitas/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/2432-50eb7b9003892013.js",
+      "static/chunks/app/layanan/fasilitas/page-d42eecbe90101040.js"
+    ],
+    "/layanan/rawat-inap/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/4228-8811642921d0cf3b.js",
+      "static/chunks/app/layanan/rawat-inap/page-aa8bdf616adbed03.js"
+    ],
+    "/sosial-media/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/app/sosial-media/page-b4d2a5481086e105.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/106-91ba30ecc749f581.js",
+      "static/chunks/8345-2adc1ab17ddb9057.js",
+      "static/chunks/app/page-42096de59eecc0ab.js"
+    ],
+    "/spesialis-kami/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/168-ee30950f5bdadb6c.js",
+      "static/chunks/8345-2adc1ab17ddb9057.js",
+      "static/chunks/app/spesialis-kami/page-a2285fe0bbe67d2a.js"
+    ],
+    "/tentang-kami/struktur-organisasi/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/tentang-kami/struktur-organisasi/page-9a22acabaf86e642.js"
+    ],
+    "/kesyariahan/profil-dps/[slug]/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/kesyariahan/profil-dps/[slug]/page-5f17077db5586f41.js"
     ],
     "/tentang-kami/sejarah/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tentang-kami/sejarah/page.js"
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/tentang-kami/sejarah/page-9c5cb5682f0d256c.js"
+    ],
+    "/spesialis-kami/[slug]/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/spesialis-kami/[slug]/page-a9885fc183b64184.js"
+    ],
+    "/tentang-kami/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/tentang-kami/page-f4991ec9bb3f293c.js"
+    ],
+    "/tentang-kami/visi-misi/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/app/tentang-kami/visi-misi/page-ade11274329146d1.js"
+    ],
+    "/tentang-kami/akreditasi/page": [
+      "static/chunks/webpack-18a548a87706f5f2.js",
+      "static/chunks/fd9d1056-bacac4aa67c68bda.js",
+      "static/chunks/2117-7effb37702805238.js",
+      "static/chunks/main-app-7923b815b4fe8308.js",
+      "static/chunks/2972-1c5b520077e018f4.js",
+      "static/chunks/5878-1004bfcdb134e001.js",
+      "static/chunks/app/tentang-kami/akreditasi/page-2cf3a206a039f854.js"
     ]
   }
 }

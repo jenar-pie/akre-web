@@ -32,6 +32,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Poppins", "var(--font-inter)", "sans-serif"],
+        serif: ["'Playfair Display'", "Georgia", "serif"],
       },
       borderRadius: {
         card: "16px",

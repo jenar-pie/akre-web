@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import {
   Award,
@@ -71,97 +72,99 @@ export default function AkreditasiPage() {
             {akreditasiData.accreditations.map((item) => {
               const isParipurna = item.id === "kars-paripurna";
               const isSyariah = item.id === "dsn-mui-syariah";
+              const isHalal = item.id === "ketetapan-halal-terpadu";
 
               return (
                 <div
                   key={item.id}
-                  className={`bg-white rounded-2xl p-6 sm:p-7 border ${
+                  className={`bg-white rounded-2xl overflow-hidden border ${
                     isParipurna
-                      ? "border-accent-gold/40 shadow-md ring-1 ring-accent-gold/20"
+                      ? "border-amber-300 shadow-md ring-1 ring-amber-200"
                       : isSyariah
                       ? "border-emerald-300 shadow-md ring-1 ring-emerald-200"
+                      : isHalal
+                      ? "border-teal-300 shadow-md ring-1 ring-teal-200"
                       : "border-gray-200 shadow-card"
-                  } hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative overflow-hidden`}
+                  } hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative`}
                 >
-                  {/* Decorative Corner Ribbon */}
-                  {isParipurna && (
-                    <div className="absolute top-0 right-0 bg-accent-gold text-white text-[10px] font-extrabold px-3 py-1 rounded-bl-lg uppercase tracking-wider shadow-xs">
-                      Bintang 5
-                    </div>
-                  )}
-                  {isSyariah && (
-                    <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-bl-lg uppercase tracking-wider shadow-xs">
-                      RS Syariah
-                    </div>
-                  )}
+                  {/* Photo Header */}
+                  {item.image && (
+                    <div className="relative w-full h-48 sm:h-52 bg-gray-100 overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(min-width: 1024px) 33vw, 100vw"
+                      />
+                      {/* Gradient overlay for readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                  <div>
-                    {/* Top Badge */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          isParipurna
-                            ? "bg-amber-50 text-accent-gold"
-                            : isSyariah
-                            ? "bg-emerald-50 text-emerald-600"
-                            : "bg-primary-light text-primary"
-                        }`}
-                      >
-                        <Award className="w-6 h-6" />
-                      </div>
-                      <div>
+                      {/* Floating Badge on Top Left */}
+                      <div className="absolute top-3 left-3 z-10">
                         <span
-                          className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold ${
+                          className={`inline-block px-3 py-1 rounded-full text-xs font-bold shadow-md ${
                             isParipurna
-                              ? "bg-amber-100 text-amber-900"
+                              ? "bg-amber-500 text-white"
                               : isSyariah
-                              ? "bg-emerald-100 text-emerald-900"
-                              : "bg-primary/10 text-primary"
+                              ? "bg-emerald-600 text-white"
+                              : "bg-[#3A9D9A] text-white"
                           }`}
                         >
                           {item.badgeText}
                         </span>
-                        <div className="text-[11px] text-gray-500 font-medium mt-0.5">
-                          Tingkat {item.level}
+                      </div>
+
+                      {/* Corner Ribbon */}
+                      {isParipurna && (
+                        <div className="absolute top-0 right-0 bg-accent-gold text-white text-[10px] font-extrabold px-3.5 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-md z-10">
+                          Bintang 5
                         </div>
+                      )}
+                      {isSyariah && (
+                        <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-extrabold px-3.5 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-md z-10">
+                          RS Syariah
+                        </div>
+                      )}
+                      {isHalal && (
+                        <div className="absolute top-0 right-0 bg-teal-600 text-white text-[10px] font-extrabold px-3.5 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-md z-10">
+                          Halal Terpadu
+                        </div>
+                      )}
+
+                      {/* Level Tag on Bottom Left */}
+                      <div className="absolute bottom-3 left-3 z-10">
+                        <span className="text-[11px] font-medium text-white/95 bg-black/60 px-2.5 py-1 rounded-md border border-white/20">
+                          Tingkat {item.level}
+                        </span>
                       </div>
                     </div>
+                  )}
 
-                    {/* Title & Issuer */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-primary font-medium mb-3">
-                      Penerbit: {item.issuer}
-                    </p>
-
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                      {item.description}
-                    </p>
-
-                    {/* Meta info box */}
-                    <div className="p-3 bg-surface-bg rounded-lg border border-gray-100 space-y-1 text-xs text-gray-600 mb-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-400">No. Sertifikat:</span>
-                        <span className="font-semibold text-gray-800">{item.certificateNo}</span>
+                  {/* Card Content Body */}
+                  <div className="p-6 sm:p-7 flex flex-col flex-grow">
+                    {/* Title & Issuer Header */}
+                    <div className="flex items-start gap-3">
+                      <div
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                          isParipurna
+                            ? "bg-amber-50 text-accent-gold"
+                            : isSyariah
+                            ? "bg-emerald-50 text-emerald-600"
+                            : "bg-teal-50 text-[#3A9D9A]"
+                        }`}
+                      >
+                        <Award className="w-5 h-5" />
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-400">Masa Berlaku:</span>
-                        <span className="font-semibold text-gray-800">{item.year} - {item.validUntil}</span>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-primary font-medium mt-0.5">
+                          Penerbit: {item.issuer}
+                        </p>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Highlight Bullets */}
-                  <div className="pt-3 border-t border-gray-100">
-                    <ul className="space-y-1.5 text-xs text-gray-700">
-                      {item.highlights.map((h, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-accent-green flex-shrink-0 mt-0.5" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               );
@@ -227,41 +230,63 @@ export default function AkreditasiPage() {
             {akreditasiData.awards.map((award) => (
               <div
                 key={award.id}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl hover:shadow-teal-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block px-3 py-1 rounded-full bg-accent-gold/10 text-accent-gold text-xs font-bold">
-                      Tahun {award.year}
-                    </span>
-                    <span className="text-[11px] font-semibold text-gray-400">
-                      {award.category}
-                    </span>
+                {/* Photo Header */}
+                {award.image && (
+                  <div className="relative w-full h-44 sm:h-48 bg-gray-100 overflow-hidden">
+                    <Image
+                      src={award.image}
+                      alt={award.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                    {/* Floating year badge on top-left */}
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="inline-block px-3 py-1 rounded-full bg-accent-gold text-white text-xs font-bold shadow-md">
+                        Tahun {award.year}
+                      </span>
+                    </div>
+
+                    {/* Category badge on top-right */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-black/60 text-white text-[11px] font-semibold border border-white/20">
+                        {award.category}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Card Content Body */}
+                <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between gap-4">
+                  <div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-amber-50 text-accent-gold flex items-center justify-center flex-shrink-0 group-hover:bg-accent-gold group-hover:text-white transition-colors shadow-xs">
+                        <Medal className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug">
+                          {award.title}
+                        </h3>
+                        <p className="text-xs text-primary font-medium mt-0.5">
+                          {award.issuer}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 text-accent-gold flex items-center justify-center flex-shrink-0 group-hover:bg-accent-gold group-hover:text-white transition-colors">
-                      <Medal className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug">
-                        {award.title}
-                      </h3>
-                      <p className="text-xs text-primary font-medium mt-0.5">
-                        {award.issuer}
-                      </p>
-                    </div>
+                  <div className="pt-3 mt-4 border-t border-gray-100 flex items-center justify-between">
+                    <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200/60">
+                      {award.badge}
+                    </span>
+                    <span className="text-[11px] font-medium text-gray-400 group-hover:text-primary transition-colors">
+                      RS Ridhoka Salma
+                    </span>
                   </div>
-
-                  <p className="text-xs text-gray-600 leading-relaxed pt-2">
-                    {award.description}
-                  </p>
-                </div>
-
-                <div className="pt-3 mt-4 border-t border-gray-100">
-                  <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-700">
-                    {award.badge}
-                  </span>
                 </div>
               </div>
             ))}

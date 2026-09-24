@@ -25,6 +25,13 @@ import {
   Phone,
   Calendar,
   Layers,
+  Truck,
+  CreditCard,
+  Coffee,
+  HeartHandshake,
+  Utensils,
+  Tv,
+  BookOpen,
 } from "lucide-react";
 import LayananHero from "@/components/layanan/LayananHero";
 import LayananNavTabs from "@/components/layanan/LayananNavTabs";
@@ -48,6 +55,13 @@ const iconMap: Record<string, React.ElementType> = {
   Car,
   Building2,
   ShieldCheck,
+  Truck,
+  CreditCard,
+  Coffee,
+  HeartHandshake,
+  Utensils,
+  Tv,
+  BookOpen,
 };
 
 export default function FasilitasPage() {

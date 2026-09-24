@@ -47,8 +47,8 @@ export const navigationItems: NavItem[] = [
     href: "/informasi",
     dropdown: [
       { label: "Promosi", href: "/informasi/promosi" },
-      { label: "Artikel Kesehatan", href: "/informasi/artikel-kesehatan" },
-      { label: "Artikel Islami", href: "/informasi/artikel-islami" },
+      { label: "Artikel & Edukasi", href: "/informasi/artikel" },
+      { label: "Sosial Media", href: "/informasi/sosial-media" },
       { label: "E-leaflet", href: "/informasi/e-leaflet" },
       { label: "Event", href: "/informasi/event" },
       { label: "Karir", href: "/informasi/karir" },
@@ -82,8 +82,8 @@ export const footerNavigation = {
   ],
   informasi: [
     { label: "Promosi", href: "/informasi/promosi" },
-    { label: "Artikel Kesehatan", href: "/informasi/artikel-kesehatan" },
-    { label: "Artikel Islami", href: "/informasi/artikel-islami" },
+    { label: "Artikel & Edukasi", href: "/informasi/artikel" },
+    { label: "Sosial Media", href: "/informasi/sosial-media" },
     { label: "Event", href: "/informasi/event" },
     { label: "Karir", href: "/informasi/karir" },
   ],

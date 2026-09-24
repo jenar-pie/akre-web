@@ -40,10 +40,21 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const navRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Detect scroll to style sticky navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -95,9 +106,14 @@ export default function Navbar() {
   );
 
   return (
-    <header ref={navRef} className="w-full sticky top-0 z-50 bg-white shadow-xs">
+    <header
+      ref={navRef}
+      className={`w-full sticky top-0 z-50 bg-white transition-all duration-300 ${
+        isScrolled ? "shadow-md bg-white/95 backdrop-blur-md" : "shadow-xs"
+      }`}
+    >
       {/* 1. Top Bar */}
-      <div className="w-full bg-gradient-to-r from-[#1C5555] to-[#3A9D9A] text-white text-[11px] sm:text-xs">
+      <div className="w-full bg-[#3A9D9A] text-white text-[11px] sm:text-xs shadow-inner">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
           
           {/* Left Contact & Address Info */}
@@ -314,27 +330,42 @@ export default function Navbar() {
                   <Search className="w-4 h-4" />
                 </button>
 
-                {/* Floating Search Input Popover */}
+                {/* Floating Search Input Popover (Responsive for Android & iOS mobile) */}
                 {searchOpen && (
-                  <form
-                    onSubmit={handleSearchSubmit}
-                    className="absolute right-0 top-full mt-3 w-72 sm:w-80 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 z-50 flex items-center gap-2 animate-in fade-in slide-in-from-top-2"
-                  >
-                    <input
-                      ref={searchInputRef}
-                      type="text"
-                      placeholder="Cari dokter atau layanan..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="flex-1 text-xs sm:text-sm px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3A9D9A]/30 focus:border-[#3A9D9A]"
+                  <>
+                    {/* Mobile Backdrop */}
+                    <div
+                      className="fixed inset-0 bg-black/25 z-40 sm:hidden"
+                      onClick={() => setSearchOpen(false)}
                     />
-                    <button
-                      type="submit"
-                      className="bg-[#3A9D9A] hover:bg-[#2A7B78] text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-colors"
+                    <form
+                      onSubmit={handleSearchSubmit}
+                      className="fixed sm:absolute inset-x-3 sm:inset-x-auto top-[76px] sm:top-full sm:right-0 sm:mt-3 w-auto sm:w-80 bg-white p-3 rounded-2xl shadow-2xl border border-gray-100 z-50 flex items-center gap-2 animate-in fade-in slide-in-from-top-2"
                     >
-                      Cari
-                    </button>
-                  </form>
+                      <input
+                        ref={searchInputRef}
+                        type="text"
+                        placeholder="Cari dokter atau layanan..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="flex-1 text-xs sm:text-sm px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3A9D9A]/30 focus:border-[#3A9D9A]"
+                      />
+                      <button
+                        type="submit"
+                        className="bg-[#3A9D9A] hover:bg-[#2A7B78] text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-colors shrink-0"
+                      >
+                        Cari
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setSearchOpen(false)}
+                        className="p-2 text-gray-400 hover:text-gray-700 sm:hidden rounded-lg"
+                        aria-label="Tutup pencarian"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </form>
+                  </>
                 )}
               </div>
 
@@ -381,6 +412,26 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white border-b border-gray-100 shadow-xl overflow-y-auto max-h-[85vh] animate-in slide-in-from-top duration-200">
           <div className="px-4 py-4 space-y-2">
+            {/* Search Bar in Mobile Drawer */}
+            <form onSubmit={handleSearchSubmit} className="mb-3 flex items-center gap-2">
+              <div className="relative flex-1">
+                <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="text"
+                  placeholder="Cari dokter atau layanan..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#3A9D9A]/30 focus:border-[#3A9D9A]"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-[#3A9D9A] hover:bg-[#2A7B78] text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-colors shrink-0"
+              >
+                Cari
+              </button>
+            </form>
+
             {menuItems.map((item) => {
               const hasDropdown = item.dropdown && item.dropdown.length > 0;
               const isExpanded = mobileExpanded === item.label;

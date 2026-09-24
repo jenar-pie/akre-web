@@ -14,6 +14,11 @@ import {
   UserCheck,
   Calendar,
   Sparkles,
+  Eye,
+  Headphones,
+  Smile,
+  Shield,
+  Wind,
 } from "lucide-react";
 import { featuredSpecialists } from "@/data/specialists";
 
@@ -24,12 +29,24 @@ const iconMap: Record<string, React.ElementType> = {
   Activity,
   Zap,
   HeartPulse,
+  Sparkles,
+  Eye,
+  Headphones,
+  Smile,
+  Shield,
+  Wind,
 };
 
 export default function Specialists() {
   return (
-    <section className="w-full py-6 sm:py-8 bg-surface-bg border-y border-gray-100">
-      <div className="max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8">
+    <section className="relative w-full py-8 sm:py-12 bg-surface-bg border-y border-gray-100 overflow-hidden">
+      {/* Ambient Mesh Glow Backdrop */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[120px]" />
+        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-purple-300/10 rounded-full blur-[130px]" />
+      </div>
+
+      <div className="relative max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-6">

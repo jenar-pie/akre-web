@@ -6,7 +6,7 @@ import { contacts } from "@/data/contacts";
 export default function KonsultasiSyariahPage() {
   return (
     <div className="bg-surface-bg min-h-screen">
-      <div className="relative w-full bg-gradient-to-r from-primary-dark via-primary to-primary-hover text-white py-10 sm:py-14">
+      <div className="relative w-full bg-[#3A9D9A] text-white py-10 sm:py-14">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 mb-3">
             <Link href="/kesyariahan" className="text-xs text-teal-100 hover:text-white transition-colors flex items-center gap-1">

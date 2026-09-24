@@ -38,7 +38,7 @@ const navigationCards = [
     description: "Arah panduan strategis dan komitmen pelayanan yang berorientasi pada mutu medis prima, keselamatan pasien, dan akhlak Islami.",
     href: "/tentang-kami/visi-misi",
     icon: Target,
-    badge: "Keikhlasan Melayani Adalah Ibadahku",
+    badge: "Barokah Bersama Kami",
     color: "from-primary to-teal-700",
   },
   {
@@ -122,7 +122,7 @@ export default function TentangKamiHubPage() {
                 <span className="text-xs uppercase tracking-widest text-teal-200 font-bold">
                   Moto Pelayanan
                 </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold mt-1 mb-3">
+                <h3 className="font-serif italic text-2xl sm:text-3xl font-medium tracking-wide drop-shadow-sm mt-1 mb-3">
                   &ldquo;{visiMisiData.moto}&rdquo;
                 </h3>
                 <p className="text-xs text-teal-50/90 leading-relaxed mb-6">

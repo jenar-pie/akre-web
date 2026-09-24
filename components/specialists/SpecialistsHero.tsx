@@ -23,23 +23,8 @@ export default function SpecialistsHero({
   breadcrumbs,
 }: SpecialistsHeroProps) {
   return (
-    <div className="relative w-full bg-gradient-to-r from-primary-dark via-primary to-primary-hover text-white overflow-hidden py-10 sm:py-14 lg:py-16">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-white blur-3xl"></div>
-        <div className="absolute left-1/3 -bottom-20 w-96 h-96 rounded-full bg-accent-gold blur-3xl"></div>
-        <svg
-          className="w-full h-full object-cover"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 L100,0 L100,100 Z"
-            fill="rgba(255,255,255,0.03)"
-          />
-        </svg>
-      </div>
+    <div className="relative w-full bg-[#3A9D9A] text-white overflow-hidden py-10 sm:py-14 lg:py-16">
+
 
       <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}

@@ -9,7 +9,7 @@ import { footerNavigation } from "@/data/navigation";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-r from-[#1C5555] to-[#3A9D9A] text-white">
+    <footer className="w-full bg-[#3A9D9A] text-white">
       <div className="max-w-[1280px] mx-auto px-3 sm:px-5 lg:px-8 py-8 lg:py-10">
 
         {/* Main Grid */}
@@ -17,14 +17,14 @@ export default function Footer() {
 
           {/* Column 1: Logo + Info */}
           <div className="lg:col-span-4 space-y-3">
-            {/* Logo - original colors */}
-            <div className="relative w-[200px] sm:w-[220px] h-[64px] sm:h-[70px]">
-              <Image
-                src="/assets/logo/LOGO RSRS.svg"
-                alt="RS Ridhoka Salma"
-                fill
-                className="object-contain object-left"
-              />
+            {/* Slogan Text: Barokah Bersama Kami */}
+            <div className="pb-1">
+              <h2 className="font-serif italic text-2xl sm:text-3xl text-white font-medium tracking-wide drop-shadow-sm leading-tight">
+                Barokah Bersama Kami
+              </h2>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-teal-100 font-medium mt-1">
+                RS Ridhoka Salma
+              </p>
             </div>
 
             {/* Address */}

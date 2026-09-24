@@ -45,6 +45,7 @@ export interface AccreditationItem {
   description: string;
   highlights: string[];
   category: "akreditasi" | "syariah" | "iso";
+  image?: string;
 }
 
 export interface AwardItem {
@@ -55,6 +56,7 @@ export interface AwardItem {
   category: string;
   description: string;
   badge: string;
+  image?: string;
 }
 
 export const sejarahData = {
@@ -123,7 +125,7 @@ export const sejarahData = {
 };
 
 export const visiMisiData = {
-  moto: "Keikhlasan Melayani Adalah Ibadahku",
+  moto: "Barokah Bersama Kami",
   mottoTranslation: "Setiap langkah pelayanan kami didedikasikan sebagai wujud ibadah untuk memberikan yang terbaik bagi kesembuhan dan kenyamanan pasien.",
   visi: "Menjadi Rumah Sakit Islam Terpilih dan Terpercaya di Bekasi yang Unggul dalam Pelayanan Medis dan Berlandaskan Prinsip Syariah.",
   visiDescription: "Visi ini menjadi kompas seluruh insan RS Ridhoka Salma dalam menghadirkan pelayanan kesehatan berstandar mutu tinggi, aman, humanis, serta senantiasa menghidupkan nilai-nilai luhur Islami dalam setiap interaksi.",
@@ -285,6 +287,7 @@ export const akreditasiData = {
         "Pencegahan dan pengendalian infeksi rumah sakit yang komprehensif",
       ],
       category: "akreditasi",
+      image: "/assets/sertif/sertif-paripurna.png",
     },
     {
       id: "dsn-mui-syariah",
@@ -302,70 +305,117 @@ export const akreditasiData = {
         "Pemberian edukasi Islami dan penjagaan privasi/aurat pasien",
       ],
       category: "syariah",
+      image: "/assets/sertif/sertif-syariah.png",
     },
     {
-      id: "bpjs-faskes-prima",
-      title: "Kepatuhan Mutu Faskes Rujukan BPJS",
-      issuer: "BPJS Kesehatan Cabang Cikarang / Wilayah Jawa Barat",
-      level: "Fasilitas Kesehatan Rujukan Utama",
-      badgeText: "Faskes Kepatuhan Tinggi",
+      id: "ketetapan-halal-terpadu",
+      title: "Sertifikasi Ketetapan Halal Gizi, Farmasi, dan Laundry",
+      issuer: "Badan Penyelenggara Jaminan Produk Halal (BPJPH) & LPPOM MUI",
+      level: "Ketetapan Halal Terpadu",
+      badgeText: "Sertifikasi Halal",
       year: "2024",
       validUntil: "Aktif",
-      certificateNo: "BPJS-CKR/MUTU/2024",
-      description: "Pengakuan resmi atas komitmen RS Ridhoka Salma dalam menyediakan akses pelayanan BPJS Kesehatan yang mudah, cepat, setara, tanpa diskriminasi dan tanpa iur biaya tambahan.",
+      certificateNo: "ID0041000000000/2024",
+      description: "Jaminan halal menyeluruh pada penyelenggaraan instalasi gizi makanan pasien, formularium obat & farmasi, serta standar pencucian linen laundry yang suci dan thaharah.",
       highlights: [
-        "Integrasi antrean online Mobile JKN dan finger print",
-        "Ketersediaan display tempat tidur & jadwal dokter transparan",
-        "Respon cepat pengaduan peserta BPJS Kesehatan",
+        "Sistem Jaminan Produk Halal (SJPH) terintegrasi pada instalasi gizi",
+        "Pengadaan obat-obatan & perbekalan farmasi teruji kehalalannya",
+        "Pencucian linen medis dan laundry sesuai standar kesucian thaharah",
       ],
-      category: "akreditasi",
+      category: "halal",
+      image: "/assets/sertif/sertif-halal.png",
     },
   ] as AccreditationItem[],
   awards: [
     {
-      id: "mukisi-2026",
-      year: "2026",
-      title: "MUKISI Syariah Healthcare Award",
-      issuer: "Majelis Upaya Kesehatan Islam Seluruh Indonesia (MUKISI)",
-      category: "Pelayanan Syariah",
-      description: "Penghargaan atas konsistensi dan inovasi dalam penyelenggaraan pelayanan kesehatan berbasis syariah dan bimbingan rohani pasien terbaik.",
-      badge: "Kategori Layanan Syariah",
-    },
-    {
-      id: "bpjs-kepatuhan-2024",
+      id: "bpjs-kessan",
       year: "2024",
-      title: "Penghargaan Capaian Kepatuhan Kontrak Faskes Tertinggi",
+      title: "Penghargaan Capaian KESSAN (Kesan Pesan Peserta) Terbaik",
       issuer: "BPJS Kesehatan Cabang Cikarang",
-      category: "Kepatuhan Mutu & Kerjasama",
-      description: "Apresiasi atas komitmen rumah sakit dalam menjaga mutu perjanjian kerja sama, nihil diskriminasi pasien, serta optimalisasi antrean digital.",
-      badge: "Kepatuhan Terbaik",
-    },
-    {
-      id: "leadership-women-2022",
-      year: "2022",
-      title: "Inspiring Healthcare Leader & Successful Women in Leadership",
-      issuer: "Indonesia Achievement Center / Forum Komunikasi Profesi",
-      category: "Kepemimpinan Manajemen",
-      description: "Diberikan kepada Hj. Roziana Ghani (Direktur Utama) atas dedikasi dan visi kepemimpinan yang progresif dalam memajukan RS Ridhoka Salma.",
-      badge: "Leadership Award",
-    },
-    {
-      id: "plkk-bpjamsostek-2021",
-      year: "2021",
-      title: "Pusat Layanan Kecelakaan Kerja (PLKK) Award",
-      issuer: "BPJS Ketenagakerjaan (BPJAMSOSTEK) Bekasi",
-      category: "Pelayanan Trauma & PLKK",
-      description: "Penghargaan bagi tenaga kesehatan dan rumah sakit sebagai penanggung jawab dan penanganan trauma kecelakaan kerja terbaik di kawasan industri Cikarang.",
-      badge: "PLKK Terbaik",
-    },
-    {
-      id: "layanan-terbaik-masyarakat",
-      year: "2023",
-      title: "Penghargaan Rumah Sakit Pilihan & Ramah Pasien",
-      issuer: "Asosiasi Komunitas Masyarakat Cikarang Barat",
       category: "Kepuasan Pasien",
-      description: "Apresiasi dari masyarakat sekitar atas keramahan petugas, kebersihan fasilitas, serta program sosial kesehatan gratis secara rutin.",
-      badge: "Pilihan Masyarakat",
+      badge: "KESSAN Terbaik",
+      image: "/assets/sertif/bpjs-kesann.png",
+    },
+    {
+      id: "bpjs-rating",
+      year: "2024",
+      title: "Penghargaan Rating & Ulasan Kepuasan Pelayanan Faskes",
+      issuer: "BPJS Kesehatan Wilayah Jawa Barat",
+      category: "Pelayanan Prima",
+      badge: "Rating Tertinggi",
+      image: "/assets/sertif/bpjs-rating1.png",
+    },
+    {
+      id: "bpjs-aduan",
+      year: "2024",
+      title: "Penghargaan Respon Cepat & Penanganan Pengaduan Pasien",
+      issuer: "BPJS Kesehatan",
+      category: "Layanan Pengaduan",
+      badge: "Respon Cepat",
+      image: "/assets/sertif/bpjs-aduan.png",
+    },
+    {
+      id: "bpjs-sipp",
+      year: "2023",
+      title: "Penghargaan Kepatuhan Integrasi Sistem SIPP & Antrean Online",
+      issuer: "BPJS Kesehatan",
+      category: "Transformasi Digital",
+      badge: "Integrasi SIPP",
+      image: "/assets/sertif/bpjs-sipp.png",
+    },
+    {
+      id: "bpjs-3d",
+      year: "2023",
+      title: "Penyelenggara Kegiatan 3D (Diskusi Duo Dinamis) Terbaik",
+      issuer: "BPJS Kesehatan",
+      category: "Transparansi Layanan",
+      badge: "Display Transparan",
+      image: "/assets/sertif/bpjs-3d.png",
+    },
+    {
+      id: "bpjs-cs1",
+      year: "2023",
+      title: "Penghargaan Frontliner & Petugas Informasi BPJS Terbaik",
+      issuer: "BPJS Kesehatan Cabang Cikarang",
+      category: "Customer Care",
+      badge: "Pelayanan Terbaik",
+      image: "/assets/sertif/bpjs-cs1.png",
+    },
+    {
+      id: "bpjs-cs2",
+      year: "2023",
+      title: "Apresiasi Komitmen Pelayanan Tanpa Diskriminasi & Iur Biaya",
+      issuer: "BPJS Kesehatan",
+      category: "Integritas Layanan",
+      badge: "Komitmen Mutu",
+      image: "/assets/sertif/bpjs-cs2.png",
+    },
+    {
+      id: "bpjs-gn",
+      year: "2022",
+      title: "Penghargaan Fasilitas Kesehatan Berkomitmen Pelayanan Mutu",
+      issuer: "BPJS Kesehatan",
+      category: "Mutu Pelayanan",
+      badge: "Faskes Berkomitmen",
+      image: "/assets/sertif/bpjs-gn.png",
+    },
+    {
+      id: "achieve-covid",
+      year: "2021",
+      title: "Penghargaan Dedikasi Pelayanan Kesehatan Tanggap Pandemi",
+      issuer: "Pemerintah Daerah & Satgas Kesehatan",
+      category: "Tanggap Darurat",
+      badge: "Dedikasi Kesehatan",
+      image: "/assets/sertif/achive-covid.png",
+    },
+    {
+      id: "sertif-th",
+      year: "2022",
+      title: "Sertifikasi Penghargaan Tata Kelola & Mutu Berkelanjutan",
+      issuer: "Lembaga Mutu Kesehatan Nasional",
+      category: "Tata Kelola RS",
+      badge: "Tata Kelola Unggul",
+      image: "/assets/sertif/sertif-th.png",
     },
   ] as AwardItem[],
   syariahPrinciples: [

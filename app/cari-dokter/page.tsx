@@ -277,8 +277,8 @@ export default function CariDokterPage() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top View Toggle Switcher */}
-        <div className="flex justify-center mb-8 sm:mb-10">
-          <div className="relative inline-flex p-1.5 bg-white rounded-2xl border border-gray-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] select-none">
+        <div className="flex justify-center mb-8 sm:mb-10 px-2">
+          <div className="relative inline-flex p-1.5 bg-white rounded-2xl border border-gray-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] select-none max-w-full">
             {/* Smooth Sliding Background Pill (Zero Delay / Hardware Accelerated) */}
             <div
               className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-gradient-to-r from-[#198782] to-[#259b95] rounded-xl shadow-[0_4px_16px_rgba(25,135,130,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] border border-teal-500/30 transition-transform duration-200 ease-out pointer-events-none ${
@@ -289,7 +289,7 @@ export default function CariDokterPage() {
             <button
               type="button"
               onClick={() => setViewMode("hari")}
-              className={`relative z-10 flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
                 viewMode === "hari" ? "text-white" : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -299,7 +299,7 @@ export default function CariDokterPage() {
             <button
               type="button"
               onClick={() => setViewMode("dokter")}
-              className={`relative z-10 flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer ${
                 viewMode === "dokter" ? "text-white" : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -325,16 +325,19 @@ export default function CariDokterPage() {
         {viewMode === "hari" && (
           <div>
             {/* Horizontal Day Selector Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 mb-8 sm:mb-10">
-              {DAYS.map((day) => {
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 sm:gap-4 mb-8 sm:mb-10">
+              {DAYS.map((day, index) => {
                 const isActive = selectedDay === day;
                 const count = dayDoctorCounts[day];
+                const isLast = index === DAYS.length - 1;
 
                 return (
                   <button
                     key={day}
                     onClick={() => setSelectedDay(day)}
-                    className={`p-4 sm:p-5 rounded-2xl text-center transition-all duration-200 ${
+                    className={`p-3.5 sm:p-5 rounded-2xl text-center transition-all duration-200 cursor-pointer ${
+                      isLast ? "col-span-2 sm:col-span-1" : "col-span-1"
+                    } ${
                       isActive
                         ? "bg-gradient-to-br from-[#198782] via-[#1d918b] to-[#126b67] text-white shadow-[0_10px_28px_-4px_rgba(25,135,130,0.45),inset_0_1px_1px_rgba(255,255,255,0.3)] border border-teal-400/40 -translate-y-0.5"
                         : "bg-white text-gray-800 border border-gray-200/90 shadow-[0_4px_14px_-2px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_-4px_rgba(25,135,130,0.15)] hover:border-[#198782]/50 hover:-translate-y-0.5"

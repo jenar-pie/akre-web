@@ -71,7 +71,7 @@ export default function VisiMisiPage() {
             <span className="inline-block px-3 py-1 bg-white/20 text-teal-100 text-xs font-semibold rounded-full mb-3">
               MOTO PELAYANAN
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-3 text-white">
+            <h2 className="font-serif italic text-2xl sm:text-3xl lg:text-4xl font-medium tracking-wide drop-shadow-sm mb-3 text-white">
               &ldquo;{visiMisiData.moto}&rdquo;
             </h2>
             <p className="text-xs sm:text-sm text-teal-50/90 leading-relaxed max-w-2xl">
